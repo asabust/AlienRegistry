@@ -2,17 +2,22 @@ using UnityEngine;
 
 public class UITestOpen : MonoBehaviour
 {
-    [SerializeField] private int correctPlanetId = 5;
-    [SerializeField] private string planetsViewKey = "demo_planets";
+    [SerializeField] private int characterId = 2;
 
     public void OpenNow()
     {
-        Debug.Log("OpenNow clicked");
+        if (characterId <= 0)
+        {
+            Debug.LogWarning("characterId 必须大于 0");
+            return;
+        }
+
+        Debug.Log($"OpenNow clicked, characterId={characterId}");
+
         UIManager.Instance.Open<PlanetsPanel>(
             new PlanetsPanel.OpenData
             {
-                correctPlanetId = correctPlanetId,
-                planetsViewKey = planetsViewKey
+                characterId = characterId
             }
         );
     }
