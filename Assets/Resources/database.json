@@ -1,4 +1,178 @@
 {
+  "characters": {
+    "1": {
+      "id": 1,
+      "name": "Groot",
+      "species": "Sprout",
+      "description": "Plant-like sprouts grow on its antennae. Its jagged, tooth-like body serves as perfect camouflage to evade natural enemies.",
+      "homePlanet": "1",
+      "planetOption": [
+        7,
+        8,
+        1
+      ],
+      "itemIds": [
+        1,
+        2
+      ],
+      "shortQuestions": [
+        "",
+        "",
+        ""
+      ],
+      "questions": [
+        "",
+        "",
+        ""
+      ],
+      "answers": [
+        "Groot_prefab_1",
+        "Groot_prefab_2",
+        "Groot_prefab_3"
+      ],
+      "portrait": "Groot_Profile",
+      "fullBody": "Groot_appearance",
+      "xray": "Groot_X"
+    },
+    "2": {
+      "id": 2,
+      "name": "BuBoom",
+      "species": "Inorganic",
+      "description": "A Balloonian who changes color according to its emotional state.",
+      "homePlanet": "2",
+      "planetOption": [
+        2,
+        6,
+        10
+      ],
+      "itemIds": [
+        3
+      ],
+      "shortQuestions": [
+        "",
+        "",
+        ""
+      ],
+      "questions": [
+        "",
+        "",
+        ""
+      ],
+      "answers": [
+        "BuBoom_prefab_1",
+        "BuBoom_prefab_2",
+        "BuBoom_prefab_3"
+      ],
+      "portrait": "BuBoom_Profile",
+      "fullBody": "BuBoom_appearance",
+      "xray": "BuBoom_X"
+    },
+    "3": {
+      "id": 3,
+      "name": "Bank",
+      "species": "Urban Legend",
+      "description": "An eerie Mothman-like entity born from urban legends on Fajnara. In truth, it belongs to the dominant species of the planet Frattwizz.",
+      "homePlanet": "3",
+      "planetOption": [
+        5,
+        3,
+        9
+      ],
+      "itemIds": [
+        4,
+        5,
+        6
+      ],
+      "shortQuestions": [
+        "",
+        "",
+        ""
+      ],
+      "questions": [
+        "",
+        "",
+        ""
+      ],
+      "answers": [
+        "Bank_prefab_1",
+        "Bank_prefab_2",
+        "Bank_prefab_3"
+      ],
+      "portrait": "Bank_Profile",
+      "fullBody": "Bank_appearance",
+      "xray": "Bank_X"
+    },
+    "4": {
+      "id": 4,
+      "name": "G-007",
+      "species": "Ferro",
+      "description": "A satellite signal detection model. It was once the most common robot type used in interstellar exploration.",
+      "homePlanet": "4",
+      "planetOption": [
+        2,
+        4,
+        7
+      ],
+      "itemIds": [
+        7,
+        8
+      ],
+      "shortQuestions": [
+        "",
+        "",
+        ""
+      ],
+      "questions": [
+        "",
+        "",
+        ""
+      ],
+      "answers": [
+        "G-007_prefab_1",
+        "G-007_prefab_2",
+        "G-007_prefab_3"
+      ],
+      "portrait": "G-007_Profile",
+      "fullBody": "G-007_appearance",
+      "xray": "G-007_X"
+    },
+    "5": {
+      "id": 5,
+      "name": "Ivy-chan",
+      "species": "Beast",
+      "description": "A cute little vine critter that loves snuggling up to furry creatures and climbing all over them.",
+      "homePlanet": "5",
+      "planetOption": [
+        8,
+        10,
+        5
+      ],
+      "itemIds": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "shortQuestions": [
+        "",
+        "",
+        ""
+      ],
+      "questions": [
+        "",
+        "",
+        ""
+      ],
+      "answers": [
+        "Ivy-chan_prefab_1",
+        "Ivy-chan_prefab_2",
+        "Ivy-chan_prefab_3"
+      ],
+      "portrait": "Ivy-chan_Profile",
+      "fullBody": "Ivy-chan_appearance",
+      "xray": "Ivy-chan_X"
+    }
+  },
   "dialogues": {
     "1": {
       "dialogueId": 1,
@@ -490,6 +664,7 @@
       "nextDialogueId": 0
     }
   },
+  "items": {},
   "planets": {
     "1": {
       "id": 1,
