@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Game.Runtime.Data
     {
         public List<AudioInf> audioInfos = new List<AudioInf>();
 
-        public AudioInf GetAudioInfo(AudioName audioName)
+        public AudioInf GetAudioInfo(string audioName)
         {
             return audioInfos.Find(x => x.audioName == audioName);
         }
@@ -18,7 +19,7 @@ namespace Game.Runtime.Data
     [System.Serializable]
     public class AudioInf
     {
-        public AudioName audioName;
+        public string audioName;
         public AudioClip clip;
         [Range(0f, 1f)]
         public float volume;
