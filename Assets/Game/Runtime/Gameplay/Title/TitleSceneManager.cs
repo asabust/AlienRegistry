@@ -14,8 +14,8 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
-        // if (settingButton)
-            // settingButton.onClick.AddListener(() => UIManager.Instance.Open<SettingsPanel>());
+        if (settingButton)
+            settingButton.onClick.AddListener(() => UIManager.Instance.Open<SettingsPanel>(false));
         if (startGameButton) startGameButton.onClick.AddListener(() => GameManager.Instance.StartNewGame());
         if (exitGameButton) exitGameButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
     }
