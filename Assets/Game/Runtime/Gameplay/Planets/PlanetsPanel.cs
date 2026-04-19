@@ -11,14 +11,16 @@ public class PlanetsPanel : UIPanel
     [Header("卡片组的父对象")]
     public Transform cardsRoot;
 
-    [Header("卡片列表自动匹配")]
+    [Header("卡片列表手动匹配")]
     public List<PlanetsCard> cards = new List<PlanetsCard>();
 
-    [Header("自动匹配")]
+    [Header("卡片列表自动匹配")]
     public bool autoFindCardsFromRoot = true;
+
 
     [Header("顺序显示")]
     public bool sortByPlanetId = true;
+    //调用时没有传入正确星球id就会是顺序显示，从startIndex开始
     public int startIndex = 0;
 
     [Header("关闭按钮")]
@@ -29,7 +31,7 @@ public class PlanetsPanel : UIPanel
     public Animator panelAnimator;
     public string openTrigger = "Open";
     public string closeTrigger = "Close";
-    public float closeAnimDuration = 0.25f;
+    public float closeAnimDuration = 0.2f;
 
 
     private readonly List<PlanetData> planets = new List<PlanetData>();
@@ -269,18 +271,50 @@ public class PlanetsPanel : UIPanel
     #region 点击事件
     private void OnCardClicked(PlanetsCard card, PlanetData data)
     {
-        //判断是不是顺序显示
-        bool isViewMode = currentOpenData != null && currentOpenData.correctPlanetId > 0;
-        //判断是不是正确星球
-        bool isCorrect = isViewMode && data != null && data.id == currentOpenData.correctPlanetId;
+        if (data == null) return;
 
-        
-        if (isViewMode)
-            Debug.Log($"点击星球: {data.name} (id={data.id})，是否正确: {isCorrect}");
+        bool isQuizMode = currentOpenData != null && currentOpenData.correctPlanetId > 0;
+
+        if (isQuizMode)
+        {
+            bool isCorrect = data.id == currentOpenData.correctPlanetId;
+
+            if (isCorrect)
+            {
+                Debug.Log($"[选择模式] 点击星球: {data.name} (id={data.id})，结果: 正确");
+                TriggerCorrect(); // 点击正确时触发
+            }
+            else
+            {
+                Debug.Log($"[选择模式] 点击星球: {data.name} (id={data.id})，结果: 错误");
+                TriggerWrong();   // 点击错误时触发
+            }
+        }
         else
-            Debug.Log($"点击星球: {data.name} (id={data.id})");
+        {
+            //调用时没有传入正确星球id就会是顺序显示
+            Debug.Log($"[顺序模式] 点击星球: {data.name} (id={data.id})");
+            TriggerViewMode();   // 点击错误时触发
+            
+        }
     }
 
+    #region 判定处理
+    //传入外界参数进行相关判定处理
+    private void TriggerCorrect()
+    {
+        // TODO: 正确逻辑
+    }
+    private void TriggerWrong()
+    {
+        // TODO: 错误逻辑
+    }
+    private void TriggerViewMode()
+    {
+        // TODO: 顺序逻辑
+        //什么也不做
+    }
+    #endregion
     private void OnClickClose()
     {
         if (isClosing) return;
