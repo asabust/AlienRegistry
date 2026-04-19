@@ -1589,7 +1589,7 @@ GameObject:
   - component: {fileID: 1982998534}
   - component: {fileID: 1982998533}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Planets_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
