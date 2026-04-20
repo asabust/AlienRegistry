@@ -4,13 +4,10 @@ using UnityEngine.UI;
 
 public class SettingsPanel : UIPanel
 {
-
-    [Header("Settings - Audio")]
-    public Slider musicSlider;
+    [Header("Settings - Audio")] public Slider musicSlider;
     public Slider sfxSlider;
 
-    [Header("Settings - Buttons")]
-    public Button btnBack;
+    [Header("Settings - Buttons")] public Button btnBack;
     public Button btnQuit;
     public Button btnClose;
 
@@ -23,7 +20,7 @@ public class SettingsPanel : UIPanel
         // 按钮绑定
         btnBack.onClick.AddListener(OnBack);
         btnQuit.onClick.AddListener(OnQuit);
-        btnClose.onClick.AddListener(()=>UIManager.Instance.Close<SettingsPanel>());
+        btnClose.onClick.AddListener(Close);
     }
 
     public override void OnOpen(object data = null)
@@ -52,10 +49,11 @@ public class SettingsPanel : UIPanel
     #endregion
 
     #region 设置按钮
-    
+
     void OnBack()
     {
         GameManager.Instance.GameTitle();
+        Close();
     }
 
     void OnQuit()
@@ -63,6 +61,10 @@ public class SettingsPanel : UIPanel
         GameManager.Instance.QuitGame();
     }
 
-    #endregion
+    void Close()
+    {
+        UIManager.Instance.Close<SettingsPanel>();
+    }
 
+    #endregion
 }

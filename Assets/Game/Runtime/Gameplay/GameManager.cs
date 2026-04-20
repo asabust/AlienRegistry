@@ -15,8 +15,10 @@ public class GameManager : Singleton<GameManager>
     [SceneName] public string titleScene;
     [SceneName] public string openingScene;
     [SceneName] public string firstGameScene;
-    
+    [SceneName] public string endingScene;
+
     public GamePhase CurrentPhase { get; private set; }
+    public int finalScore { get; private set; }
 
     public void SetGamePhase(GamePhase newPhase)
     {
@@ -26,7 +28,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public bool IsGameplay => CurrentPhase == GamePhase.Gameplay;
-    
+
     private void Start()
     {
         GameTitle(); //从标题界面开始
@@ -53,9 +55,16 @@ public class GameManager : Singleton<GameManager>
     public void GameTitle()
     {
         SetGamePhase(GamePhase.GameTitle);
-        TransitionManager.Instance.Transition(string.Empty, titleScene);
+        TransitionManager.Instance.TransitionTo(titleScene);
     }
 
+
+    public void GameEnding(int correctCount)
+    {
+        finalScore = correctCount;
+        SetGamePhase(GamePhase.GameOver);
+        TransitionManager.Instance.TransitionTo(endingScene);
+    }
 
     /// <summary>
     ///     退出游戏
@@ -69,4 +78,3 @@ public class GameManager : Singleton<GameManager>
 #endif
     }
 }
-

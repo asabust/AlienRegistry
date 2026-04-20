@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537324989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c95484e092a348038ba124febff0a0b, type: 3}
   m_Name: 
@@ -1195,6 +1195,7 @@ MonoBehaviour:
   titleScene: TitleScene
   openingScene: Opening
   firstGameScene: GameScene
+  endingScene: Ending
 --- !u!4 &1537324991
 Transform:
   m_ObjectHideFlags: 0
