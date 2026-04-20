@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // 引入 TextMeshPro 命名空间
@@ -17,9 +18,10 @@ public class PadPanel : MonoBehaviour
 
     public Toggle packageToggle;
 
-    [Header("Views")] public GameObject profileView;
+    [Header("Views")] public GameObject profilePanel;
 
-    public GameObject packageView;
+    public GameObject packagePanel;
+    private PackageView packageView;
 
     [Header("Profile View Elements")] public TextMeshProUGUI nameLabel;
 
@@ -38,11 +40,16 @@ public class PadPanel : MonoBehaviour
 
     private UIPadParallax parallax;
     private RectTransform rectTransform;
+    private GameObject profileToggleOn;
+    private GameObject packageToggleOn;
 
     private void Awake()
     {
         parallax = GetComponent<UIPadParallax>();
         rectTransform = GetComponent<RectTransform>();
+        profileToggleOn = profileToggle.transform.Find("ProfileToggleOn").gameObject;
+        packageToggleOn = packageToggle.transform.Find("PackageToggleOn").gameObject;
+        packageView = packagePanel.GetComponent<PackageView>();
 
         // 初始位置设为隐藏位置
         var pos = rectTransform.anchoredPosition;
@@ -55,15 +62,15 @@ public class PadPanel : MonoBehaviour
     {
         showButton.onClick.AddListener(ShowPad);
         hideButton.onClick.AddListener(HidePad);
-        profileToggle.onValueChanged.AddListener(isOn => profileView.SetActive(isOn));
-        packageToggle.onValueChanged.AddListener(isOn => packageView.SetActive(isOn));
+        profileToggle.onValueChanged.AddListener(OnProfileToggleChange);
+        packageToggle.onValueChanged.AddListener(OnPackageToggleChange);
 
         showButton.gameObject.SetActive(true);
         hideButton.gameObject.SetActive(false);
 
         profileToggle.isOn = true;
-        profileView.SetActive(true);
-        packageView.SetActive(false);
+        profilePanel.transform.localScale = Vector3.one;
+        packagePanel.transform.localScale = Vector3.zero;
     }
 
     private void OnDestroy()
@@ -85,6 +92,20 @@ public class PadPanel : MonoBehaviour
         if (desText != null) desText.text = pDesc;
     }
 
+    private void OnProfileToggleChange(bool isOn)
+    {
+        profilePanel.transform.localScale = new Vector3(isOn ? 1f : 0f, 1f, 1f);
+        profileToggleOn.SetActive(isOn);
+    }
+
+    private void OnPackageToggleChange(bool isOn)
+    {
+        packagePanel.transform.localScale = new Vector3(isOn ? 1f : 0f, 1f, 1f);
+        packageToggleOn.SetActive(isOn);
+        if (isOn) packageView.OnSlotSelected(0);
+    }
+
+
     public void ShowPad()
     {
         if (isShowing) return;
@@ -92,7 +113,6 @@ public class PadPanel : MonoBehaviour
         showButton.gameObject.SetActive(false);
 
         rectTransform.DOKill();
-        var parallax = GetComponent<UIPadParallax>();
         if (parallax != null) parallax.enabled = false;
 
         rectTransform.DOAnchorPosY(visibleY, duration).SetEase(Ease.OutBack)
@@ -104,7 +124,7 @@ public class PadPanel : MonoBehaviour
                     parallax.enabled = true;
                 }
 
-                // 【新增】动画播完后，才把 Hide 按钮显示出来
+                //动画播完后，才把 Hide 按钮显示出来
                 hideButton.gameObject.SetActive(true);
             });
 

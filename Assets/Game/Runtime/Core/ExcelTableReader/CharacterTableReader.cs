@@ -39,9 +39,10 @@ namespace Game.Runtime.Core.ExcelTableReader
         private const int ColAnswer3 = 16;
 
         // 资源字段
-        private const int ColPortrait = 20;
-        private const int ColFullBody = 21;
-        private const int ColXray = 22;
+        private const int ColGlitterPrefab = 17;
+        private const int ColPortrait = 21;
+        private const int ColFullBody = 22;
+        private const int ColXray = 23;
 
         public void Read(DataTable table, ExcelTableContext context)
         {
@@ -64,7 +65,7 @@ namespace Game.Runtime.Core.ExcelTableReader
                     name = ExcelCellParser.GetString(row, ColName),
                     species = ExcelCellParser.GetString(row, ColSpecies),
                     description = ExcelCellParser.GetString(row, ColDesc),
-                    homePlanet = ExcelCellParser.GetString(row, ColHomePlanet),
+                    homePlanet = ExcelCellParser.GetInt(row, ColHomePlanet),
                     planetOption = ExcelCellParser.GetIntArray(row, CoPlanetOption).ToList(),
 
                     itemIds = ExcelCellParser.GetIntArray(row, ColItemIds).ToList(),
@@ -90,6 +91,7 @@ namespace Game.Runtime.Core.ExcelTableReader
                         ExcelCellParser.GetString(row, ColAnswer3)
                     },
 
+                    glitterPrefab = ExcelCellParser.GetString(row, ColGlitterPrefab),
                     portrait = ExcelCellParser.GetString(row, ColPortrait),
                     fullBody = ExcelCellParser.GetString(row, ColFullBody),
                     xray = ExcelCellParser.GetString(row, ColXray)

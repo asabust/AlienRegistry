@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-// 引入新输入系统命名空间
-
 [RequireComponent(typeof(RectTransform))]
 public class UIPadParallax : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {

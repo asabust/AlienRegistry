@@ -6,7 +6,7 @@ using Game.Runtime.Data;
 namespace Game.Runtime.Core.ExcelTableReader
 {
     [ExcelSheet("Item")]
-    public class ItemTableReader
+    public class ItemTableReader : IExcelTableReader
     {
         private const int DataStartRow = 3; //0是表头，1是类型，2是说明 
 
