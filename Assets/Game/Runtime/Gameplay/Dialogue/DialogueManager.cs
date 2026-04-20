@@ -47,6 +47,7 @@ public class DialogueManager : Singleton<DialogueManager>
     public void ShowDialogueString(string text, int id = 0)
     {
         currentDialogueId = id;
+        nextDialogueId = 0;
         UIManager.Instance.Open<DialoguePanel>();
         var line = new DialogueLine { type = DialogueType.Black, text = text };
         var lines = new List<DialogueLine> { line };
