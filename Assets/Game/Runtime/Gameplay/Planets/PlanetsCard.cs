@@ -5,6 +5,7 @@ using Game.Runtime.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlanetsCard : MonoBehaviour,
@@ -27,7 +28,7 @@ public class PlanetsCard : MonoBehaviour,
     [SerializeField] private bool useLockPopAnimation = true;
     [SerializeField] private float lockPopScale = 1.5f;
     [SerializeField] private float lockPopDuration = 0.2f;
-    [SerializeField,Range(0.05f, 0.95f)] private float lockPopExpandRatio = 0.2f;
+    [SerializeField, Range(0.05f, 0.95f)] private float lockPopExpandRatio = 0.2f;
 
     public event Action<PlanetsCard, PlanetData> Clicked;
 
@@ -60,6 +61,31 @@ public class PlanetsCard : MonoBehaviour,
             selectPicNBaseScale = selectPicN.rectTransform.localScale;
 
         HideSelectPic();
+    }
+
+    private void Update()
+    {
+        if (!interactionEnabled) return;
+        if (!pointerDown) return;
+
+        // 防止在卡片外松开后 pointerDown 残留为 true
+        if (!IsLeftMousePressed())
+        {
+            pointerDown = false;
+
+            if (lockedSelected)
+            {
+                ShowLockedState();
+            }
+            else if (pointerInside)
+            {
+                ShowNormalState(); // 只有松开后才显示 selectPicN
+            }
+            else
+            {
+                HideSelectPic();
+            }
+        }
     }
 
     private void OnDisable()
@@ -95,7 +121,7 @@ public class PlanetsCard : MonoBehaviour,
 
         if (lockedSelected)
         {
-            ShowSelectPic();
+            ShowLockedState();
             PlayLockPopAnimation();
         }
         else
@@ -196,7 +222,23 @@ public class PlanetsCard : MonoBehaviour,
         if (!interactionEnabled) return;
 
         pointerInside = true;
-        ShowSelectPic();
+
+        if (lockedSelected)
+        {
+            ShowLockedState();
+            return;
+        }
+
+        // 持续按下左键并重新移入时，显示 selectPic（按下态）
+        if (pointerDown || IsLeftMousePressed())
+        {
+            pointerDown = true;
+            ShowPressedState();
+        }
+        else
+        {
+            ShowNormalState();
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -204,6 +246,13 @@ public class PlanetsCard : MonoBehaviour,
         if (!interactionEnabled) return;
 
         pointerInside = false;
+
+        if (lockedSelected)
+        {
+            ShowLockedState();
+            return;
+        }
+
         HideSelectPic();
     }
 
@@ -213,7 +262,11 @@ public class PlanetsCard : MonoBehaviour,
         if (eventData.button != PointerEventData.InputButton.Left) return;
 
         pointerDown = true;
-        ShowSelectPic();
+
+        if (lockedSelected)
+            ShowLockedState();
+        else
+            ShowPressedState();
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -221,11 +274,21 @@ public class PlanetsCard : MonoBehaviour,
         if (!interactionEnabled) return;
         if (eventData.button != PointerEventData.InputButton.Left) return;
 
-        // 只有松开后才决定是否继续显示
+        // 松开后才回到 selectPicN（未锁定态）
         pointerDown = false;
 
-        if (pointerInside) ShowSelectPic();
-        else HideSelectPic();
+        if (lockedSelected)
+        {
+            ShowLockedState();
+        }
+        else if (pointerInside)
+        {
+            ShowNormalState(); // 只有松开后才显示 selectPicN
+        }
+        else
+        {
+            HideSelectPic();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -233,28 +296,49 @@ public class PlanetsCard : MonoBehaviour,
         if (!interactionEnabled) return;
         if (eventData.button != PointerEventData.InputButton.Left) return;
         if (data == null) return;
+
+        // 放在卡片上松开时才会触发点击，从而外部可在收到后锁定
         Clicked?.Invoke(this, data);
     }
 
-    private void ShowSelectPic()
+    private bool IsLeftMousePressed()
     {
-        // 未锁定：显示 selectPic_n；锁定：显示 selectPic
-        if (!lockedSelected)
+        return Mouse.current != null && Mouse.current.leftButton.isPressed;
+    }
+
+    private void ShowPressedState()
+    {
+        // 按下态显示 selectPic
+        if (selectPicN != null) selectPicN.gameObject.SetActive(false);
+
+        if (selectPic != null)
         {
-            if (selectPic != null) selectPic.gameObject.SetActive(false);
-
-            if (selectPicN != null)
-            {
-                selectPicN.gameObject.SetActive(true);
-            }
-            else if (selectPic != null) // 兼容没填 selectPicN 的情况
-            {
-                selectPic.gameObject.SetActive(true);
-            }
-
-            return;
+            selectPic.gameObject.SetActive(true);
         }
+        else if (selectPicN != null) // 兼容没填 selectPic 的情况
+        {
+            selectPicN.gameObject.SetActive(true);
+        }
+    }
 
+    private void ShowNormalState()
+    {
+        // 未锁定且已松开：显示 selectPicN
+        if (selectPic != null) selectPic.gameObject.SetActive(false);
+
+        if (selectPicN != null)
+        {
+            selectPicN.gameObject.SetActive(true);
+        }
+        else if (selectPic != null) // 兼容没填 selectPicN 的情况
+        {
+            selectPic.gameObject.SetActive(true);
+        }
+    }
+
+    private void ShowLockedState()
+    {
+        // 锁定态显示 selectPic
         if (selectPicN != null) selectPicN.gameObject.SetActive(false);
 
         if (selectPic != null)
