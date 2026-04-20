@@ -83,6 +83,9 @@ public class InspectionPanel : MonoBehaviour
         portraitImage.sprite = pSprite;
         fullBodyImage.sprite = fSprite;
         xrayImage.sprite = xSprite;
+        portraitImage.SetNativeSize();
+        fullBodyImage.SetNativeSize();
+        xrayImage.SetNativeSize();
 
         //初始状态：只显示全身图，隐藏X光和闪光点
         fullBodyImage.gameObject.SetActive(true);
