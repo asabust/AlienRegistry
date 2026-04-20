@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GliterData : MonoBehaviour
+public class GlitterData : MonoBehaviour
 {
     [Header("外观焦点位置")] public Vector2 appearancePosition;
     [Header("图片缩放系数")] public float scale = 1;
