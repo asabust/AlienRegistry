@@ -11,8 +11,11 @@ public class PadPanel : MonoBehaviour
     public Button showButton;
     public Button hideButton;
     public float duration = 0.5f;
-    public float hiddenY = -800f; // 隐藏时的 Y 坐标
-    public float visibleY = -190f; // 显示时的 Y 坐标
+    [SerializeField] private Vector2 visiblePos = new Vector2(0, -190);
+    [SerializeField] private Vector2 hiddenPos = new Vector2(360, -710);
+
+    [SerializeField] private Vector3 visibleScale = Vector3.one;
+    [SerializeField] private Vector3 hiddenScale = new Vector3(0.75f, 0.75f, 1f);
 
     [Header("Toggles (Tebs)")] public Toggle profileToggle;
 
@@ -52,9 +55,8 @@ public class PadPanel : MonoBehaviour
         packageView = packagePanel.GetComponent<PackageView>();
 
         // 初始位置设为隐藏位置
-        var pos = rectTransform.anchoredPosition;
-        pos.y = hiddenY;
-        rectTransform.anchoredPosition = pos;
+        rectTransform.anchoredPosition = hiddenPos;
+        rectTransform.localScale = hiddenScale;
         isShowing = false;
     }
 
@@ -115,18 +117,22 @@ public class PadPanel : MonoBehaviour
         rectTransform.DOKill();
         if (parallax != null) parallax.enabled = false;
 
-        rectTransform.DOAnchorPosY(visibleY, duration).SetEase(Ease.OutBack)
-            .OnComplete(() =>
-            {
-                if (parallax != null)
-                {
-                    parallax.SetBasePosition(rectTransform.anchoredPosition);
-                    parallax.enabled = true;
-                }
+        // 同时做位置 + 缩放
+        Sequence seq = DOTween.Sequence();
 
-                //动画播完后，才把 Hide 按钮显示出来
-                hideButton.gameObject.SetActive(true);
-            });
+        seq.Join(rectTransform.DOAnchorPos(visiblePos, duration).SetEase(Ease.OutBack));
+        seq.Join(rectTransform.DOScale(visibleScale, duration).SetEase(Ease.OutBack));
+
+        seq.OnComplete(() =>
+        {
+            if (parallax != null)
+            {
+                parallax.SetBasePosition(rectTransform.anchoredPosition);
+                parallax.enabled = true;
+            }
+
+            hideButton.gameObject.SetActive(true);
+        });
 
         isShowing = true;
     }
@@ -134,23 +140,27 @@ public class PadPanel : MonoBehaviour
     public void HidePad()
     {
         if (!isShowing) return;
+
         hideButton.gameObject.SetActive(false);
 
         rectTransform.DOKill();
-        var parallax = GetComponent<UIPadParallax>();
         if (parallax != null) parallax.enabled = false;
 
-        rectTransform.DOAnchorPosY(hiddenY, duration).SetEase(Ease.InBack)
-            .OnComplete(() =>
-            {
-                if (parallax != null)
-                {
-                    parallax.SetBasePosition(rectTransform.anchoredPosition);
-                    parallax.enabled = true;
-                }
+        Sequence seq = DOTween.Sequence();
 
-                showButton.gameObject.SetActive(true);
-            });
+        seq.Join(rectTransform.DOAnchorPos(hiddenPos, duration).SetEase(Ease.InBack));
+        seq.Join(rectTransform.DOScale(hiddenScale, duration).SetEase(Ease.InBack));
+
+        seq.OnComplete(() =>
+        {
+            if (parallax != null)
+            {
+                parallax.SetBasePosition(rectTransform.anchoredPosition);
+                parallax.enabled = true;
+            }
+
+            showButton.gameObject.SetActive(true);
+        });
 
         isShowing = false;
     }

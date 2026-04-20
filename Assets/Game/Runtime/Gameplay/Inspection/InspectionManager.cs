@@ -27,9 +27,25 @@ public class InspectionManager : MonoBehaviour
     public GlitterView glitterView;
     public PlanetsPanel dispatchPanel; //星球面板
 
+    public GameObject cover;
+
     //解锁状态追踪
     private readonly HashSet<int> clickedGlitterPoints = new(); // 记录点过的闪光点索引
     private readonly HashSet<int> viewedItemIds = new(); // 记录点过的道具ID
+
+
+    private int endingDialoguesStar = 5;
+    private int exitDialogueId = 15;
+
+    private List<int> endingDialogues = new List<int>()
+    {
+        6,
+        7,
+        7,
+        8,
+        8,
+        9
+    };
 
     private CharacterData currentData;
     public bool hasViewedGlitters { get; private set; }
@@ -64,6 +80,7 @@ public class InspectionManager : MonoBehaviour
         {
             // 更新UI进度显示
             inspectionPanel.progressText.text = $"{currentCharacterIndex + 1} / {characterIds.Count}";
+            cover.SetActive(true);
             _ = UpdateCharacterDisplay(currentData);
         }
 
@@ -101,6 +118,7 @@ public class InspectionManager : MonoBehaviour
 
         await Task.WhenAll(t1, t2);
         Debug.Log("入场动画播完了，玩家现在可以开始操作了");
+        cover.SetActive(false);
     }
 
     /// <summary>
@@ -124,7 +142,11 @@ public class InspectionManager : MonoBehaviour
 
             DialogueManager.Instance.ShowDialogueString($"You have dispatched {currentData.name} to {planet.name}.");
             // 执行离场并进入下一轮
-            DialogueManager.Instance.onFinishedAction += () => { _ = NextRoundSequenceAsync(); };
+            DialogueManager.Instance.onFinishedAction += () =>
+            {
+                cover.SetActive(true);
+                _ = NextRoundSequenceAsync();
+            };
         }
     }
 
@@ -148,17 +170,9 @@ public class InspectionManager : MonoBehaviour
         float score = (float)correctCount / characterIds.Count;
         Debug.Log($"游戏结束！最终得分: {correctCount}. 正确率: {score * 100}%");
 
-        if (correctCount >= 5)
-        {
-            // 完美结局
-        }
-        else if (correctCount >= 3)
-        {
-            // 普通结局
-        }
-        // 糟糕结局
-        // UIManager.Instance.Open<ResultPanel>(score);
+        GameManager.Instance.GameEnding(correctCount);
     }
+
 
     #region 星球
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 742489831978650336}
   - component: {fileID: 1493887390792226305}
   - component: {fileID: 8486845338714319440}
+  - component: {fileID: 6464151886649446616}
   m_Layer: 5
   m_Name: glitter1
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 193}
-  m_SizeDelta: {x: 54, y: 38}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337082428270916885
 MonoBehaviour:
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 612eba497fa944db19b89519ef931886, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -136,6 +137,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6464151886649446616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2259397793899425647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628957cd3841b425296687df7c5acce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: 33195bdaa2fd144bdad40f66f93da986, type: 3}
+  - {fileID: 21300000, guid: 805c8f8261d9942e8973e1dd87c37482, type: 3}
+  - {fileID: 21300000, guid: dffc213bdfd0e466ebfb5be462918d39, type: 3}
+  - {fileID: 21300000, guid: d82ca837ee6e54d9096b061e7f9bbb78, type: 3}
+  - {fileID: 21300000, guid: 432daebe4f773427f89b3c024361f198, type: 3}
+  - {fileID: 21300000, guid: 251d3f12eb828449ca697fd36efcd943, type: 3}
+  - {fileID: 21300000, guid: cd2085f2883b94794b4ec30e50980c0b, type: 3}
+  - {fileID: 21300000, guid: 05551f392bdca4c8d8cef68ba80bd807, type: 3}
+  - {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
+  - {fileID: 21300000, guid: dd464427e42b14c25bd6d7864d9d4799, type: 3}
+  - {fileID: 21300000, guid: dadec88413efa428bb81929f40a173fb, type: 3}
+  - {fileID: 21300000, guid: 26b5d139384534b32b3473c026870bc2, type: 3}
+  - {fileID: 21300000, guid: 043aeb8cb63a34c8aaf258eb2db654d0, type: 3}
+  - {fileID: 21300000, guid: 7b51966ea66db44ef978bf295f4e87c0, type: 3}
+  fps: 12
+  loop: 1
 --- !u!1 &3101081493458346936
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +179,7 @@ GameObject:
   - component: {fileID: 7623020315868876280}
   - component: {fileID: 498573420944778866}
   - component: {fileID: 4280988137843664415}
+  - component: {fileID: 4926713361242772593}
   m_Layer: 5
   m_Name: glitter3
   m_TagString: Untagged
@@ -173,7 +204,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 54, y: -153}
-  m_SizeDelta: {x: 54, y: 38}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4710676644237612611
 MonoBehaviour:
@@ -218,7 +249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 612eba497fa944db19b89519ef931886, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -272,6 +303,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4926713361242772593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101081493458346936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628957cd3841b425296687df7c5acce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: 33195bdaa2fd144bdad40f66f93da986, type: 3}
+  - {fileID: 21300000, guid: 805c8f8261d9942e8973e1dd87c37482, type: 3}
+  - {fileID: 21300000, guid: dffc213bdfd0e466ebfb5be462918d39, type: 3}
+  - {fileID: 21300000, guid: d82ca837ee6e54d9096b061e7f9bbb78, type: 3}
+  - {fileID: 21300000, guid: 432daebe4f773427f89b3c024361f198, type: 3}
+  - {fileID: 21300000, guid: 251d3f12eb828449ca697fd36efcd943, type: 3}
+  - {fileID: 21300000, guid: cd2085f2883b94794b4ec30e50980c0b, type: 3}
+  - {fileID: 21300000, guid: 05551f392bdca4c8d8cef68ba80bd807, type: 3}
+  - {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
+  - {fileID: 21300000, guid: dd464427e42b14c25bd6d7864d9d4799, type: 3}
+  - {fileID: 21300000, guid: dadec88413efa428bb81929f40a173fb, type: 3}
+  - {fileID: 21300000, guid: 26b5d139384534b32b3473c026870bc2, type: 3}
+  - {fileID: 21300000, guid: 043aeb8cb63a34c8aaf258eb2db654d0, type: 3}
+  - {fileID: 21300000, guid: 7b51966ea66db44ef978bf295f4e87c0, type: 3}
+  fps: 12
+  loop: 1
 --- !u!1 &5836459768267314956
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +345,7 @@ GameObject:
   - component: {fileID: 5771813870265310475}
   - component: {fileID: 1832499145762578246}
   - component: {fileID: 483801206247826746}
+  - component: {fileID: 1147872436468242645}
   m_Layer: 5
   m_Name: glitter2
   m_TagString: Untagged
@@ -309,7 +370,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -130, y: 89}
-  m_SizeDelta: {x: 54, y: 38}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8373155491518366707
 MonoBehaviour:
@@ -355,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 612eba497fa944db19b89519ef931886, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,6 +470,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1147872436468242645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836459768267314956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628957cd3841b425296687df7c5acce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: 33195bdaa2fd144bdad40f66f93da986, type: 3}
+  - {fileID: 21300000, guid: 805c8f8261d9942e8973e1dd87c37482, type: 3}
+  - {fileID: 21300000, guid: dffc213bdfd0e466ebfb5be462918d39, type: 3}
+  - {fileID: 21300000, guid: d82ca837ee6e54d9096b061e7f9bbb78, type: 3}
+  - {fileID: 21300000, guid: 432daebe4f773427f89b3c024361f198, type: 3}
+  - {fileID: 21300000, guid: 251d3f12eb828449ca697fd36efcd943, type: 3}
+  - {fileID: 21300000, guid: cd2085f2883b94794b4ec30e50980c0b, type: 3}
+  - {fileID: 21300000, guid: 05551f392bdca4c8d8cef68ba80bd807, type: 3}
+  - {fileID: 21300000, guid: ab3b403e06123410a8d91eded7ab5f01, type: 3}
+  - {fileID: 21300000, guid: dd464427e42b14c25bd6d7864d9d4799, type: 3}
+  - {fileID: 21300000, guid: dadec88413efa428bb81929f40a173fb, type: 3}
+  - {fileID: 21300000, guid: 26b5d139384534b32b3473c026870bc2, type: 3}
+  - {fileID: 21300000, guid: 043aeb8cb63a34c8aaf258eb2db654d0, type: 3}
+  - {fileID: 21300000, guid: 7b51966ea66db44ef978bf295f4e87c0, type: 3}
+  fps: 12
+  loop: 1
 --- !u!1 &8657244336093173306
 GameObject:
   m_ObjectHideFlags: 0
