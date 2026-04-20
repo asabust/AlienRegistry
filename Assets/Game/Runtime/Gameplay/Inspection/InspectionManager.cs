@@ -33,20 +33,6 @@ public class InspectionManager : MonoBehaviour
     private readonly HashSet<int> clickedGlitterPoints = new(); // 记录点过的闪光点索引
     private readonly HashSet<int> viewedItemIds = new(); // 记录点过的道具ID
 
-
-    private int endingDialoguesStar = 5;
-    private int exitDialogueId = 15;
-
-    private List<int> endingDialogues = new List<int>()
-    {
-        6,
-        7,
-        7,
-        8,
-        8,
-        9
-    };
-
     private CharacterData currentData;
     public bool hasViewedGlitters { get; private set; }
     public bool hasViewedXray { get; private set; } // 是否看过了X光

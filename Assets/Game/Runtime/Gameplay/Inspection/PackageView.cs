@@ -87,6 +87,7 @@ public class PackageView : MonoBehaviour
     {
         if (currentItemIds == null || index >= currentItemIds.Count) return;
 
+        AudioManager.Instance.PlaySfx("click_package");
         int itemId = currentItemIds[index];
         UpdateDetailDisplay(itemId);
         InspectionManager.Instance.OnItemViewed(itemId);

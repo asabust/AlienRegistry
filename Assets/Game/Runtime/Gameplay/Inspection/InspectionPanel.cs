@@ -115,11 +115,13 @@ public class InspectionPanel : MonoBehaviour
 
     private void OnClickSettings()
     {
+        AudioManager.Instance.PlaySfx("click");
         UIManager.Instance.Open<SettingsPanel>(true);
     }
 
     private void OnClickDispatch()
     {
+        AudioManager.Instance.PlaySfx("click_dispatch");
         Debug.Log("Dispatch Clicked/ Open PlanetPanel");
         UIManager.Instance.Open<PlanetsPanel>(new PlanetsPanel.OpenData() { characterId = currentData.id });
     }
@@ -134,6 +136,7 @@ public class InspectionPanel : MonoBehaviour
 
     private void OnClickScan()
     {
+        AudioManager.Instance.PlaySfx("click_button");
         Debug.Log("Scan Clicked");
         fullBodyImage.gameObject.SetActive(true);
         xrayImage.gameObject.SetActive(false);
@@ -142,6 +145,7 @@ public class InspectionPanel : MonoBehaviour
 
     private void OnClickXray()
     {
+        AudioManager.Instance.PlaySfx("click_button");
         Debug.Log("Xray Clicked");
         fullBodyImage.gameObject.SetActive(false);
         xrayImage.gameObject.SetActive(true);
@@ -150,6 +154,7 @@ public class InspectionPanel : MonoBehaviour
 
     private void OnClickQuestionItem(int index)
     {
+        AudioManager.Instance.PlaySfx("click_choose");
         if ((index == 0 && InspectionManager.Instance.hasViewedGlitters) ||
             (index == 1 && InspectionManager.Instance.hasViewedXray) ||
             (index == 2 && InspectionManager.Instance.hasViewitems))
@@ -275,6 +280,7 @@ public class InspectionPanel : MonoBehaviour
 
     public async Task ArmExtendAsync()
     {
+        AudioManager.Instance.PlaySfx("M_open");
         arm.DOKill();
 
         var seq = DOTween.Sequence();
@@ -302,6 +308,7 @@ public class InspectionPanel : MonoBehaviour
 
     public async Task ArmRetractAsync()
     {
+        AudioManager.Instance.PlaySfx("M_open");
         arm.DOKill();
         var seq = DOTween.Sequence();
 
