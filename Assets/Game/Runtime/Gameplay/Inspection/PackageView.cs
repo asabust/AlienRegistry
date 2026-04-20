@@ -44,14 +44,15 @@ public class PackageView : MonoBehaviour
     public void RefreshView(CharacterData characterData)
     {
         if (characterData == null) return;
-        Debug.Log($"RefreshView {characterData.id} count={characterData.itemIds.Count}");
         currentItemIds = characterData.itemIds;
+        Debug.Log($"刷新背包 Character={characterData.id} 道具数量={currentItemIds.Count}");
 
         for (int i = 0; i < slots.Count; i++)
         {
             if (i < currentItemIds.Count)
             {
                 // 有数据，显示 Slot 
+                slots[i].gameObject.SetActive(true);
                 FillSlotInfo(slotImages[i], currentItemIds[i]);
             }
             else
