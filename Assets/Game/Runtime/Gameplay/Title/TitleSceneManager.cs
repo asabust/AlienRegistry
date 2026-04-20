@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TitleSceneManager : MonoBehaviour
 {
-    
     public Button startGameButton;
     public Button settingButton;
     public Button membersButton;
@@ -15,8 +14,27 @@ public class TitleSceneManager : MonoBehaviour
     private void Start()
     {
         if (settingButton)
-            settingButton.onClick.AddListener(() => UIManager.Instance.Open<SettingsPanel>(false));
-        if (startGameButton) startGameButton.onClick.AddListener(() => GameManager.Instance.StartNewGame());
-        if (exitGameButton) exitGameButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
+            settingButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlaySfx("click");
+                UIManager.Instance.Open<SettingsPanel>(false);
+            });
+        if (startGameButton)
+            startGameButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlaySfx("click");
+                GameManager.Instance.StartNewGame();
+            });
+        if (exitGameButton)
+            exitGameButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlaySfx("click");
+                GameManager.Instance.QuitGame();
+            });
+        if (membersButton)
+            membersButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlaySfx("click");
+            });
     }
 }
