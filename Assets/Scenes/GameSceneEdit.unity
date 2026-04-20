@@ -1172,8 +1172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There was a ring of red marks around the ankles from long-term wear of
-    shackles.
+  m_text: Its soft little feet are enough to carry it in quick hops and light sprints.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6afcacb6206c84faf8e67707d2a115a1, type: 2}
   m_sharedMaterial: {fileID: 3278446751124379594, guid: 6afcacb6206c84faf8e67707d2a115a1, type: 2}
@@ -2504,14 +2503,6 @@ PrefabInstance:
       propertyPath: targetDesc
       value: 
       objectReference: {fileID: 289555331}
-    - target: {fileID: 337082428270916885, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
-      propertyPath: glitterDescription
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 456460352848670179, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1868110295064753127, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2592,10 +2583,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2259397793899425647, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4710676644237612611, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
       propertyPath: targetDesc
       value: 
@@ -2607,10 +2594,6 @@ PrefabInstance:
     - target: {fileID: 8657244336093173306, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
       propertyPath: m_Name
       value: G-007_glitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8657244336093173306, guid: 792d652fb255b403a8915a42a73ed01f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3870,18 +3853,6 @@ PrefabInstance:
       propertyPath: targetDesc
       value: 
       objectReference: {fileID: 289555331}
-    - target: {fileID: 456460352848670179, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579772152649771669, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579772152649771669, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -153
-      objectReference: {fileID: 0}
     - target: {fileID: 1868110295064753127, guid: 224898413ad5b4684911e2e290f582da, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3966,22 +3937,6 @@ PrefabInstance:
       propertyPath: targetDesc
       value: 
       objectReference: {fileID: 289555331}
-    - target: {fileID: 4914994438883575032, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914994438883575032, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 193
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571939425623934174, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -130
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571939425623934174, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 89
-      objectReference: {fileID: 0}
     - target: {fileID: 8373155491518366707, guid: 224898413ad5b4684911e2e290f582da, type: 3}
       propertyPath: targetDesc
       value: 
@@ -3989,10 +3944,6 @@ PrefabInstance:
     - target: {fileID: 8657244336093173306, guid: 224898413ad5b4684911e2e290f582da, type: 3}
       propertyPath: m_Name
       value: BuBoom_glitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8657244336093173306, guid: 224898413ad5b4684911e2e290f582da, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4557,7 +4508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5272691cccb684dbca88f6d9958aeea0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60420abcb2fe84d2e8fe9cc2a308a2cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4591,7 +4542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 221.5, y: 303.5}
+  m_AnchoredPosition: {x: 221.5, y: 313.5}
   m_SizeDelta: {x: 393, y: 569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1010408113
@@ -4783,10 +4734,6 @@ PrefabInstance:
     - target: {fileID: 8657244336093173306, guid: 86b51049dab634176a09d8a254a0f1c0, type: 3}
       propertyPath: m_Name
       value: Groot_glitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8657244336093173306, guid: 86b51049dab634176a09d8a254a0f1c0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5735,14 +5682,14 @@ RectTransform:
   m_GameObject: {fileID: 1282075956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1271781248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: 415}
+  m_AnchoredPosition: {x: -78, y: 93}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282075958
@@ -5765,7 +5712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93c42686b235d44d080c9a1898932401, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4cd3e47995a547f9901a1f0bab85fe6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6437,18 +6384,6 @@ PrefabInstance:
       propertyPath: targetDesc
       value: 
       objectReference: {fileID: 289555331}
-    - target: {fileID: 456460352848670179, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579772152649771669, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -101
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579772152649771669, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -155
-      objectReference: {fileID: 0}
     - target: {fileID: 1868110295064753127, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6533,22 +6468,6 @@ PrefabInstance:
       propertyPath: targetDesc
       value: 
       objectReference: {fileID: 289555331}
-    - target: {fileID: 4914994438883575032, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914994438883575032, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571939425623934174, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571939425623934174, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -34
-      objectReference: {fileID: 0}
     - target: {fileID: 8373155491518366707, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
       propertyPath: targetDesc
       value: 
@@ -6556,10 +6475,6 @@ PrefabInstance:
     - target: {fileID: 8657244336093173306, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
       propertyPath: m_Name
       value: Ivy-chan_glitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8657244336093173306, guid: 3e7cff9ce08fa4cc0a66cddb4aabc5c1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8498,10 +8413,6 @@ PrefabInstance:
     - target: {fileID: 8657244336093173306, guid: f93f627aad23f48348f7dab22a4afdb3, type: 3}
       propertyPath: m_Name
       value: Bank_glitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8657244336093173306, guid: f93f627aad23f48348f7dab22a4afdb3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
