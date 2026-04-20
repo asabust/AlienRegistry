@@ -96,12 +96,22 @@ public class PadPanel : MonoBehaviour
 
     private void OnProfileToggleChange(bool isOn)
     {
+        if (isOn)
+        {
+            AudioManager.Instance.PlaySfx("switch");
+        }
+
         profilePanel.transform.localScale = new Vector3(isOn ? 1f : 0f, 1f, 1f);
         profileToggleOn.SetActive(isOn);
     }
 
     private void OnPackageToggleChange(bool isOn)
     {
+        if (isOn)
+        {
+            AudioManager.Instance.PlaySfx("switch");
+        }
+
         packagePanel.transform.localScale = new Vector3(isOn ? 1f : 0f, 1f, 1f);
         packageToggleOn.SetActive(isOn);
         if (isOn) packageView.OnSlotSelected(0);

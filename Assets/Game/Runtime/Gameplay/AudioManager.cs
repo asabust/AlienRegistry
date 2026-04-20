@@ -9,11 +9,9 @@ public class AudioManager : Singleton<AudioManager>
     public const string SFXVolumeKey = "SFXVolume";
     public const string MusicVolumeKey = "MusicVolume";
 
-    [Header("音频数据")]
-    public AudioInfoListSO audioInfoListSO;
+    [Header("音频数据")] public AudioInfoListSO audioInfoListSO;
 
-    [Header("Audio Sources")]
-    public AudioSource musicSource;
+    [Header("Audio Sources")] public AudioSource musicSource;
     public AudioSource sfxSource;
 
     // 音量设置
@@ -30,7 +28,8 @@ public class AudioManager : Singleton<AudioManager>
 
     void OnSceneLoaded(string sceneName)
     {
-        // PlayMusic(GameManager.Instance.IsGameplay ? AudioName.BGM : AudioName.None);
+        StopMusic();
+        PlayMusic(sceneName);
     }
 
     public void StopMusic()
@@ -41,7 +40,6 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMusic(string musicName)
     {
-
         if (musicName == currentMusic)
         {
             return;
@@ -63,18 +61,13 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySfx(string sfxName)
     {
-        if (sfxSource.isPlaying && currentSFX == sfxName)
-        {
-            return;
-        }
-
         currentSFX = sfxName;
         AudioInf audioInf = audioInfoListSO.GetAudioInfo(sfxName);
-        sfxSource.clip = audioInf.clip;
-        sfxSource.volume = audioInf.volume * _sfxVolume;
-        sfxSource.loop = audioInf.loop;
-        sfxSource.Play();
-        //sfxSource.PlayOneShot(audioInf.clip, audioInf.volume * _sfxVolume);
+        // sfxSource.clip = audioInf.clip;
+        // sfxSource.volume = audioInf.volume * _sfxVolume;
+        // sfxSource.loop = audioInf.loop;
+        // sfxSource.Play();
+        sfxSource.PlayOneShot(audioInf.clip, audioInf.volume * _sfxVolume);
     }
 
     public void SetMusicVolume(float volume)

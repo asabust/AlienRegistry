@@ -11,12 +11,13 @@ public class DialoguePanel : UIPanel
     [Header("UI Elements")] public Button nextButton;
 
     public GameObject normalDialoguePanel;
+
     public GameObject blackDialoguePanel;
+
     // public Button skipButton;
     public GameObject nextArrow;
 
-    [Header("角色对话")]
-    public TextMeshProUGUI nameLabel;
+    [Header("角色对话")] public TextMeshProUGUI nameLabel;
     public TextMeshProUGUI dialogueTextLabel;
 
     [Header("选项")] public GameObject optionGroup;
@@ -41,7 +42,7 @@ public class DialoguePanel : UIPanel
         //cancelButton.GetComponent<Button>().onClick.AddListener(OnCancelClick);
         optionButtons = optionGroup.GetComponentsInChildren<Button>();
     }
-    
+
     private void Update()
     {
         if (!waitingForOption && Keyboard.current.spaceKey.wasPressedThisFrame) nextButton.onClick.Invoke();
@@ -173,10 +174,10 @@ public class DialoguePanel : UIPanel
     {
         if (waitingForOption) return;
         waitingForOption = true;
-        
+
         HideOptions();
         optionGroup.gameObject.SetActive(true);
-        
+
         Debug.Log($"显示选项 共 {choices.Count} 个选项");
         for (var i = 0; i < choices.Count && i < choices.Count; i++)
         {
@@ -197,7 +198,7 @@ public class DialoguePanel : UIPanel
 
     private void OnOptionSelected(Choice choice)
     {
-        // AudioManager.Instance.PlaySFX(AudioName.Click);
+        AudioManager.Instance.PlaySfx("click");
 
         HideOptions();
         waitingForOption = false;

@@ -39,6 +39,7 @@ public class GlitterGroup : MonoBehaviour
     /// <param name="data">被点击的闪光点数据</param>
     private void OnGlitterClicked(int idx, GlitterData data)
     {
+        AudioManager.Instance.PlaySfx("click_glitter");
         if (InspectionManager.Instance != null)
         {
             InspectionManager.Instance.OnGlitterClicked(idx, data);
