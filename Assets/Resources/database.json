@@ -30,6 +30,7 @@
         "Groot_prefab_2",
         "Groot_prefab_3"
       ],
+      "glitterPrefab": "Groot_glitter",
       "portrait": "Groot_Profile",
       "fullBody": "Groot_appearance",
       "xray": "Groot_X"
@@ -63,6 +64,7 @@
         "BuBoom_prefab_2",
         "BuBoom_prefab_3"
       ],
+      "glitterPrefab": "BuBoom_glitter",
       "portrait": "BuBoom_Profile",
       "fullBody": "BuBoom_appearance",
       "xray": "BuBoom_X"
@@ -98,6 +100,7 @@
         "Bank_prefab_2",
         "Bank_prefab_3"
       ],
+      "glitterPrefab": "Bank_glitter",
       "portrait": "Bank_Profile",
       "fullBody": "Bank_appearance",
       "xray": "Bank_X"
@@ -132,6 +135,7 @@
         "G-007_prefab_2",
         "G-007_prefab_3"
       ],
+      "glitterPrefab": "G-007_glitter",
       "portrait": "G-007_Profile",
       "fullBody": "G-007_appearance",
       "xray": "G-007_X"
@@ -168,6 +172,7 @@
         "Ivy-chan_prefab_2",
         "Ivy-chan_prefab_3"
       ],
+      "glitterPrefab": "Ivy-chan_glitter",
       "portrait": "Ivy-chan_Profile",
       "fullBody": "Ivy-chan_appearance",
       "xray": "Ivy-chan_X"
@@ -664,7 +669,80 @@
       "nextDialogueId": 0
     }
   },
-  "items": {},
+  "items": {
+    "1": {
+      "id": 1,
+      "name": "Kettle",
+      "description": "A cute mini hovering kettle that automatically waters nearby plants.",
+      "iconName": "Kettle_icon"
+    },
+    "2": {
+      "id": 2,
+      "name": "Cup of Soil",
+      "description": "Black soil brought from Earth.",
+      "iconName": "CupofSoil_icon"
+    },
+    "3": {
+      "id": 3,
+      "name": "Air Pump",
+      "description": "Everyone on Balloon Planet has one.",
+      "iconName": "AirPump_icon"
+    },
+    "4": {
+      "id": 4,
+      "name": "Electronic Shackles",
+      "description": "The screen displays \"Fugitive…\". Code: 2002.",
+      "iconName": "ElectronicShackles_icon"
+    },
+    "5": {
+      "id": 5,
+      "name": "Cash",
+      "description": "A roll of banknotes that seem to be exclusive tokens usable only in a certain district.",
+      "iconName": "Cash_icon"
+    },
+    "6": {
+      "id": 6,
+      "name": "Metal Cross",
+      "description": "A faith item obtained from a visitor during prison visitation. It can be unscrewed, revealing a tiny lock-picking tool inside.",
+      "iconName": "MetalCross_icon"
+    },
+    "7": {
+      "id": 7,
+      "name": "Spare Battery",
+      "description": "Battery power has been completely drained…",
+      "iconName": "SpareBattery_icon"
+    },
+    "8": {
+      "id": 8,
+      "name": "ID Badge",
+      "description": "Embedded in the palm of G-007's hand. In the bottom right corner, a tiny engraving reads: \"where is the home\".",
+      "iconName": "IDBadge_icon"
+    },
+    "9": {
+      "id": 9,
+      "name": "Mantis Arm",
+      "description": "A green hollow scythe-like arm, perfectly shaped but covered in corroded pitted holes.",
+      "iconName": "MantisArm_icon"
+    },
+    "10": {
+      "id": 10,
+      "name": "Black Unknown Substance",
+      "description": "Upon closer inspection, insects can be seen struggling and writhing inside the viscous slime.",
+      "iconName": "BlackUnknownSubstance_icon"
+    },
+    "11": {
+      "id": 11,
+      "name": "Flesh Lump",
+      "description": "In a half-digested state, covered with pale yellow mucus.",
+      "iconName": "FleshLump_icon"
+    },
+    "12": {
+      "id": 12,
+      "name": "Crimson Snake Skin",
+      "description": "Tightly wrapped around the vines, heavily fragmented and torn.",
+      "iconName": "CrimsonSnakeSkin_icon"
+    }
+  },
   "planets": {
     "1": {
       "id": 1,
@@ -684,7 +762,7 @@
       "id": 3,
       "name": "Shawshank",
       "description": "Over 80% of the planet is ocean. The only landmass hosts the galaxy's most heavily guarded maximum-security prison.",
-      "planetneed": "Urgent need for 10 maintenance workers.\n“The highest bounty for an escaped prisoner is 503,333…”",
+      "planetneed": "Urgent need for 10 maintenance workers.\n\"The highest bounty for an escaped prisoner is 503,333…\"",
       "iconName": "Shawshank_icon"
     },
     "4": {

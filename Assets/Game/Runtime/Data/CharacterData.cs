@@ -8,7 +8,7 @@ namespace Game.Runtime.Core
         public string name;
         public string species;
         public string description;
-        public string homePlanet;
+        public int homePlanet;
         public List<int> planetOption;
 
         public List<int> itemIds;
@@ -16,6 +16,7 @@ namespace Game.Runtime.Core
         public List<string> questions;
         public List<string> answers;
 
+        public string glitterPrefab;
         public string portrait;
         public string fullBody;
         public string xray;

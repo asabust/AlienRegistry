@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 public class InspectionPanel : MonoBehaviour
 {
-    [Header("Animation")] public RectTransform portrait;
+    [Header("Animation")] public RectTransform portrait; //窗口中的角色
 
     public float enterX = -700;
     public float centerX;
@@ -18,7 +19,9 @@ public class InspectionPanel : MonoBehaviour
     [Header("Scan Panel")] [SerializeField]
     private GameObject scanPanel;
 
-    [SerializeField] private Image scanImage;
+    [Header("Character Images")] [SerializeField]
+    private Image fullBodyImage; // 角色全身像(扫描窗口)
+
     [SerializeField] private Image xrayImage;
 
     [Header("Progress")] public TMP_Text progressText;
@@ -41,6 +44,9 @@ public class InspectionPanel : MonoBehaviour
     [HideInInspector] public TMP_Text q2Text;
     [HideInInspector] public TMP_Text q3Text;
 
+    [HideInInspector] public Image portraitImage;
+
+    private GameObject currentGlitterEffect;
 
     private void Awake()
     {
@@ -48,14 +54,12 @@ public class InspectionPanel : MonoBehaviour
         q1Text = q1Button.GetComponentInChildren<TMP_Text>();
         q2Text = q2Button.GetComponentInChildren<TMP_Text>();
         q3Text = q3Button.GetComponentInChildren<TMP_Text>();
+        portraitImage = portrait.GetComponentInChildren<Image>();
     }
 
     private void Start()
     {
-        q1Text.text = "???";
-        q2Text.text = "???";
-        q3Text.text = "???";
-        questionList.SetActive(false);
+        ResetQuestionTexts();
     }
 
     private void BindEvents()
@@ -72,9 +76,32 @@ public class InspectionPanel : MonoBehaviour
         q3Button.onClick.AddListener(() => OnClickQuestionItem(3));
     }
 
+    #region ScanScreen
+
+    public void UpdateScreenImage(Sprite pSprite, Sprite fSprite, Sprite xSprite, string glitterPrefabName)
+    {
+        portraitImage.sprite = pSprite;
+        fullBodyImage.sprite = fSprite;
+        xrayImage.sprite = xSprite;
+
+        //初始状态：只显示全身图，隐藏X光和闪光点
+        fullBodyImage.gameObject.SetActive(true);
+        xrayImage.gameObject.SetActive(false);
+
+        if (currentGlitterEffect != null) Destroy(currentGlitterEffect);
+        var prefab = Resources.Load<GameObject>($"ScanPrefabs/{glitterPrefabName}");
+        if (prefab != null)
+        {
+            currentGlitterEffect = Instantiate(prefab, fullBodyImage.transform);
+            currentGlitterEffect.SetActive(false);
+        }
+    }
+
+    #endregion
+
     #region Animation
 
-    public void PlayWalk(bool isExit)
+    public async Task PlayWalkAsync(bool isExit)
     {
         portrait.DOKill();
 
@@ -107,13 +134,14 @@ public class InspectionPanel : MonoBehaviour
         );
 
         //最后恢复正常
-        seq.Append(
-            portrait.DOScale(Vector3.one, 0.1f)
-        );
-        seq.OnComplete(() => { Debug.Log("进场动画结束"); });
+        seq.Append(portrait.DOScale(Vector3.one, 0.1f));
+        seq.SetLink(portrait.gameObject);
+
+        await seq.Play().AsyncWaitForCompletion();
+        Debug.Log(isExit ? "离场动画结束" : "进场动画结束");
     }
 
-    public void PlayRobotWalk(bool isExit)
+    public async Task PlayRobotWalk(bool isExit)
     {
         var x = isExit ? exitX : centerX;
         portrait.DOKill();
@@ -135,20 +163,17 @@ public class InspectionPanel : MonoBehaviour
         {
             var targetX = startX + stepDistance * i;
 
-            // 走一步（硬移动）
-            seq.Append(
-                portrait.DOAnchorPosX(targetX, stepTime)
-                    .SetEase(Ease.Linear)
-            );
-
-            // 停顿（机器人感）
+            // 走一步停一下
+            seq.Append(portrait.DOAnchorPosX(targetX, stepTime).SetEase(Ease.Linear));
             seq.AppendInterval(pauseTime);
         }
 
         // 最后对齐（防止浮点误差）
-        seq.Append(
-            portrait.DOAnchorPosX(endX, 0.05f)
-        );
+        seq.Append(portrait.DOAnchorPosX(endX, 0.05f));
+        seq.SetLink(portrait.gameObject);
+
+        await seq.Play().AsyncWaitForCompletion();
+        Debug.Log(isExit ? "机器人离场动画结束" : "机器人进场动画结束");
     }
 
 
@@ -157,7 +182,7 @@ public class InspectionPanel : MonoBehaviour
     private readonly float armShakeTime = 0.25f;
     private readonly float armStartX = 1200f;
 
-    public void ArmExtend()
+    public async Task ArmExtendAsync()
     {
         arm.DOKill();
 
@@ -167,34 +192,33 @@ public class InspectionPanel : MonoBehaviour
         arm.anchoredPosition = new Vector2(armStartX, arm.anchoredPosition.y);
 
         // 伸出（机械直线）
-        seq.Append(
-            arm.DOAnchorPosX(armEndX, armMoveTime)
-                .SetEase(Ease.Linear)
-        );
+        seq.Append(arm.DOAnchorPosX(armEndX, armMoveTime).SetEase(Ease.Linear));
 
         // 到位震动
-        seq.AppendCallback(() =>
-        {
+        seq.Append(
             arm.DOShakeAnchorPos(
                 armShakeTime,
                 new Vector2(10f, 4f),
                 20,
                 0,
                 fadeOut: true
-            );
-        });
+            ));
 
         seq.AppendInterval(armShakeTime);
+        seq.SetLink(arm.gameObject);
+        await seq.Play().AsyncWaitForCompletion();
     }
 
-    public void ArmRetract()
+    public async Task ArmRetractAsync()
     {
         arm.DOKill();
         var seq = DOTween.Sequence();
 
-        seq.AppendCallback(() => { arm.DOShakeAnchorPos(0.1f, new Vector2(8f, 3f), 15, 0, fadeOut: false); });
+        seq.Append(arm.DOShakeAnchorPos(0.1f, new Vector2(8f, 3f), 15, 0, fadeOut: false));
         seq.AppendInterval(0.1f);
         seq.Append(arm.DOAnchorPosX(armStartX, armMoveTime).SetEase(Ease.Linear));
+        seq.SetLink(arm.gameObject);
+        await seq.Play().AsyncWaitForCompletion();
     }
 
     #endregion
@@ -209,34 +233,60 @@ public class InspectionPanel : MonoBehaviour
     private void OnClickDispatch()
     {
         Debug.Log("Dispatch Clicked/ Open PlanetPanel");
+        // UIManager.Instance.Open<PlanetsPanel>(new PlanetsPanel.OpenData())
     }
+
+    private bool showQList;
 
     private void OnClickAsk()
     {
-        questionList.SetActive(!questionList.activeSelf);
+        showQList = !showQList;
+        questionList.transform.localScale = showQList ? Vector3.one : Vector3.zero;
     }
-
-    private bool test;
 
     private void OnClickScan()
     {
-        ArmExtend();
-        PlayWalk(test);
-        test = !test;
         Debug.Log("Scan Clicked");
+        fullBodyImage.gameObject.SetActive(true);
+        xrayImage.gameObject.SetActive(false);
+        if (currentGlitterEffect != null) currentGlitterEffect.SetActive(true);
     }
 
     private void OnClickXray()
     {
-        ArmRetract();
-        PlayRobotWalk(test);
-        test = !test;
         Debug.Log("Xray Clicked");
+        fullBodyImage.gameObject.SetActive(false);
+        xrayImage.gameObject.SetActive(true);
+        InspectionManager.Instance.RegisterXrayView();
     }
 
     private void OnClickQuestionItem(int index)
     {
         Debug.Log($"Question {index} Clicked");
+    }
+
+    #endregion
+
+    #region Question
+
+    public void ResetQuestionTexts()
+    {
+        q1Text.text = "???";
+        q2Text.text = "???";
+        q3Text.text = "???";
+        questionList.transform.localScale = Vector3.zero; //TODO:改为显示小横条
+    }
+
+    public void SetQuestionText(int index, string content)
+    {
+        switch (index)
+        {
+            case 0: q1Text.text = content; break;
+            case 1: q2Text.text = content; break;
+            case 2: q3Text.text = content; break;
+        }
+        // 可在这里播一个解锁的音效或特效
+        // 需要更新小红点
     }
 
     #endregion
