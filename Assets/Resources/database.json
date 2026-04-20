@@ -441,12 +441,6 @@
           "speakerName": "Manager",
           "text": "Let me see that performance report...",
           "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Manager",
-          "text": "Your dispatches have disappointed them[ n ]times and satisfied them[ n ]times!",
-          "choices": null
         }
       ],
       "nextDialogueId": 0

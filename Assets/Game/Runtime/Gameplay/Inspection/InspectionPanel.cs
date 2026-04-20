@@ -163,6 +163,40 @@ public class InspectionPanel : MonoBehaviour
             questionBubble.SetActive(true);
             questionBubbleText.text = currentData.questions[index];
         }
+
+        ShowAnswer(index);
+    }
+
+    private GameObject currentAnswerGO;
+
+    private void ShowAnswer(int index)
+    {
+        if (currentAnswerGO != null)
+        {
+            Destroy(currentAnswerGO);
+            currentAnswerGO = null;
+        }
+
+        string path = $"AnswerPrefabs/{currentData.answers[index]}";
+        GameObject prefab = Resources.Load<GameObject>(path);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"Answer prefab not found at: {path}");
+            return;
+        }
+
+
+        currentAnswerGO = Instantiate(prefab, questionBubble.transform);
+        currentAnswerGO.SetActive(true);
+
+
+        // RectTransform rect = currentAnswerGO.GetComponent<RectTransform>();
+        // if (rect != null)
+        // {
+        //     rect.anchoredPosition = Vector2.zero;
+        //     rect.localScale = Vector3.one;
+        // }
     }
 
     #endregion

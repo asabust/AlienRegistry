@@ -7,4 +7,7 @@ ShaderVariantCollection:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: My
-  m_Shaders: {}
+  m_Shaders:
+  - first: {fileID: 4800000, guid: 8c97e5a49cd964d739165a72cf2baa51, type: 3}
+    second:
+      variants: []

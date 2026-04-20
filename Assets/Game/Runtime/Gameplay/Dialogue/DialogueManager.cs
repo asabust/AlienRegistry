@@ -44,10 +44,9 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
-    public void ShowDialogueString(string text)
+    public void ShowDialogueString(string text, int id = 0)
     {
-        currentDialogueId = 0;
-        nextDialogueId = 0;
+        currentDialogueId = id;
         UIManager.Instance.Open<DialoguePanel>();
         var line = new DialogueLine { type = DialogueType.Black, text = text };
         var lines = new List<DialogueLine> { line };
@@ -67,9 +66,9 @@ public class DialogueManager : Singleton<DialogueManager>
         onFinishedAction?.Invoke();
         onFinishedAction = null;
 
-        Debug.Log($"结束对话 {currentDialogueId}");
+        Debug.Log($"结束对话 {currentDialogueId} next={nextDialogueId}");
         EventHandler.CallDialogueFinishedEvent(currentDialogueId);
-        if (nextDialogueId != 0)
+        if (nextDialogueId != currentDialogueId && nextDialogueId != 0)
         {
             PlayDialogue(nextDialogueId);
         }

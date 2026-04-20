@@ -10,12 +10,12 @@ public class EndingManager : MonoBehaviour
 
     private List<int> endingDialogues = new List<int>()
     {
-        6,
-        7,
-        7,
+        9,
         8,
         8,
-        9
+        7,
+        7,
+        6
     };
 
     void Start()
@@ -27,9 +27,19 @@ public class EndingManager : MonoBehaviour
     {
         if (id == endingDialoguesStar)
         {
-            var score = GameManager.Instance.finalScore;
-            DialogueManager.Instance.PlayDialogue(endingDialogues[score]);
+            Debug.Log(endingDialogues);
+
+            DialogueManager.Instance.ShowDialogueString(
+                $"Your dispatches have disappointed them 5 times and satisfied them {GameManager.Instance.finalScore} times!",
+                999);
         }
+
+        if (id == 999)
+        {
+            var score = GameManager.Instance.finalScore;
+            DialogueManager.Instance.PlayDialogue(score);
+        }
+
 
         if (id == exitDialogueId)
         {
