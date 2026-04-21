@@ -12,6 +12,7 @@ public class InspectionPanel : MonoBehaviour
     public float enterX = -700;
     public float centerX;
     public float exitX = 700;
+    public float scale = 0.9f;
 
     public RectTransform arm;
 
@@ -253,18 +254,18 @@ public class InspectionPanel : MonoBehaviour
 
         // 步伐（压缩+拉伸）
         seq.Join(
-            portrait.DOScaleX(1.08f, stepDuration)
+            portrait.DOScaleX(1.08f * scale, stepDuration)
                 .SetLoops(steps, LoopType.Yoyo)
                 .SetEase(Ease.InOutSine)
         );
         seq.Join(
-            portrait.DOScaleY(0.92f, stepDuration)
+            portrait.DOScaleY(0.92f * scale, stepDuration)
                 .SetLoops(steps, LoopType.Yoyo)
                 .SetEase(Ease.InOutSine)
         );
 
         //最后恢复正常
-        seq.Append(portrait.DOScale(Vector3.one, 0.1f));
+        seq.Append(portrait.DOScale(Vector3.one * scale, 0.1f));
         seq.SetLink(portrait.gameObject);
 
         await seq.Play().AsyncWaitForCompletion();

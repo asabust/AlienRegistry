@@ -99,7 +99,7 @@ public class InspectionManager : MonoBehaviour
         // 刷新背包数据
         packageView.RefreshView(data);
 
-        Task t1 = inspectionPanel.PlayWalkAsync(false);
+        Task t1 = data.id == 4 ? inspectionPanel.PlayRobotWalk(false) : inspectionPanel.PlayWalkAsync(false);
         Task t2 = inspectionPanel.ArmExtendAsync();
 
         await Task.WhenAll(t1, t2);
@@ -141,7 +141,9 @@ public class InspectionManager : MonoBehaviour
         // 1. 同时开启两个动画，但不立即 await 它们
         // 这会让机械臂收回和角色走开【同时开始】
         Task armTask = inspectionPanel.ArmRetractAsync();
-        Task walkTask = inspectionPanel.PlayWalkAsync(true);
+        Task walkTask = characterIds[currentCharacterIndex] == 4
+            ? inspectionPanel.PlayRobotWalk(true)
+            : inspectionPanel.PlayWalkAsync(true);
 
         // 2. 等待两个任务全部完成
         // 即使一个播 1s，一个播 2s，代码也会等最长的那个播完

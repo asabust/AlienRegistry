@@ -211,7 +211,7 @@ public class DialoguePanel : UIPanel
 
     #endregion
 
-    #region 探索对话按钮事件
+    #region 按钮事件
 
     private void OnCancelClick()
     {
