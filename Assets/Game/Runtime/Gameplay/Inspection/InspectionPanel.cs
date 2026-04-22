@@ -315,7 +315,7 @@ public class InspectionPanel : MonoBehaviour
 
     public async Task ArmExtendAsync()
     {
-        AudioManager.Instance.PlaySfx("M_open");
+        AudioManager.Instance?.PlaySfx("M_open");
         arm.DOKill();
 
         var seq = DOTween.Sequence();
@@ -343,7 +343,7 @@ public class InspectionPanel : MonoBehaviour
 
     public async Task ArmRetractAsync()
     {
-        AudioManager.Instance.PlaySfx("M_open");
+        AudioManager.Instance?.PlaySfx("M_open");
         arm.DOKill();
         var seq = DOTween.Sequence();
 
