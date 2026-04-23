@@ -10,24 +10,19 @@ namespace Game.Runtime.Core.ExcelTableReader
     {
         private const int DataStartRow = 3; //0是表头，1是类型，2是说明 
 
-        private const int ColID = 0;
-        private const int ColName = 1;
-        private const int ColDesc = 2;
-        private const int ColNeed = 3;
-        private const int ColIcon = 4;
-        
 
         public void Read(DataTable table, ExcelTableContext context)
         {
+            ColumnSchema schema = ColumnSchema.Build(table);
             for (var i = DataStartRow; i < table.Rows.Count; i++)
             {
-                var row = table.Rows[i];
+                var row = new SmartRow(table.Rows[i], schema);
 
                 // 跳过空行
-                if (ExcelCellParser.IsEmpty(row, ColID))
+                if (row.IsEmpty("PlanetId"))
                     continue;
 
-                var id = ExcelCellParser.GetInt(row, ColID);
+                var id = row.GetInt("PlanetId");
 
                 if (context.planets.ContainsKey(id))
                     throw new Exception($"星球数据重复 planet_id={id} ");
@@ -36,11 +31,10 @@ namespace Game.Runtime.Core.ExcelTableReader
                 var planet = new PlanetData()
                 {
                     id = id,
-                    name = ExcelCellParser.GetString(row, ColName),
-                    description = ExcelCellParser.GetString(row, ColDesc),
-                    planetneed = ExcelCellParser.GetString(row, ColNeed),
-                    iconName = ExcelCellParser.GetString(row, ColIcon),
-                    
+                    name = row.GetString("Name"),
+                    description = row.GetString("Description"),
+                    planetneed = row.GetString("PlanetRequire"),
+                    iconName = row.GetString("PlanetIcon"),
                 };
 
                 context.planets[planet.id] = planet;

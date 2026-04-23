@@ -34,6 +34,6 @@ namespace Game.Runtime.Data
     public class Choice
     {
         public string text;
-        public int nextNodeId;
+        public int nextDialogueId;
     }
 }

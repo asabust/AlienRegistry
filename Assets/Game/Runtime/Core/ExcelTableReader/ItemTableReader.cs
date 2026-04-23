@@ -10,33 +10,27 @@ namespace Game.Runtime.Core.ExcelTableReader
     {
         private const int DataStartRow = 3; //0是表头，1是类型，2是说明 
 
-        private const int ColID = 0;
-        private const int ColName = 1;
-        private const int ColDesc = 2;
-        private const int ColIcon = 3;
-
         public void Read(DataTable table, ExcelTableContext context)
         {
+            ColumnSchema schema = ColumnSchema.Build(table);
             for (var i = DataStartRow; i < table.Rows.Count; i++)
             {
-                var row = table.Rows[i];
+                var row = new SmartRow(table.Rows[i], schema);
 
                 // 跳过空行
-                if (ExcelCellParser.IsEmpty(row, ColID))
-                    continue;
+                if (row.IsEmpty("ItemId")) continue;
 
-                var id = ExcelCellParser.GetInt(row, ColID);
+                int id = row.GetInt("ItemId");
 
                 if (context.items.ContainsKey(id))
                     throw new Exception($"道具数据重复 item_id={id} ");
 
-
                 var item = new ItemData
                 {
                     id = id,
-                    name = ExcelCellParser.GetString(row, ColName),
-                    description = ExcelCellParser.GetString(row, ColDesc),
-                    iconName = ExcelCellParser.GetString(row, ColIcon)
+                    name = row.GetString("ItemName"),
+                    description = row.GetString("Desc"),
+                    iconName = row.GetString("Icon"),
                 };
 
                 context.items[item.id] = item;

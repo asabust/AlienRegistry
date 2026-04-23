@@ -206,11 +206,11 @@
           "choices": [
             {
               "text": "Yes",
-              "nextNodeId": 2
+              "nextDialogueId": 2
             },
             {
               "text": "No",
-              "nextNodeId": 3
+              "nextDialogueId": 3
             }
           ]
         }
@@ -223,7 +223,7 @@
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "Great. Then I'll keep it short. We've had a flood of alien job seekers lately. Whole crowds of them.",
+          "text": "Great. Then I'll keep it short. We've had a flood of alien job seekers lately. Whole crowds of them.\n",
           "choices": null
         },
         {
@@ -265,7 +265,7 @@
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "The problem is, some of them have tempers hot enough to melt steel.",
+          "text": "Manager: The problem is, some of them have tempers hot enough to melt steel.",
           "choices": null
         },
         {
@@ -307,13 +307,13 @@
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "That's the rundown. Good luck, kiddo.",
+          "text": "That's the rundown. Good luck, Kiddo. ",
           "choices": null
         },
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "Try not to get eaten.Ciao~",
+          "text": "Try not to get eaten. Ciao~",
           "choices": null
         }
       ],
@@ -325,31 +325,7 @@
         {
           "type": 0,
           "speakerName": "Woofie",
-          "text": "Hey there, rookie! I'm Woofie, your senior guide around here. Woof!",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "This right here is your workstation.",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Any creatures needing placement will show up at the window. Woof!",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "You can check their [PROFILE] on the tablet below.",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Use the tabs to switch screens and inspect whatever they're carrying in their [PACKAGE].",
+          "text": "Woofie: Hey there, rookie! I'm Woofie, your senior guide around here. Woof!\nWoofie: This right here is your workstation.\nWoofie: Any creatures needing placement will show up at the window. Woof!\nWoofie: You can check their [PROFILE] on the tablet below.\nWoofie: Use the tabs to switch screens and inspect whatever they're carrying in their [PACKAGE].",
           "choices": null
         }
       ],
@@ -361,13 +337,7 @@
         {
           "type": 0,
           "speakerName": "Woofie",
-          "text": "These are the scanning buttons. Woof!",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Tap [SCAN] to check their external features, or [X-RAY] to get a look at their internal skeleton.",
+          "text": "Woofie: These are the scanning buttons. Woof!\nWoofie: Tap [SCAN] to check their external features, or [X-RAY] to get a look at their internal skeleton.",
           "choices": null
         }
       ],
@@ -379,25 +349,7 @@
         {
           "type": 0,
           "speakerName": "Woofie",
-          "text": "Now then, a proper dispatcher also needs to ask a few simple questions.",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "That's what the [ASK] button is for.",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "After that, you can review their answers in the [PROFILE] tab.",
-          "choices": null
-        },
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Oh, and one important thing-if you haven't examined them properly first, the [ASK] button won't work. Woof!",
+          "text": "Woofie: Now then, a proper dispatcher also needs to ask a few simple questions.\nWoofie: That's what the [ASK] button is for.\nWoofie: After that, you can review their answers in the [PROFILE] tab.\nWoofie: Oh, and one important thing-if you haven't examined them properly first, the [ASK] button won't work. Woof!",
           "choices": null
         }
       ],
@@ -409,7 +361,7 @@
         {
           "type": 0,
           "speakerName": "Woofie",
-          "text": "Once you think you've got them figured out, hit [DISPATCH] and choose the planet that suits them best.",
+          "text": "Woofie: Once you think you've got them figured out, hit [DISPATCH] and choose the planet that suits them best.",
           "choices": null
         }
       ],
@@ -451,7 +403,7 @@
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "Well, well. You're sharper than you look.",
+          "text": "Manager: Well, well. You're sharper than you look.",
           "choices": null
         },
         {
@@ -461,11 +413,11 @@
           "choices": [
             {
               "text": "Heh~",
-              "nextNodeId": 11
+              "nextDialogueId": 11
             },
             {
               "text": "Not bad, right?",
-              "nextNodeId": 11
+              "nextDialogueId": 11
             }
           ]
         }
@@ -478,7 +430,7 @@
         {
           "type": 0,
           "speakerName": "Manager",
-          "text": "Hm. You're taking this seriously. I like that.",
+          "text": "Manager: Hm. You're taking this seriously. I like that.",
           "choices": null
         },
         {
@@ -488,11 +440,11 @@
           "choices": [
             {
               "text": "Heh~",
-              "nextNodeId": 12
+              "nextDialogueId": 12
             },
             {
               "text": "Not bad, right?",
-              "nextNodeId": 12
+              "nextDialogueId": 12
             }
           ]
         }
@@ -515,11 +467,11 @@
           "choices": [
             {
               "text": "Heh~",
-              "nextNodeId": 13
+              "nextDialogueId": 13
             },
             {
               "text": "Not bad, right?",
-              "nextNodeId": 13
+              "nextDialogueId": 13
             }
           ]
         }
@@ -542,11 +494,11 @@
           "choices": [
             {
               "text": "Heh~",
-              "nextNodeId": 14
+              "nextDialogueId": 14
             },
             {
               "text": "Not bad, right?",
-              "nextNodeId": 14
+              "nextDialogueId": 14
             }
           ]
         }
@@ -660,8 +612,8 @@
         },
         {
           "type": 0,
-          "speakerName": "Managerz",
-          "text": "See you tomorrow！ Ciao~",
+          "speakerName": "Manager",
+          "text": "See you tomorrow! Ciao~",
           "choices": null
         }
       ],
@@ -671,9 +623,9 @@
       "dialogueId": 21,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "Oops! You haven't checked all the parts yet~",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：Oops! You haven't checked all the parts yet~",
           "choices": null
         }
       ],
@@ -683,9 +635,9 @@
       "dialogueId": 22,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "DIRECTOR",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：DIRECTOR",
           "choices": null
         }
       ],
@@ -695,9 +647,9 @@
       "dialogueId": 23,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "SleepyAppleKitty",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：SleepyAppleKitty",
           "choices": null
         }
       ],
@@ -707,9 +659,9 @@
       "dialogueId": 24,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "biba2012",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：biba2012",
           "choices": null
         }
       ],
@@ -719,9 +671,9 @@
       "dialogueId": 25,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "AOI",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：AOI",
           "choices": null
         }
       ],
@@ -731,9 +683,9 @@
       "dialogueId": 26,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "Yi geng",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：Yi geng",
           "choices": null
         }
       ],
@@ -743,9 +695,9 @@
       "dialogueId": 27,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "Nino",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：Nino",
           "choices": null
         }
       ],
@@ -755,9 +707,9 @@
       "dialogueId": 28,
       "lines": [
         {
-          "type": 2,
-          "speakerName": null,
-          "text": "Xing Ren",
+          "type": 0,
+          "speakerName": "",
+          "text": "Null：Xing Ren",
           "choices": null
         }
       ],

@@ -54,10 +54,7 @@ namespace Game.Runtime.Data
             var speaker = line[..idx].Trim();
             var text = line[(idx + 1)..].Trim();
 
-            var dialogueLine = new DialogueLine
-            {
-                text = text
-            };
+            var dialogueLine = new DialogueLine { text = text };
 
             if (speaker.Equals("black", StringComparison.OrdinalIgnoreCase))
             {
@@ -70,7 +67,7 @@ namespace Game.Runtime.Data
                 dialogueLine.type = DialogueType.Null;
                 return dialogueLine;
             }
-            
+
 
             dialogueLine.type = DialogueType.Normal;
             dialogueLine.speakerName = speaker;
@@ -80,11 +77,7 @@ namespace Game.Runtime.Data
 
         private static DialogueLine ParseChoice(string[] rows, ref int index)
         {
-            var line = new DialogueLine
-            {
-                type = DialogueType.Choice,
-                choices = new List<Choice>()
-            };
+            var line = new DialogueLine { type = DialogueType.Choice, choices = new List<Choice>() };
 
             for (var i = index + 1; i < rows.Length; i++)
             {
@@ -103,13 +96,9 @@ namespace Game.Runtime.Data
 
                 if (!int.TryParse(parts[1], out var value))
                     value = 0;
-                    
-                line.choices.Add(new Choice
-                {
-                    text = parts[0],
-                    nextNodeId = value
-                });
-                
+
+                line.choices.Add(new Choice { text = parts[0], nextDialogueId = value });
+
                 index = i;
             }
 

@@ -2,43 +2,104 @@ using System;
 using System.Data;
 using Game.Runtime.Core.Attributes;
 using Game.Runtime.Data;
+using System.Collections.Generic;
 
 namespace Game.Runtime.Core.ExcelTableReader
 {
     [ExcelSheet("Dialogue")]
     public class DialogueTableReader : IExcelTableReader
     {
-        private const int DataStartRow = 3; //0是表头，1是类型，2是说明 
-
-        private const int ColID = 1;
-        private const int ColText = 2;
-        private const int ColNext = 3;
+        private const int DataStartRow = 3;
 
         public void Read(DataTable table, ExcelTableContext context)
         {
-            for (var i = DataStartRow; i < table.Rows.Count; i++)
+            ColumnSchema schema = ColumnSchema.Build(table);
+
+            // 用来追踪当前正在构建的 dialogue
+            int currentDialogueId = -1;
+            bool isTruncated = false; // 当前 dialogue 是否已经被 NextDialogue 截断
+            DialogueData currentDialogue = null;
+
+            for (int i = DataStartRow; i < table.Rows.Count; i++)
             {
-                var row = table.Rows[i];
+                var row = new SmartRow(table.Rows[i], schema);
 
-                // 跳过空行
-                if (ExcelCellParser.IsEmpty(row, ColID) || ExcelCellParser.IsEmpty(row, ColText))
-                    continue;
+                if (row.IsEmpty("DialogueId")) continue;
 
-                var id = ExcelCellParser.GetInt(row, ColID);
+                int dialogueId = row.GetInt("DialogueId");
 
-                if (context.dialogues.ContainsKey(id))
-                    throw new Exception($"对话重复 dialogueId={id} ");
-
-
-                var rawText = ExcelCellParser.GetString(row, ColText);
-                var dialogue = new DialogueData()
+                // 切换到新的 dialogue
+                if (dialogueId != currentDialogueId)
                 {
-                    dialogueId = id,
-                    lines = DialogueParser.Parse(rawText),
-                    nextDialogueId = ExcelCellParser.GetInt(row, ColNext)
+                    currentDialogueId = dialogueId;
+                    isTruncated = false;
+
+                    if (context.dialogues.ContainsKey(dialogueId))
+                        throw new Exception($"对话数据重复 dialogue_id={dialogueId}");
+
+                    currentDialogue = new DialogueData
+                    {
+                        dialogueId = dialogueId, lines = new List<DialogueLine>(), nextDialogueId = 0
+                    };
+                    context.dialogues[dialogueId] = currentDialogue;
+                }
+
+                // 已被截断，跳过同一 dialogueId 的后续行
+                if (isTruncated) continue;
+
+                string speaker = row.GetString("Speaker").Trim();
+                string text = row.GetString("Text");
+                int nextDialogue = row.GetInt("nextDialogue");
+
+                DialogueType type = speaker.ToLower() switch
+                {
+                    "choice" => DialogueType.Choice,
+                    "black" => DialogueType.Black,
+                    "null" => DialogueType.Null,
+                    _ => DialogueType.Normal
                 };
 
-                context.dialogues[dialogue.dialogueId] = dialogue;
+                if (type == DialogueType.Choice)
+                {
+                    if (currentDialogue == null || currentDialogue.lines.Count == 0)
+                        throw new Exception($"dialogue_id={dialogueId} 的 Choice 前没有任何对话行");
+
+                    // 如果上一行已经是 Choice Line，直接追加
+                    DialogueLine lastLine = currentDialogue.lines[^1];
+
+                    if (lastLine?.type == DialogueType.Choice)
+                    {
+                        lastLine.choices.Add(new Choice { text = text, nextDialogueId = nextDialogue });
+                    }
+                    else
+                    {
+                        // 新建一个 Choice Line
+                        currentDialogue.lines.Add(new DialogueLine
+                        {
+                            type = DialogueType.Choice,
+                            speakerName = null,
+                            text = null,
+                            choices = new List<Choice> { new Choice { text = text, nextDialogueId = nextDialogue } }
+                        });
+                    }
+                }
+                else
+                {
+                    currentDialogue.lines.Add(new DialogueLine
+                    {
+                        type = type,
+                        speakerName = type == DialogueType.Normal ? speaker : null,
+                        text = text,
+                        choices = null
+                    });
+
+                    // NextDialogue 有值就截断
+                    if (nextDialogue != 0)
+                    {
+                        currentDialogue.nextDialogueId = nextDialogue;
+                        isTruncated = true;
+                    }
+                }
             }
         }
     }

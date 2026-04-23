@@ -205,8 +205,8 @@ public class DialoguePanel : UIPanel
         waitingForOption = false;
         DialogueManager.Instance.FinishDialogue();
 
-        Debug.Log($"选择 【{choice.text}】 nextNode={choice.nextNodeId}");
-        DialogueManager.Instance.PlayDialogue(choice.nextNodeId);
+        Debug.Log($"选择 【{choice.text}】 nextNode={choice.nextDialogueId}");
+        DialogueManager.Instance.PlayDialogue(choice.nextDialogueId);
     }
 
     #endregion
