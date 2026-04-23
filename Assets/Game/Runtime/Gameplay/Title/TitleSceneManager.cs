@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +22,7 @@ public class TitleSceneManager : MonoBehaviour
             {
                 AudioManager.Instance.PlaySfx("click");
                 GameManager.Instance.StartNewGame();
+                // GameManager.Instance.EnterGameScene();
             });
         if (exitGameButton)
             exitGameButton.onClick.AddListener(() =>

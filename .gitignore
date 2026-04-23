@@ -104,3 +104,4 @@ InitTestScene*.unity*
 /BuildMac
 /BuildLD
 /BuildItch
+Assets/Game/Runtime/Core/ExcelTableReader/OldDialogueTableReader.cs

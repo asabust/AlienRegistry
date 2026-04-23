@@ -2,25 +2,26 @@ using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GlitterView : MonoBehaviour
 {
     [SerializeField] private Image glitterPortrait;
     [SerializeField] private TMP_Text glitterDesc;
-    public Button CloseButton;
+    public Button closeButton;
     public float duration = 0.3f;
 
-    private Tween currentTween;
+    private Tween _currentTween;
 
-    private RectTransform rect;
-    private RectTransform portraitRect;
-    private GlitterData currentData;
-    private bool isOpen;
+    private RectTransform _rect;
+    private RectTransform _portraitRect;
+    private GlitterData _currentGlitterData;
+    private bool _isOpen;
 
     private void Awake()
     {
-        rect = GetComponent<RectTransform>();
+        _rect = GetComponent<RectTransform>();
 
         if (glitterPortrait == null)
         {
@@ -32,14 +33,14 @@ public class GlitterView : MonoBehaviour
             glitterDesc = transform.Find("GlitterDesc").GetComponent<TMP_Text>();
         }
 
-        CloseButton.onClick.RemoveAllListeners();
-        CloseButton.onClick.AddListener(() => OnClickClose());
+        closeButton.onClick.RemoveAllListeners();
+        closeButton.onClick.AddListener(OnClickClose);
     }
 
     private void Start()
     {
-        rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
-        isOpen = false;
+        _rect.anchoredPosition = new Vector2(0, _rect.anchoredPosition.y);
+        _isOpen = false;
     }
 
     /// <summary>
@@ -48,15 +49,15 @@ public class GlitterView : MonoBehaviour
     public void Show(Sprite sprite, GlitterData data)
     {
         //如果点的是同一个，直接无视
-        if (currentData == data)
+        if (_currentGlitterData == data)
         {
             return;
         }
 
-        currentData = data;
+        _currentGlitterData = data;
 
         // 如果当前已经打开，先收再开
-        if (isOpen)
+        if (_isOpen)
         {
             Hide(() =>
             {
@@ -81,15 +82,15 @@ public class GlitterView : MonoBehaviour
 
     private void PlayShow()
     {
-        currentTween?.Kill();
+        _currentTween?.Kill();
 
-        rect.anchoredPosition = new Vector2(0, rect.anchoredPosition.y);
+        _rect.anchoredPosition = new Vector2(0, _rect.anchoredPosition.y);
 
-        currentTween = rect.DOAnchorPosX(-400f, duration)
+        _currentTween = _rect.DOAnchorPosX(-400f, duration)
             .SetEase(Ease.OutCubic);
 
-        CloseButton.gameObject.SetActive(true);
-        isOpen = true;
+        closeButton.gameObject.SetActive(true);
+        _isOpen = true;
     }
 
     /// <summary>
@@ -97,20 +98,21 @@ public class GlitterView : MonoBehaviour
     /// </summary>
     public void OnClickClose()
     {
-        isOpen = false;
-        currentData = null;
+        AudioManager.Instance.PlaySfx("quit");
+        _isOpen = false;
+        _currentGlitterData = null;
         Hide();
     }
 
     private void Hide(Action onComplete = null)
     {
-        currentTween?.Kill();
+        _currentTween?.Kill();
 
-        currentTween = rect.DOAnchorPosX(0f, duration)
+        _currentTween = _rect.DOAnchorPosX(0f, duration)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>
             {
-                isOpen = false;
+                _isOpen = false;
                 onComplete?.Invoke();
             });
     }

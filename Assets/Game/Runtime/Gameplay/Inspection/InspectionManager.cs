@@ -25,18 +25,20 @@ public class InspectionManager : MonoBehaviour
     public PadPanel padPanel;
     public PackageView packageView;
     public GlitterView glitterView;
-    public PlanetsPanel dispatchPanel; //星球面板
+    // public PlanetsPanel dispatchPanel; //星球面板
 
     public GameObject cover;
+
+    private Sprite portraitSprite; // 在 GlitterView 复用角色大图
 
     //解锁状态追踪
     private readonly HashSet<int> clickedGlitterPoints = new(); // 记录点过的闪光点索引
     private readonly HashSet<int> viewedItemIds = new(); // 记录点过的道具ID
 
     private CharacterData currentData;
-    public bool hasViewedGlitters { get; private set; }
+    public bool hasViewedGlitters { get; private set; } // 是否查看了所有闪光点
     public bool hasViewedXray { get; private set; } // 是否看过了X光
-    public bool hasViewitems { get; private set; }
+    public bool hasViewitems { get; private set; } // 是否查看了所有道具
 
     private void Awake()
     {
@@ -80,18 +82,18 @@ public class InspectionManager : MonoBehaviour
         inspectionPanel.ResetQuestionTexts();
     }
 
-    private Sprite pSprite;
 
     private async Task UpdateCharacterDisplay(CharacterData data)
     {
+        Debug.Log("刷新工作台");
         // 加载图片
         Sprite avatar = Resources.Load<Sprite>($"Character/{data.profile}");
-        pSprite = Resources.Load<Sprite>($"Character/{data.portrait}");
+        portraitSprite = Resources.Load<Sprite>($"Character/{data.portrait}");
         Sprite fSprite = Resources.Load<Sprite>($"Character/{data.fullBody}");
         Sprite xSprite = Resources.Load<Sprite>($"Character/{data.xray}");
 
         // 刷新扫描窗口
-        inspectionPanel.UpdateScreenImage(pSprite, fSprite, xSprite, data);
+        inspectionPanel.UpdateScreenImage(portraitSprite, fSprite, xSprite, data);
 
         // 刷新 PadPanel 角色信息
         padPanel.UpdateProfileData(data.name, data.species, avatar, data.description);
@@ -186,7 +188,7 @@ public class InspectionManager : MonoBehaviour
 
     public void OnGlitterClicked(int index, GlitterData data)
     {
-        glitterView.Show(pSprite, data);
+        glitterView.Show(portraitSprite, data);
         if (hasViewedGlitters)
         {
             return;

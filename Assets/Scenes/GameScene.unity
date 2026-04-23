@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitterPortrait: {fileID: 1282075958}
   glitterDesc: {fileID: 289555331}
-  CloseButton: {fileID: 759896587}
+  closeButton: {fileID: 759896587}
   duration: 0.3
 --- !u!1 &420280188
 GameObject:
@@ -4184,8 +4184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 250.9}
+  m_AnchoredPosition: {x: 20.000008, y: 0}
+  m_SizeDelta: {x: 159.99998, y: 250.9}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &828531902
 MonoBehaviour:
@@ -4520,8 +4520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -710}
-  m_SizeDelta: {x: 1577, y: 917}
+  m_AnchoredPosition: {x: 325, y: -730}
+  m_SizeDelta: {x: 1321, y: 875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962481993
 MonoBehaviour:
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   hideButton: {fileID: 1151671677}
   duration: 0.5
   visiblePos: {x: 0, y: -190}
-  hiddenPos: {x: 360, y: -710}
+  hiddenPos: {x: 325, y: -730}
   visibleScale: {x: 1, y: 1, z: 1}
   hiddenScale: {x: 0.75, y: 0.75, z: 1}
   profileToggle: {fileID: 541425566}
@@ -4689,19 +4689,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 983701105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 983701102}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &983701105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1329252318
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6723,14 +6711,11 @@ MonoBehaviour:
   scanButton: {fileID: 1329802185}
   xrayButton: {fileID: 2038918092}
   questionList: {fileID: 1533430301}
-  questionBubble: {fileID: 983701102}
+  questionBubblePanel: {fileID: 983701104}
   questionBubbleText: {fileID: 1704764450}
   q1Button: {fileID: 420280192}
   q2Button: {fileID: 1779944655}
   q3Button: {fileID: 1592673610}
-  q1Text: {fileID: 0}
-  q2Text: {fileID: 0}
-  q3Text: {fileID: 0}
   portraitImage: {fileID: 0}
 --- !u!1 &1408479842
 GameObject:
@@ -6766,7 +6751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 59, y: 0}
   m_SizeDelta: {x: 1577, y: 917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408479844
@@ -8124,7 +8109,6 @@ MonoBehaviour:
   padPanel: {fileID: 962481996}
   packageView: {fileID: 1119193061}
   glitterView: {fileID: 407065975}
-  dispatchPanel: {fileID: 0}
   cover: {fileID: 1329252317}
 --- !u!1 &1779944651
 GameObject:
@@ -8486,7 +8470,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 741681541}
   - {fileID: 1704764447}

@@ -1,8 +1,11 @@
 using System.Threading.Tasks;
 using DG.Tweening;
 using Game.Runtime.Core;
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class InspectionPanel : MonoBehaviour
@@ -39,29 +42,30 @@ public class InspectionPanel : MonoBehaviour
     [Header("Question List")] [SerializeField]
     private GameObject questionList;
 
-    [SerializeField] private GameObject questionBubble;
+    [SerializeField] private Button questionBubblePanel;
     [SerializeField] private TMP_Text questionBubbleText;
 
     [SerializeField] private Button q1Button;
     [SerializeField] private Button q2Button;
     [SerializeField] private Button q3Button;
 
-
-    [HideInInspector] public TMP_Text q1Text;
-    [HideInInspector] public TMP_Text q2Text;
-    [HideInInspector] public TMP_Text q3Text;
+    private TMP_Text _q1Text;
+    private TMP_Text _q2Text;
+    private TMP_Text _q3Text;
 
     [HideInInspector] public Image portraitImage;
 
-    private GameObject currentGlitterEffect;
-    private CharacterData currentData;
+    private CharacterData _currentData;
+    private GameObject _currentGlitterEffect;
+    private GameObject _currentAnswerGo;
+    // private int _currentQuestionIndex = -1;
 
     private void Awake()
     {
         BindEvents();
-        q1Text = q1Button.GetComponentInChildren<TMP_Text>();
-        q2Text = q2Button.GetComponentInChildren<TMP_Text>();
-        q3Text = q3Button.GetComponentInChildren<TMP_Text>();
+        _q1Text = q1Button.GetComponentInChildren<TMP_Text>();
+        _q2Text = q2Button.GetComponentInChildren<TMP_Text>();
+        _q3Text = q3Button.GetComponentInChildren<TMP_Text>();
         portraitImage = portrait.GetComponentInChildren<Image>();
     }
 
@@ -75,9 +79,10 @@ public class InspectionPanel : MonoBehaviour
         settingsButton.onClick.AddListener(OnClickSettings);
 
         dispatchButton.onClick.AddListener(OnClickDispatch);
-        askButton.onClick.AddListener(OnClickAsk);
+        // askButton.onClick.AddListener(OnClickAsk);
         scanButton.onClick.AddListener(OnClickScan);
         xrayButton.onClick.AddListener(OnClickXray);
+        questionBubblePanel.onClick.AddListener(OnClickQuestionBubblePanel);
 
         q1Button.onClick.AddListener(() => OnClickQuestionItem(0));
         q2Button.onClick.AddListener(() => OnClickQuestionItem(1));
@@ -88,7 +93,7 @@ public class InspectionPanel : MonoBehaviour
 
     public void UpdateScreenImage(Sprite pSprite, Sprite fSprite, Sprite xSprite, CharacterData data)
     {
-        currentData = data;
+        _currentData = data;
         portraitImage.sprite = pSprite;
         fullBodyImage.sprite = fSprite;
         xrayImage.sprite = xSprite;
@@ -100,12 +105,12 @@ public class InspectionPanel : MonoBehaviour
         fullBodyImage.gameObject.SetActive(true);
         xrayImage.gameObject.SetActive(false);
 
-        if (currentGlitterEffect != null) Destroy(currentGlitterEffect);
+        if (_currentGlitterEffect != null) Destroy(_currentGlitterEffect);
         var prefab = Resources.Load<GameObject>($"ScanPrefabs/{data.glitterPrefab}");
         if (prefab != null)
         {
-            currentGlitterEffect = Instantiate(prefab, fullBodyImage.transform);
-            currentGlitterEffect.SetActive(false);
+            _currentGlitterEffect = Instantiate(prefab, fullBodyImage.transform);
+            _currentGlitterEffect.SetActive(false);
         }
     }
 
@@ -124,16 +129,16 @@ public class InspectionPanel : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx("click_dispatch");
         Debug.Log("Dispatch Clicked/ Open PlanetPanel");
-        UIManager.Instance.Open<PlanetsPanel>(new PlanetsPanel.OpenData() { characterId = currentData.id });
+        UIManager.Instance.Open<PlanetsPanel>(new PlanetsPanel.OpenData() { characterId = _currentData.id });
     }
 
-    private bool showQList;
-
-    private void OnClickAsk()
-    {
-        showQList = !showQList;
-        // questionList.transform.localScale = showQList ? Vector3.one : Vector3.zero;
-    }
+    // private bool _showQList;
+    //
+    // private void OnClickAsk()
+    // {
+    //     _showQList = !_showQList;
+    //     // questionList.transform.localScale = showQList ? Vector3.one : Vector3.zero;
+    // }
 
     private void OnClickScan()
     {
@@ -141,7 +146,7 @@ public class InspectionPanel : MonoBehaviour
         Debug.Log("Scan Clicked");
         fullBodyImage.gameObject.SetActive(true);
         xrayImage.gameObject.SetActive(false);
-        if (currentGlitterEffect != null) currentGlitterEffect.SetActive(true);
+        if (_currentGlitterEffect != null) _currentGlitterEffect.SetActive(true);
     }
 
     private void OnClickXray()
@@ -161,43 +166,24 @@ public class InspectionPanel : MonoBehaviour
             (index == 2 && InspectionManager.Instance.hasViewitems))
 
         {
-            questionBubble.SetActive(true);
-            questionBubbleText.text = currentData.questions[index];
+            questionBubblePanel.gameObject.SetActive(true);
+            questionBubbleText.text = _currentData.questions[index];
+            Transform bubble = questionBubbleText.transform.parent;
+            ShowBubble(bubble, index, ShowAnswer);
         }
-
-        ShowAnswer(index);
     }
 
-    private GameObject currentAnswerGO;
 
-    private void ShowAnswer(int index)
+    private void OnClickQuestionBubblePanel()
     {
-        if (currentAnswerGO != null)
+        if (_currentAnswerGo != null)
         {
-            Destroy(currentAnswerGO);
-            currentAnswerGO = null;
+            Destroy(_currentAnswerGo);
+            _currentAnswerGo = null;
         }
 
-        string path = $"AnswerPrefabs/{currentData.answers[index]}";
-        GameObject prefab = Resources.Load<GameObject>(path);
-
-        if (prefab == null)
-        {
-            Debug.LogError($"Answer prefab not found at: {path}");
-            return;
-        }
-
-
-        currentAnswerGO = Instantiate(prefab, questionBubble.transform);
-        currentAnswerGO.SetActive(true);
-
-
-        // RectTransform rect = currentAnswerGO.GetComponent<RectTransform>();
-        // if (rect != null)
-        // {
-        //     rect.anchoredPosition = Vector2.zero;
-        //     rect.localScale = Vector3.one;
-        // }
+        questionBubblePanel.gameObject.SetActive(false);
+        AudioManager.Instance.PlaySfx("quit");
     }
 
     #endregion
@@ -206,23 +192,49 @@ public class InspectionPanel : MonoBehaviour
 
     public void ResetQuestionTexts()
     {
-        q1Text.text = "???";
-        q2Text.text = "???";
-        q3Text.text = "???";
-        questionBubble.SetActive(false);
-        // questionList.transform.localScale = Vector3.zero; //TODO:改为显示小横条
+        _q1Text.text = "???";
+        _q2Text.text = "???";
+        _q3Text.text = "???";
+        questionBubblePanel.gameObject.SetActive(false);
     }
 
     public void SetQuestionText(int index, string content)
     {
         switch (index)
         {
-            case 0: q1Text.text = content; break;
-            case 1: q2Text.text = content; break;
-            case 2: q3Text.text = content; break;
+            case 0: _q1Text.text = content; break;
+            case 1: _q2Text.text = content; break;
+            case 2: _q3Text.text = content; break;
         }
         // 可在这里播一个解锁的音效或特效
-        // 需要更新小红点
+    }
+
+    private void ShowAnswer(int index)
+    {
+        if (_currentAnswerGo != null)
+        {
+            Destroy(_currentAnswerGo);
+            _currentAnswerGo = null;
+        }
+
+        string path = $"AnswerPrefabs/{_currentData.answers[index]}";
+        GameObject prefab = Resources.Load<GameObject>(path);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"Answer prefab not found at: {path}");
+            return;
+        }
+
+        _currentAnswerGo = Instantiate(prefab, questionBubblePanel.transform);
+        _currentAnswerGo.SetActive(true);
+        VerticalLayoutGroup[] bubbles = _currentAnswerGo.GetComponentsInChildren<VerticalLayoutGroup>();
+        foreach (var bubble in bubbles)
+        {
+            ShowBubble(bubble.transform);
+        }
+
+        AudioManager.Instance.PlaySfx($"{_currentData.id}_{index + 1}");
     }
 
     #endregion
@@ -352,6 +364,19 @@ public class InspectionPanel : MonoBehaviour
         seq.Append(arm.DOAnchorPosX(armStartX, armMoveTime).SetEase(Ease.Linear));
         seq.SetLink(arm.gameObject);
         await seq.Play().AsyncWaitForCompletion();
+    }
+
+    private void ShowBubble(Transform bubble, int index = -1, Action<int> onComplete = null)
+    {
+        bubble.DOKill();
+        bubble.localScale = Vector3.zero; // 起始为0
+
+        bubble.DOScale(Vector3.one, 0.3f)
+            .SetEase(Ease.OutBack)
+            .OnComplete(() =>
+            {
+                onComplete?.Invoke(index);
+            });
     }
 
     #endregion

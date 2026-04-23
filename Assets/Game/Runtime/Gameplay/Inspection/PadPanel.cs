@@ -153,6 +153,7 @@ public class PadPanel : MonoBehaviour
         if (!isShowing) return;
 
         hideButton.gameObject.SetActive(false);
+        AudioManager.Instance.PlaySfx("quit");
 
         rectTransform.DOKill();
         if (parallax != null) parallax.enabled = false;

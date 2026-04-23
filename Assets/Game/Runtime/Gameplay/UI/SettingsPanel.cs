@@ -52,6 +52,7 @@ public class SettingsPanel : UIPanel
 
     void OnBack()
     {
+        AudioManager.Instance.PlaySfx("quit");
         GameManager.Instance.GameTitle();
         Close();
     }
@@ -63,6 +64,7 @@ public class SettingsPanel : UIPanel
 
     void Close()
     {
+        AudioManager.Instance.PlaySfx("quit");
         UIManager.Instance.Close<SettingsPanel>();
     }
 
