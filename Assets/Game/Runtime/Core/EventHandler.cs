@@ -27,8 +27,14 @@ namespace Game.Runtime.Core
             GamePhaseChangeEvent?.Invoke(gamePhase);
         }
 
-        #endregion
+        public static event Action LanguageChangedEvent;
 
+        public static void CallLanguageChangedEvent()
+        {
+            LanguageChangedEvent?.Invoke();
+        }
+
+        #endregion
 
 
         #region 剧情
@@ -55,6 +61,5 @@ namespace Game.Runtime.Core
         }
 
         #endregion
-
     }
 }

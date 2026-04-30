@@ -1,3 +1,4 @@
+using Game.Runtime.Core;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Runtime.Data;
@@ -17,8 +18,8 @@ public class DialoguePanel : UIPanel
     // public Button skipButton;
     public GameObject nextArrow;
 
-    [Header("角色对话")] public TextMeshProUGUI nameLabel;
-    public TextMeshProUGUI dialogueTextLabel;
+    [Header("角色对话")] public LocalizedText nameLabel;
+    public LocalizedText dialogueTextLabel;
 
     [Header("选项")] public GameObject optionGroup;
 
@@ -38,7 +39,7 @@ public class DialoguePanel : UIPanel
     {
         nextButton.onClick.AddListener(OnNextClick);
         // if (blackDialoguePanel) blackDialoguePanel.GetComponent<Button>().onClick.AddListener(OnNextClick);
-        //skipButton.GetComponent<Button>().onClick.AddListener(OnSkipClick);
+        // skipButton.GetComponent<Button>().onClick.AddListener(OnSkipClick);
         //cancelButton.GetComponent<Button>().onClick.AddListener(OnCancelClick);
         optionButtons = optionGroup.GetComponentsInChildren<Button>();
     }
@@ -66,7 +67,7 @@ public class DialoguePanel : UIPanel
             // 停止协程并直接显示完整文字
             StopCoroutine(typingCoroutine);
             typingFinished = true;
-            dialogueTextLabel.text = dialogueLines[index].text;
+            dialogueTextLabel.SetLocalizationKey(dialogueLines[index].text);
             if (blackTextLabel) blackTextLabel.text = dialogueLines[index].text;
             nextArrow.SetActive(true);
             index++;
@@ -90,30 +91,33 @@ public class DialoguePanel : UIPanel
     {
         blackDialoguePanel.SetActive(false);
         var line = dialogueLines[index];
+        var dlgString = "";
         switch (line.type)
         {
             case DialogueType.Normal:
                 // 普通角色对话
 
-                nameLabel.text = line.speakerName;
-                typingCoroutine = StartCoroutine(TypingText(dialogueTextLabel));
+                nameLabel.SetLocalizationKey(line.speakerName);
+                dlgString = LocalizationManager.Get(dialogueLines[index].text);
+                typingCoroutine = StartCoroutine(TypingText(dlgString, dialogueTextLabel.text));
                 break;
 
             case DialogueType.Null:
                 // 没有角色，旁白等
 
-                nameLabel.text = "";
-                typingCoroutine = StartCoroutine(TypingText(dialogueTextLabel));
+                nameLabel.text.text = "";
+                dlgString = LocalizationManager.Get(dialogueLines[index].text);
+                typingCoroutine = StartCoroutine(TypingText(dlgString, dialogueTextLabel.text));
                 break;
 
             case DialogueType.Black:
                 // 全屏，黑色背景对话
                 blackDialoguePanel.SetActive(true);
-                typingCoroutine = StartCoroutine(TypingText(blackTextLabel));
+                dlgString = dialogueLines[index].text;
+                typingCoroutine = StartCoroutine(TypingText(dlgString, blackTextLabel));
                 break;
 
             case DialogueType.Choice:
-
                 ShowOptions(line.choices);
                 break;
         }
@@ -131,14 +135,15 @@ public class DialoguePanel : UIPanel
 
     #region 打字效果
 
-    private IEnumerator TypingText(TextMeshProUGUI textLabel = null)
+    private IEnumerator TypingText(string dlgString, TMP_Text textLabel = null)
     {
-        if (!textLabel) textLabel = dialogueTextLabel;
+        if (!textLabel) textLabel = dialogueTextLabel.text;
         textLabel.text = "";
         nextArrow.SetActive(false);
         typingFinished = false;
         var isAddingRichTextTag = false;
-        foreach (var c in dialogueLines[index].text)
+
+        foreach (var c in dlgString)
             if (c == '<' || isAddingRichTextTag)
             {
                 isAddingRichTextTag = true;
@@ -151,6 +156,7 @@ public class DialoguePanel : UIPanel
                 yield return new WaitForSeconds(textSpeed);
             }
 
+        dialogueTextLabel.SetLocalizationKey(dialogueLines[index].text);
         nextArrow.SetActive(true);
         typingFinished = true;
         index++;
@@ -186,9 +192,9 @@ public class DialoguePanel : UIPanel
             button.gameObject.SetActive(true); // 显示选项按钮
 
             // 设置按钮文本
-            var text = button.GetComponentInChildren<TextMeshProUGUI>();
+            var text = button.GetComponentInChildren<LocalizedText>();
             if (text)
-                text.text = choices[i].text;
+                text.SetLocalizationKey(choices[i].text);
 
             // 绑定点击事件（先清空旧的）
             button.onClick.RemoveAllListeners();

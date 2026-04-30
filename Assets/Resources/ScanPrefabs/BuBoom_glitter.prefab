@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: 75, y: -248}
   scale: 0.7
-  glitterDescription: The few remaining sparse hairs were well groomed.
+  glitterDescription: Character_2_Glitter_1
 --- !u!222 &742489831978650336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: -88, y: 79}
   scale: 1
-  glitterDescription: The supple, rope-like arms can rotate in different directions.
+  glitterDescription: Character_2_Glitter_3
 --- !u!222 &7623020315868876280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -386,8 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: 70, y: -239}
   scale: 1
-  glitterDescription: "Permanently furrowed brow\u2014its last gig really took it
-    out of him."
+  glitterDescription: Character_2_Glitter_2
 --- !u!222 &5771813870265310475
 CanvasRenderer:
   m_ObjectHideFlags: 0

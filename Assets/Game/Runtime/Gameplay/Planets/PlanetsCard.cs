@@ -12,20 +12,17 @@ public class PlanetsCard : MonoBehaviour,
     IPointerEnterHandler, IPointerExitHandler,
     IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
-    [Header("UI引用")]
-    [SerializeField] private TextMeshProUGUI textName;
+    [Header("UI引用")] [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textDescription;
     [SerializeField] private TextMeshProUGUI textNeed;
     [SerializeField] private Image iconImage;
     [SerializeField] private Image selectPic;
     [SerializeField] private Image selectPicN;
 
-    [Header("Icon引用")]
-    [SerializeField] private Sprite defaultIcon;
+    [Header("Icon引用")] [SerializeField] private Sprite defaultIcon;
     public Sprite[] planetSprites;
 
-    [Header("选中动画设置")]
-    [SerializeField] private bool useLockPopAnimation = true;
+    [Header("选中动画设置")] [SerializeField] private bool useLockPopAnimation = true;
     [SerializeField] private float lockPopScale = 1.5f;
     [SerializeField] private float lockPopDuration = 0.2f;
     [SerializeField, Range(0.05f, 0.95f)] private float lockPopExpandRatio = 0.2f;
@@ -38,11 +35,13 @@ public class PlanetsCard : MonoBehaviour,
 
     // 是否允许交互
     private bool interactionEnabled = true;
+
     // 是否为选中卡片
     private bool lockedSelected = false;
 
     // 缓存图标
     private readonly Dictionary<string, Sprite> iconDict = new Dictionary<string, Sprite>(StringComparer.Ordinal);
+
     // 保证同一个缺失图标只警告一次
     private readonly HashSet<string> missingIconWarned = new HashSet<string>(StringComparer.Ordinal);
 
@@ -212,7 +211,7 @@ public class PlanetsCard : MonoBehaviour,
 
         if (textName) textName.text = data.name;
         if (textDescription) textDescription.text = data.description;
-        if (textNeed) textNeed.text = data.planetneed;
+        if (textNeed) textNeed.text = data.planetRequire;
         if (iconImage) iconImage.sprite = GetIcon(data.iconName);
         HideSelectPic();
     }
@@ -403,8 +402,8 @@ public class PlanetsCard : MonoBehaviour,
         float total = Mathf.Max(0.01f, lockPopDuration);
 
         float expandRatio = Mathf.Clamp(lockPopExpandRatio, 0.05f, 0.95f);
-        float expandDuration = total * expandRatio;          // 放大阶段
-        float shrinkDuration = total * (1f - expandRatio);  // 缩回阶段
+        float expandDuration = total * expandRatio; // 放大阶段
+        float shrinkDuration = total * (1f - expandRatio); // 缩回阶段
 
         float t = 0f;
         while (t < expandDuration)

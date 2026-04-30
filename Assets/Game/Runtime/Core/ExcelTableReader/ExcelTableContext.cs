@@ -11,5 +11,6 @@ namespace Game.Runtime.Core.ExcelTableReader
         public Dictionary<int, DialogueData> dialogues = new();
         public Dictionary<int, ItemData> items = new();
         public Dictionary<int, PlanetData> planets = new();
+        public LocalizationData localizationData = new();
     }
 }

@@ -26,18 +26,11 @@ public class PadPanel : MonoBehaviour
     public GameObject packagePanel;
     private PackageView packageView;
 
-    [Header("Profile View Elements")] public TextMeshProUGUI nameLabel;
-
-    public TextMeshProUGUI speciesLabel;
-    public Image avatarImage;
-    public TextMeshProUGUI desText;
-    public Transform questionsContainer; // 对应 Questions 节点，方便后续遍历或动态生成 Q&A
-
-    [Header("Package View Elements")] public Transform itemGroup; // 背包物品组容器
-
-    public Image itemImage;
-    public TextMeshProUGUI itemName;
-    public TextMeshProUGUI itemDesc;
+    [Header("Profile View Elements")] public Image avatarImage;
+    public LocalizedText nameLabel;
+    public LocalizedText speciesLabel;
+    public LocalizedText desText;
+    // public Transform questionsContainer; // 对应 Questions 节点，方便后续遍历或动态生成 Q&A
 
     private bool isShowing; // 记录当前是否显示
 
@@ -88,10 +81,10 @@ public class PadPanel : MonoBehaviour
     /// </summary>
     public void UpdateProfileData(string pName, string pSpecies, Sprite pAvatar, string pDesc)
     {
-        if (nameLabel != null) nameLabel.text = "Name: " + pName;
-        if (speciesLabel != null) speciesLabel.text = "Species: " + pSpecies;
+        if (nameLabel != null) nameLabel.SetLocalizationKey(pName);
+        if (speciesLabel != null) speciesLabel.SetLocalizationKey(pSpecies);
         if (avatarImage != null) avatarImage.sprite = pAvatar;
-        if (desText != null) desText.text = pDesc;
+        if (desText != null) desText.SetLocalizationKey(pDesc);
         profileToggle.isOn = true;
     }
 

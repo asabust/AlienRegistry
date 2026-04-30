@@ -43,15 +43,15 @@ public class InspectionPanel : MonoBehaviour
     private GameObject questionList;
 
     [SerializeField] private Button questionBubblePanel;
-    [SerializeField] private TMP_Text questionBubbleText;
+    [SerializeField] private LocalizedText questionBubbleText;
 
     [SerializeField] private Button q1Button;
     [SerializeField] private Button q2Button;
     [SerializeField] private Button q3Button;
 
-    private TMP_Text _q1Text;
-    private TMP_Text _q2Text;
-    private TMP_Text _q3Text;
+    private LocalizedText _q1Text;
+    private LocalizedText _q2Text;
+    private LocalizedText _q3Text;
 
     [HideInInspector] public Image portraitImage;
 
@@ -63,9 +63,9 @@ public class InspectionPanel : MonoBehaviour
     private void Awake()
     {
         BindEvents();
-        _q1Text = q1Button.GetComponentInChildren<TMP_Text>();
-        _q2Text = q2Button.GetComponentInChildren<TMP_Text>();
-        _q3Text = q3Button.GetComponentInChildren<TMP_Text>();
+        _q1Text = q1Button.GetComponentInChildren<LocalizedText>();
+        _q2Text = q2Button.GetComponentInChildren<LocalizedText>();
+        _q3Text = q3Button.GetComponentInChildren<LocalizedText>();
         portraitImage = portrait.GetComponentInChildren<Image>();
     }
 
@@ -76,17 +76,17 @@ public class InspectionPanel : MonoBehaviour
 
     private void BindEvents()
     {
-        settingsButton.onClick.AddListener(OnClickSettings);
+        settingsButton?.onClick.AddListener(OnClickSettings);
 
-        dispatchButton.onClick.AddListener(OnClickDispatch);
+        dispatchButton?.onClick.AddListener(OnClickDispatch);
         // askButton.onClick.AddListener(OnClickAsk);
-        scanButton.onClick.AddListener(OnClickScan);
-        xrayButton.onClick.AddListener(OnClickXray);
-        questionBubblePanel.onClick.AddListener(OnClickQuestionBubblePanel);
+        scanButton?.onClick.AddListener(OnClickScan);
+        xrayButton?.onClick.AddListener(OnClickXray);
+        questionBubblePanel?.onClick.AddListener(OnClickQuestionBubblePanel);
 
-        q1Button.onClick.AddListener(() => OnClickQuestionItem(0));
-        q2Button.onClick.AddListener(() => OnClickQuestionItem(1));
-        q3Button.onClick.AddListener(() => OnClickQuestionItem(2));
+        q1Button?.onClick.AddListener(() => OnClickQuestionItem(0));
+        q2Button?.onClick.AddListener(() => OnClickQuestionItem(1));
+        q3Button?.onClick.AddListener(() => OnClickQuestionItem(2));
     }
 
     #region ScanScreen
@@ -129,7 +129,7 @@ public class InspectionPanel : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx("click_dispatch");
         Debug.Log("Dispatch Clicked/ Open PlanetPanel");
-        UIManager.Instance.Open<PlanetsPanel>(new PlanetsPanel.OpenData() { characterId = _currentData.id });
+        UIManager.Instance.Open<PlanetPanel>(_currentData.id);
     }
 
     // private bool _showQList;
@@ -167,7 +167,7 @@ public class InspectionPanel : MonoBehaviour
 
         {
             questionBubblePanel.gameObject.SetActive(true);
-            questionBubbleText.text = _currentData.questions[index];
+            questionBubbleText.SetLocalizationKey(_currentData.questions[index]);
             Transform bubble = questionBubbleText.transform.parent;
             ShowBubble(bubble, index, ShowAnswer);
         }
@@ -192,9 +192,9 @@ public class InspectionPanel : MonoBehaviour
 
     public void ResetQuestionTexts()
     {
-        _q1Text.text = "???";
-        _q2Text.text = "???";
-        _q3Text.text = "???";
+        _q1Text.SetLocalizationKey("inspection_question_hide");
+        _q2Text.SetLocalizationKey("inspection_question_hide");
+        _q3Text.SetLocalizationKey("inspection_question_hide");
         questionBubblePanel.gameObject.SetActive(false);
     }
 
@@ -202,9 +202,9 @@ public class InspectionPanel : MonoBehaviour
     {
         switch (index)
         {
-            case 0: _q1Text.text = content; break;
-            case 1: _q2Text.text = content; break;
-            case 2: _q3Text.text = content; break;
+            case 0: _q1Text.SetLocalizationKey(content); break;
+            case 1: _q2Text.SetLocalizationKey(content); break;
+            case 2: _q3Text.SetLocalizationKey(content); break;
         }
         // 可在这里播一个解锁的音效或特效
     }

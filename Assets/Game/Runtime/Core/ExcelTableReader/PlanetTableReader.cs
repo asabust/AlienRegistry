@@ -33,7 +33,7 @@ namespace Game.Runtime.Core.ExcelTableReader
                     id = id,
                     name = row.GetString("Name"),
                     description = row.GetString("Description"),
-                    planetneed = row.GetString("PlanetRequire"),
+                    planetRequire = row.GetString("PlanetRequire"),
                     iconName = row.GetString("PlanetIcon"),
                 };
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3220836516450838685}
   - component: {fileID: 9162901584737558285}
   - component: {fileID: 1081738279752082950}
+  - component: {fileID: 1267514143198944910}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -34,10 +35,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1971901020063862971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.045, y: -34.754997}
-  m_SizeDelta: {x: 254.09, y: 49.51}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4417751376759136182
 CanvasRenderer:
@@ -169,6 +170,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &1267514143198944910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574361949978363433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_1
 --- !u!1 &3463977280094105214
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +260,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 285, y: -630}
-  m_SizeDelta: {x: 415.85, y: 69.509995}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3621693893871397100
 MonoBehaviour:
@@ -365,7 +379,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1339, y: -412}
-  m_SizeDelta: {x: 500, y: 123.51}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2124214926812682131
 MonoBehaviour:
@@ -554,6 +568,7 @@ GameObject:
   - component: {fileID: 8966721470157733437}
   - component: {fileID: 1660331125754845336}
   - component: {fileID: 5594836736046987905}
+  - component: {fileID: 1940549242154096380}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -575,10 +590,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2099355329011889921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 207.925, y: -34.754997}
-  m_SizeDelta: {x: 375.85, y: 49.51}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4070818891593661784
 CanvasRenderer:
@@ -710,6 +725,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &1940549242154096380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5900224691302482336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_1_2
 --- !u!1 &6612209897805137460
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +873,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1203, y: -230}
-  m_SizeDelta: {x: 294.09, y: 69.509995}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6623473708330180267
 MonoBehaviour:
@@ -938,6 +966,7 @@ GameObject:
   - component: {fileID: 2727262617150846067}
   - component: {fileID: 13632421073849710}
   - component: {fileID: 3696248474578290065}
+  - component: {fileID: 8042995961845999718}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -959,10 +988,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5571094083084337079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -61.755}
-  m_SizeDelta: {x: 460, y: 103.51}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7930780341517227488
 CanvasRenderer:
@@ -1094,6 +1123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &8042995961845999718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842907856513013119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_1_1
 --- !u!1 &8449576333335693901
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using Game.Runtime.Core;
 using Game.Runtime.Core.Attributes;
-using Newtonsoft.Json;
+using Game.Runtime.Data;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 using EventHandler = Game.Runtime.Core.EventHandler;
 
 
@@ -17,7 +14,13 @@ public class GameManager : Singleton<GameManager>
     [SceneName] public string firstGameScene;
     [SceneName] public string endingScene;
 
+    public TMP_FontAsset englishFont;
+    public TMP_FontAsset chineseFont;
+    public TMP_FontAsset japaneseFont;
+
+    public bool IsGameplay => CurrentPhase == GamePhase.Gameplay;
     public GamePhase CurrentPhase { get; private set; }
+
     public int finalScore { get; private set; }
 
     public void SetGamePhase(GamePhase newPhase)
@@ -27,7 +30,16 @@ public class GameManager : Singleton<GameManager>
         EventHandler.CallGamePhaseChangedEvent(newPhase);
     }
 
-    public bool IsGameplay => CurrentPhase == GamePhase.Gameplay;
+    protected override void Awake()
+    {
+        base.Awake();
+        EventHandler.AfterSceneLoadEvent += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        EventHandler.AfterSceneLoadEvent -= OnSceneLoaded;
+    }
 
     private void Start()
     {
@@ -77,4 +89,39 @@ public class GameManager : Singleton<GameManager>
     Application.Quit();
 #endif
     }
+
+    #region 本地化
+
+    private void OnSceneLoaded(string obj)
+    {
+        ApplyFont(LocalizationManager.CurrentLanguage);
+    }
+
+    public static void ApplyFont(Language lang)
+    {
+        var font = GetFont(lang);
+
+        var texts = Object.FindObjectsOfType<LocalizedText>(true);
+
+        foreach (var t in texts)
+        {
+            if (t.text != null)
+            {
+                t.text.font = font;
+                t.text.ForceMeshUpdate();
+            }
+        }
+    }
+
+    public static TMP_FontAsset GetFont(Language lang)
+    {
+        return lang switch
+        {
+            Language.Chinese => Instance.chineseFont,
+            Language.Japanese => Instance.japaneseFont,
+            _ => Instance.englishFont
+        };
+    }
+
+    #endregion
 }

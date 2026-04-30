@@ -54,8 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: 10, y: -406}
   scale: 1
-  glitterDescription: Equipped with an advanced intelligence module that has already
-    passed the Turing Test.
+  glitterDescription: Character_4_Glitter_1
 --- !u!222 &742489831978650336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -221,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: -78, y: 93}
   scale: 0.6
-  glitterDescription: It has powerful, thick mechanical arms with immense strength.
+  glitterDescription: Character_4_Glitter_3
 --- !u!222 &7623020315868876280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -387,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearancePosition: {x: 0, y: -51}
   scale: 0.4
-  glitterDescription: A display screen on its chest can output text.
+  glitterDescription: Character_4_Glitter_2
 --- !u!222 &5771813870265310475
 CanvasRenderer:
   m_ObjectHideFlags: 0

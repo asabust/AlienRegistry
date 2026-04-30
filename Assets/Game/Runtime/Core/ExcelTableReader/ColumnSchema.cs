@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace Game.Runtime.Core.ExcelTableReader
 {
@@ -52,6 +53,9 @@ namespace Game.Runtime.Core.ExcelTableReader
 
         public ExcelColumnType GetColumnType(string name)
             => _nameToType.GetValueOrDefault(name.ToLower(), ExcelColumnType.String);
+
+        public List<string> GetAllColumns()
+            => _nameToIndex.Keys.ToList();
 
         private static ExcelColumnType ParseType(string raw) => raw.ToLower() switch
         {

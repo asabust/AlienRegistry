@@ -128,7 +128,11 @@ public class InspectionManager : MonoBehaviour
                 Debug.Log("发配错误...");
             }
 
-            DialogueManager.Instance.ShowDialogueString($"You have dispatched {currentData.name} to {planet.name}.");
+            var show = string.Format(
+                LocalizationManager.Get("inspection_dispatch_template"),
+                LocalizationManager.Get(currentData.name),
+                LocalizationManager.Get(planet.name));
+            DialogueManager.Instance.ShowDialogueString(show);
             // 执行离场并进入下一轮
             DialogueManager.Instance.onFinishedAction += () =>
             {
@@ -162,27 +166,6 @@ public class InspectionManager : MonoBehaviour
 
         GameManager.Instance.GameEnding(correctCount);
     }
-
-
-    #region 星球
-
-    private void OnEnable()
-    {
-        PlanetsPanel.AddJudgeResultListener(OnPlanetJudged);
-    }
-
-    private void OnDisable()
-    {
-        PlanetsPanel.RemoveJudgeResultListener(OnPlanetJudged);
-    }
-
-    private void OnPlanetJudged(bool isSuccess, int planetId)
-    {
-        Debug.Log($"接收到判定结果: {isSuccess}, 星球ID是: {planetId}");
-        OnDispatchCallback(planetId);
-    }
-
-    #endregion
 
     #region 条件触发方法
 

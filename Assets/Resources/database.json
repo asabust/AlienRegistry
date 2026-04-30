@@ -2,9 +2,9 @@
   "characters": {
     "1": {
       "id": 1,
-      "name": "Groot",
-      "species": "Sprout",
-      "description": "Plant-like sprouts grow on its antennae. Its jagged, tooth-like body serves as perfect camouflage to evade natural enemies.",
+      "name": "Character_Name_1",
+      "species": "Character_Species_1",
+      "description": "Character_Desc_1",
       "homePlanet": 1,
       "planetOption": [
         7,
@@ -16,14 +16,14 @@
         2
       ],
       "questions": [
-        "Are those black dots on your body your eyes?",
-        "What is the purpose of the small bud on the head?",
-        "What are the kettle and the soil for?"
+        "Character_1_Question_1",
+        "Character_1_Question_2",
+        "Character_1_Question_3"
       ],
       "shortQuestions": [
-        "Eyes",
-        "Sprout",
-        "Kettle and soil"
+        "Character_1_Question_Keyword_1",
+        "Character_1_Question_Keyword_2",
+        "Character_1_Question_Keyword_3"
       ],
       "answers": [
         "Groot_prefab_1",
@@ -38,9 +38,9 @@
     },
     "2": {
       "id": 2,
-      "name": "BuBoom",
-      "species": "Inorganic",
-      "description": "A Balloonian who changes color according to its emotional state.",
+      "name": "Character_Name_2",
+      "species": "Character_Species_2",
+      "description": "Character_Desc_2",
       "homePlanet": 2,
       "planetOption": [
         2,
@@ -51,14 +51,14 @@
         3
       ],
       "questions": [
-        "Is that strange fur on your head actually hair?",
-        "Why is your heart so huge？",
-        "Is the air pump part of your tableware?"
+        "Character_2_Question_1",
+        "Character_2_Question_2",
+        "Character_2_Question_3"
       ],
       "shortQuestions": [
-        "Hair",
-        "Heart",
-        "Air pump"
+        "Character_2_Question_Keyword_1",
+        "Character_2_Question_Keyword_2",
+        "Character_2_Question_Keyword_3"
       ],
       "answers": [
         "BuBoom_prefab_1",
@@ -73,9 +73,9 @@
     },
     "3": {
       "id": 3,
-      "name": "Bank",
-      "species": "Urban Legend",
-      "description": "An eerie Mothman-like entity born from urban legends on Fajnara. In truth, it belongs to the dominant species of the planet Frattwizz.",
+      "name": "Character_Name_3",
+      "species": "Character_Species_3",
+      "description": "Character_Desc_3",
       "homePlanet": 3,
       "planetOption": [
         5,
@@ -88,14 +88,14 @@
         6
       ],
       "questions": [
-        "Where did those red marks on your feet come from?",
-        "How did you get the gunshot wound?",
-        "Are you a Christian?"
+        "Character_3_Question_1",
+        "Character_3_Question_2",
+        "Character_3_Question_3"
       ],
       "shortQuestions": [
-        "Ankle",
-        "Shrapnel",
-        "Cross"
+        "Character_3_Question_Keyword_1",
+        "Character_3_Question_Keyword_2",
+        "Character_3_Question_Keyword_3"
       ],
       "answers": [
         "Bank_prefab_1",
@@ -110,9 +110,9 @@
     },
     "4": {
       "id": 4,
-      "name": "G-007",
-      "species": "Ferro",
-      "description": "A satellite signal detection model. It was once the most common robot type used in interstellar exploration.",
+      "name": "Character_Name_4",
+      "species": "Character_Species_4",
+      "description": "Character_Desc_4",
       "homePlanet": 4,
       "planetOption": [
         2,
@@ -124,14 +124,14 @@
         8
       ],
       "questions": [
-        "Are you sure you can communicate with your coworkers?",
-        "Can you still work?",
-        "Are you looking for a home?"
+        "Character_4_Question_1",
+        "Character_4_Question_2",
+        "Character_4_Question_3"
       ],
       "shortQuestions": [
-        "Garbage characters",
-        "Wires",
-        "ID badge"
+        "Character_4_Question_Keyword_1",
+        "Character_4_Question_Keyword_2",
+        "Character_4_Question_Keyword_3"
       ],
       "answers": [
         "G-007_prefab_1",
@@ -146,9 +146,9 @@
     },
     "5": {
       "id": 5,
-      "name": "Ivy-chan",
-      "species": "Beast",
-      "description": "A cute little vine critter that loves snuggling up to furry creatures and climbing all over them.",
+      "name": "Character_Name_5",
+      "species": "Character_Species_5",
+      "description": "Character_Desc_5",
       "homePlanet": 5,
       "planetOption": [
         8,
@@ -162,14 +162,14 @@
         12
       ],
       "questions": [
-        "Are those lines your face?",
-        "Why are there so many bone fragments in your body?",
-        "Why do you carry so many... collectibles?"
+        "Character_5_Question_1",
+        "Character_5_Question_2",
+        "Character_5_Question_3"
       ],
       "shortQuestions": [
-        "Facial features",
-        "Bone fragments",
-        "Residues"
+        "Character_5_Question_Keyword_1",
+        "Character_5_Question_Keyword_2",
+        "Character_5_Question_Keyword_3"
       ],
       "answers": [
         "Ivy-chan_prefab_1",
@@ -189,14 +189,14 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "New face, huh? Come on in. Sit down, relax. No need to look so nervous. I'm the... acting manager of this Interstellar Dispatch Office for the time being.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_1_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "You ever heard of the Galactic HR Department?",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_1_1",
           "choices": null
         },
         {
@@ -205,11 +205,11 @@
           "text": null,
           "choices": [
             {
-              "text": "Yes",
+              "text": "dlg_1_2_0",
               "nextDialogueId": 2
             },
             {
-              "text": "No",
+              "text": "dlg_1_2_1",
               "nextDialogueId": 3
             }
           ]
@@ -222,14 +222,14 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Great. Then I'll keep it short. We've had a flood of alien job seekers lately. Whole crowds of them.\n",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_2_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "They're sick of their home planets, bored out of their skulls, and looking for somewhere new to work.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_2_1",
           "choices": null
         }
       ],
@@ -240,20 +240,20 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "No worries. Honestly, they mostly just send emails.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_3_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Long story short, alien job seekers have been pouring in lately.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_3_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "They're tired of life back home and want a fresh start. New planet, new job, same old trouble.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_3_2",
           "choices": null
         }
       ],
@@ -264,116 +264,56 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Manager: The problem is, some of them have tempers hot enough to melt steel.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Some are dumb as asteroids.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "And some of them... well.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_2",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Let's just say they've eaten coworkers before.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_3",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Our job is to screen them, sort them, and send them to planets where they're least likely to cause disasters.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_4",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Do it well, and headquarters might even throw a bonus your way.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_5",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Next up, your senior coworker Woofie will teach you the ropes.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_6",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "That's the rundown. Good luck, Kiddo. ",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_7",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Try not to get eaten. Ciao~",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "16": {
-      "dialogueId": 16,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Woofie: Hey there, rookie! I'm Woofie, your senior guide around here. Woof!\nWoofie: This right here is your workstation.\nWoofie: Any creatures needing placement will show up at the window. Woof!\nWoofie: You can check their [PROFILE] on the tablet below.\nWoofie: Use the tabs to switch screens and inspect whatever they're carrying in their [PACKAGE].",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 17
-    },
-    "17": {
-      "dialogueId": 17,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Woofie: These are the scanning buttons. Woof!\nWoofie: Tap [SCAN] to check their external features, or [X-RAY] to get a look at their internal skeleton.",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 18
-    },
-    "18": {
-      "dialogueId": 18,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Woofie: Now then, a proper dispatcher also needs to ask a few simple questions.\nWoofie: That's what the [ASK] button is for.\nWoofie: After that, you can review their answers in the [PROFILE] tab.\nWoofie: Oh, and one important thing-if you haven't examined them properly first, the [ASK] button won't work. Woof!",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 19
-    },
-    "19": {
-      "dialogueId": 19,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "Woofie: Once you think you've got them figured out, hit [DISPATCH] and choose the planet that suits them best.",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 20
-    },
-    "20": {
-      "dialogueId": 20,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "Woofie",
-          "text": "I believe in you, rookie! Woof!",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_4_8",
           "choices": null
         }
       ],
@@ -384,14 +324,14 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Oh! Looks like you survived your first day on the job.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_5_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Let me see that performance report...",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_5_1",
           "choices": null
         }
       ],
@@ -402,8 +342,8 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Manager: Well, well. You're sharper than you look.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_6_0",
           "choices": null
         },
         {
@@ -412,11 +352,11 @@
           "text": null,
           "choices": [
             {
-              "text": "Heh~",
+              "text": "dlg_6_1_0",
               "nextDialogueId": 11
             },
             {
-              "text": "Not bad, right?",
+              "text": "dlg_6_1_1",
               "nextDialogueId": 11
             }
           ]
@@ -429,8 +369,8 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Manager: Hm. You're taking this seriously. I like that.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_7_0",
           "choices": null
         },
         {
@@ -439,11 +379,11 @@
           "text": null,
           "choices": [
             {
-              "text": "Heh~",
+              "text": "dlg_7_1_0",
               "nextDialogueId": 12
             },
             {
-              "text": "Not bad, right?",
+              "text": "dlg_7_1_1",
               "nextDialogueId": 12
             }
           ]
@@ -456,8 +396,8 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Looks like you've still got a lot to learn.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_8_0",
           "choices": null
         },
         {
@@ -466,11 +406,11 @@
           "text": null,
           "choices": [
             {
-              "text": "Heh~",
+              "text": "dlg_8_1_0",
               "nextDialogueId": 13
             },
             {
-              "text": "Not bad, right?",
+              "text": "dlg_8_1_1",
               "nextDialogueId": 13
             }
           ]
@@ -483,8 +423,8 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Good grief. Were you making decisions with your elbows?",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_9_0",
           "choices": null
         },
         {
@@ -493,11 +433,11 @@
           "text": null,
           "choices": [
             {
-              "text": "Heh~",
+              "text": "dlg_9_1_0",
               "nextDialogueId": 14
             },
             {
-              "text": "Not bad, right?",
+              "text": "dlg_9_1_1",
               "nextDialogueId": 14
             }
           ]
@@ -510,20 +450,20 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "I knew I wasn't wrong about you.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_11_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Talented inspectors are getting harder to find these days.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_11_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Keep this up, and you might even earn yourself a promotion to headquarters before long.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_11_2",
           "choices": null
         }
       ],
@@ -534,20 +474,20 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Confidence is good. Keep that fire in you.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_12_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Just don't slack off on your training.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_12_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "And ask your senior, Woofie, plenty of questions while you can.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_12_2",
           "choices": null
         }
       ],
@@ -558,14 +498,14 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Hah. Got jokes, huh?",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_13_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Still, for a rookie to make it this far already... not bad at all.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_13_1",
           "choices": null
         }
       ],
@@ -576,20 +516,20 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Oh please, don't try that cute routine on me.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_14_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "I've seen every trick in the book.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_14_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Hit the books tonight, or next time I'm shipping you off to Planet Dummy.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_14_2",
           "choices": null
         }
       ],
@@ -600,116 +540,20 @@
       "lines": [
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "Alright, that's enough for today.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_15_0",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "No matter what kind of work you do, remember to eat well, stay hydrated, and leave work on time.",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_15_1",
           "choices": null
         },
         {
           "type": 0,
-          "speakerName": "Manager",
-          "text": "See you tomorrow! Ciao~",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "21": {
-      "dialogueId": 21,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：Oops! You haven't checked all the parts yet~",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "22": {
-      "dialogueId": 22,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：DIRECTOR",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "23": {
-      "dialogueId": 23,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：SleepyAppleKitty",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "24": {
-      "dialogueId": 24,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：biba2012",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "25": {
-      "dialogueId": 25,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：AOI",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "26": {
-      "dialogueId": 26,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：Yi geng",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "27": {
-      "dialogueId": 27,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：Nino",
-          "choices": null
-        }
-      ],
-      "nextDialogueId": 0
-    },
-    "28": {
-      "dialogueId": 28,
-      "lines": [
-        {
-          "type": 0,
-          "speakerName": "",
-          "text": "Null：Xing Ren",
+          "speakerName": "Speaker_Manager",
+          "text": "dlg_15_2",
           "choices": null
         }
       ],
@@ -719,147 +563,778 @@
   "items": {
     "1": {
       "id": 1,
-      "name": "Kettle",
-      "description": "A cute mini hovering kettle that automatically waters nearby plants.",
+      "name": "Item_Name_1",
+      "description": "Item_Desc_1",
       "iconName": "Kettle_icon"
     },
     "2": {
       "id": 2,
-      "name": "Cup of Soil",
-      "description": "Black soil brought from Earth.",
+      "name": "Item_Name_2",
+      "description": "Item_Desc_2",
       "iconName": "CupofSoil_icon"
     },
     "3": {
       "id": 3,
-      "name": "Air Pump",
-      "description": "Everyone on Balloon Planet has one.",
+      "name": "Item_Name_3",
+      "description": "Item_Desc_3",
       "iconName": "AirPump_icon"
     },
     "4": {
       "id": 4,
-      "name": "Electronic Shackles",
-      "description": "The screen displays \"Fugitive…\". Code: 2002.",
+      "name": "Item_Name_4",
+      "description": "Item_Desc_4",
       "iconName": "ElectronicShackles_icon"
     },
     "5": {
       "id": 5,
-      "name": "Cash",
-      "description": "A roll of banknotes that seem to be exclusive tokens usable only in a certain district.",
+      "name": "Item_Name_5",
+      "description": "Item_Desc_5",
       "iconName": "Cash_icon"
     },
     "6": {
       "id": 6,
-      "name": "Metal Cross",
-      "description": "A faith item obtained from a visitor during prison visitation. It can be unscrewed, revealing a tiny lock-picking tool inside.",
+      "name": "Item_Name_6",
+      "description": "Item_Desc_6",
       "iconName": "MetalCross_icon"
     },
     "7": {
       "id": 7,
-      "name": "Spare Battery",
-      "description": "Battery power has been completely drained…",
+      "name": "Item_Name_7",
+      "description": "Item_Desc_7",
       "iconName": "SpareBattery_icon"
     },
     "8": {
       "id": 8,
-      "name": "ID Badge",
-      "description": "Embedded in the palm of G-007's hand. In the bottom right corner, a tiny engraving reads: \"where is the home\".",
+      "name": "Item_Name_8",
+      "description": "Item_Desc_8",
       "iconName": "IDBadge_icon"
     },
     "9": {
       "id": 9,
-      "name": "Mantis Arm",
-      "description": "A green hollow scythe-like arm, perfectly shaped but covered in corroded pitted holes.",
+      "name": "Item_Name_9",
+      "description": "Item_Desc_9",
       "iconName": "MantisArm_icon"
     },
     "10": {
       "id": 10,
-      "name": "Black Unknown Substance",
-      "description": "Upon closer inspection, insects can be seen struggling and writhing inside the viscous slime.",
+      "name": "Item_Name_10",
+      "description": "Item_Desc_10",
       "iconName": "BlackUnknownSubstance_icon"
     },
     "11": {
       "id": 11,
-      "name": "Flesh Lump",
-      "description": "In a half-digested state, covered with pale yellow mucus.",
+      "name": "Item_Name_11",
+      "description": "Item_Desc_11",
       "iconName": "FleshLump_icon"
     },
     "12": {
       "id": 12,
-      "name": "Crimson Snake Skin",
-      "description": "Tightly wrapped around the vines, heavily fragmented and torn.",
+      "name": "Item_Name_12",
+      "description": "Item_Desc_12",
       "iconName": "CrimsonSnakeSkin_icon"
     }
   },
   "planets": {
     "1": {
       "id": 1,
-      "name": "Budya",
-      "description": "An extraterrestrial paradise born from pure, innocent hearts. A world composed of harmless flora and fauna.",
-      "planetneed": "Everyone is welcome to join OVO!",
+      "name": "Planet_Name_1",
+      "description": "Planet_Desc_1",
+      "planetRequire": "Planet_Require_1",
       "iconName": "Budya_icon"
     },
     "2": {
       "id": 2,
-      "name": "Tonis",
-      "description": "Highly commercialized. The designated supplier for the Interstellar Alliance.",
-      "planetneed": "Hiring hair stylists. Speak with your hands, come quickly!",
+      "name": "Planet_Name_2",
+      "description": "Planet_Desc_2",
+      "planetRequire": "Planet_Require_2",
       "iconName": "Tonis_icon"
     },
     "3": {
       "id": 3,
-      "name": "Shawshank",
-      "description": "Over 80% of the planet is ocean. The only landmass hosts the galaxy's most heavily guarded maximum-security prison.",
-      "planetneed": "Urgent need for 10 maintenance workers.\n\"The highest bounty for an escaped prisoner is 503,333…\"",
+      "name": "Planet_Name_3",
+      "description": "Planet_Desc_3",
+      "planetRequire": "Planet_Require_3",
       "iconName": "Shawshank_icon"
     },
     "4": {
       "id": 4,
-      "name": "Screw",
-      "description": "A collective of intelligent mechanical spirals. The entire planet has been transformed into a massive starship.",
-      "planetneed": "Hiring crew members.\nOld exploration-type robots welcome. Only the core needs to be intact.\nThe ship has ample space and no wear-and-tear issues.",
+      "name": "Planet_Name_4",
+      "description": "Planet_Desc_4",
+      "planetRequire": "Planet_Require_4",
       "iconName": "Screw_icon"
     },
     "5": {
       "id": 5,
-      "name": "Arrakis",
-      "description": "Once rich with immense energy sources, now a lawless paradise for outlaws after drying up.",
-      "planetneed": "It's a Sicilian message. It means Luca Brasi sleeps with the fishes.Send it and you take the money.",
+      "name": "Planet_Name_5",
+      "description": "Planet_Desc_5",
+      "planetRequire": "Planet_Require_5",
       "iconName": "Arrakis_icon"
     },
     "6": {
       "id": 6,
-      "name": "Lost Eden",
-      "description": "A garden of Eden-like bliss. If you can imagine it, you can have endless joy here.",
-      "planetneed": "Work? No, come play. Your only responsibility is to make yourself happy -- and feel free to tell others how to be even happier.",
+      "name": "Planet_Name_6",
+      "description": "Planet_Desc_6",
+      "planetRequire": "Planet_Require_6",
       "iconName": "LostEden_icon"
     },
     "7": {
       "id": 7,
-      "name": "Jelly",
-      "description": "The planet's surface is covered in gelatinous material. The favorite amusement park destination for interstellar families with children.",
-      "planetneed": "Hiring a Jelly Pit Rescue Assistant. Rescue stuck kids, keep them smiling, stay cheerful. Free park access included.",
+      "name": "Planet_Name_7",
+      "description": "Planet_Desc_7",
+      "planetRequire": "Planet_Require_7",
       "iconName": "Jelly_icon"
     },
     "8": {
       "id": 8,
-      "name": "Cinnabar Eye",
-      "description": "The atmosphere consists of hydrogen and helium. The largest gas giant in the Kartos Star System.",
-      "planetneed": "Position: Lead Scout\nDuties: Explore uncharted areas and collect resource and risk data.\nCompensation: Paid per validated report. Reports are archived only; retrieval of personnel is not guaranteed.",
+      "name": "Planet_Name_8",
+      "description": "Planet_Desc_8",
+      "planetRequire": "Planet_Require_8",
       "iconName": "CinnabarEye_icon"
     },
     "9": {
       "id": 9,
-      "name": "Surukan",
-      "description": "A realm of serene silence. Every citizen focuses solely on themselves.",
-      "planetneed": "Position: Boundary Keeper\nDuties: Protect personal boundaries\nRequirements: Fair\n",
+      "name": "Planet_Name_9",
+      "description": "Planet_Desc_9",
+      "planetRequire": "Planet_Require_9",
       "iconName": "Surukan_icon"
     },
     "10": {
       "id": 10,
-      "name": "Tarasus",
-      "description": "An ocean of trees. Countless roots intertwine and fuse together, united as one.",
-      "planetneed": "Roots entwined with roots - though they occasionally tangle and twist. The old village chief has stiff legs and speaks slowly. We're short a translator who can listen to both sides of the tree-root conversations.",
+      "name": "Planet_Name_10",
+      "description": "Planet_Desc_10",
+      "planetRequire": "Planet_Require_10",
       "iconName": "Tarasus_icon"
+    }
+  },
+  "localizationData": {
+    "data": {
+      "English": {
+        "dlg_1_0": "New face, huh? Come on in. Sit down, relax. No need to look so nervous. I'm the... acting manager of this Interstellar Dispatch Office for the time being.",
+        "dlg_1_1": "You ever heard of the Galactic HR Department?",
+        "dlg_1_2_0": "Yes",
+        "dlg_1_2_1": "No",
+        "dlg_2_0": "Great. Then I'll keep it short. We've had a flood of alien job seekers lately. Whole crowds of them.\n",
+        "dlg_2_1": "They're sick of their home planets, bored out of their skulls, and looking for somewhere new to work.",
+        "dlg_3_0": "No worries. Honestly, they mostly just send emails.",
+        "dlg_3_1": "Long story short, alien job seekers have been pouring in lately.",
+        "dlg_3_2": "They're tired of life back home and want a fresh start. New planet, new job, same old trouble.",
+        "dlg_4_0": "The problem is, some of them have tempers hot enough to melt steel.",
+        "dlg_4_1": "Some are dumb as asteroids.",
+        "dlg_4_2": "And some of them... well.",
+        "dlg_4_3": "Let's just say they've eaten coworkers before.",
+        "dlg_4_4": "Our job is to screen them, sort them, and send them to planets where they're least likely to cause disasters.",
+        "dlg_4_5": "Do it well, and headquarters might even throw a bonus your way.",
+        "dlg_4_6": "Next up, your senior coworker Woofie will teach you the ropes.",
+        "dlg_4_7": "That's the rundown. Good luck, Kiddo. ",
+        "dlg_4_8": "Try not to get eaten. Ciao~",
+        "dlg_5_0": "Oh! Looks like you survived your first day on the job.",
+        "dlg_5_1": "Let me see that performance report...",
+        "dlg_6_0": "Manager: Well, well. You're sharper than you look.",
+        "dlg_6_1_0": "Heh~",
+        "dlg_6_1_1": "Not bad, right?",
+        "dlg_7_0": "Manager: Hm. You're taking this seriously. I like that.",
+        "dlg_7_1_0": "Heh~",
+        "dlg_7_1_1": "Not bad, right?",
+        "dlg_8_0": "Looks like you've still got a lot to learn.",
+        "dlg_8_1_0": "Heh~",
+        "dlg_8_1_1": "Not bad, right?",
+        "dlg_9_0": "Good grief. Were you making decisions with your elbows?",
+        "dlg_9_1_0": "Heh~",
+        "dlg_9_1_1": "Not bad, right?",
+        "dlg_11_0": "I knew I wasn't wrong about you.",
+        "dlg_11_1": "Talented inspectors are getting harder to find these days.",
+        "dlg_11_2": "Keep this up, and you might even earn yourself a promotion to headquarters before long.",
+        "dlg_12_0": "Confidence is good. Keep that fire in you.",
+        "dlg_12_1": "Just don't slack off on your training.",
+        "dlg_12_2": "And ask your senior, Woofie, plenty of questions while you can.",
+        "dlg_13_0": "Hah. Got jokes, huh?",
+        "dlg_13_1": "Still, for a rookie to make it this far already... not bad at all.",
+        "dlg_14_0": "Oh please, don't try that cute routine on me.",
+        "dlg_14_1": "I've seen every trick in the book.",
+        "dlg_14_2": "Hit the books tonight, or next time I'm shipping you off to Planet Dummy.",
+        "dlg_15_0": "Alright, that's enough for today.",
+        "dlg_15_1": "No matter what kind of work you do, remember to eat well, stay hydrated, and leave work on time.",
+        "dlg_15_2": "See you tomorrow! Ciao~",
+        "Character_Name_1": "Groot",
+        "Character_Name_2": "BuBoom",
+        "Character_Name_3": "Bank",
+        "Character_Name_4": "G-007",
+        "Character_Name_5": "Ivy-chan",
+        "Character_Species_1": "Sprout",
+        "Character_Species_2": "Inorganic",
+        "Character_Species_3": "Urban Legend",
+        "Character_Species_4": "Ferro",
+        "Character_Species_5": "Beast",
+        "Character_Desc_1": "Plant-like sprouts grow on its antennae. Its jagged, tooth-like body serves as perfect camouflage to evade natural enemies.",
+        "Character_Desc_2": "A Balloonian who changes color according to its emotional state.",
+        "Character_Desc_3": "An eerie Mothman-like entity born from urban legends on Fajnara. In truth, it belongs to the dominant species of the planet Frattwizz.",
+        "Character_Desc_4": "A satellite signal detection model. It was once the most common robot type used in interstellar exploration.",
+        "Character_Desc_5": "A cute little vine critter that loves snuggling up to furry creatures and climbing all over them.",
+        "Character_1_Glitter_1": "The pale green sprout is, in truth, its true form.",
+        "Character_1_Glitter_2": "The dark markings aren't actually eyes.",
+        "Character_1_Glitter_3": "Its soft little feet are enough to carry it in quick hops and light sprints.",
+        "Character_2_Glitter_1": "Years of overwork have left its scalp smooth, with only a few hairs still holding the line.",
+        "Character_2_Glitter_2": "A flexible cord allows your hand to rotate it in all directions.",
+        "Character_2_Glitter_3": "Frowning deeply, it looked worn out by its usual work.\n",
+        "Character_3_Glitter_1": "Glints beneath the fluff resemble eye-like reflections.\n",
+        "Character_3_Glitter_2": "A ring of red marks its ankles--left by long-term restraints.",
+        "Character_3_Glitter_3": "The flickering of its compound eyes underscores its power as a dominant individual.",
+        "Character_4_Glitter_1": "Equipped with an intelligence module, it has passed the Turing test.",
+        "Character_4_Glitter_2": "The display screen on its chest can output text.",
+        "Character_4_Glitter_3": "At its core, a red light continues to glow…",
+        "Character_5_Glitter_1": "What look like patterns across its body… are actually tiny faces?\n",
+        "Character_5_Glitter_2": "Thin brown vines coil tightly, imitating the curves of joints.",
+        "Character_5_Glitter_3": "A mask with bark texture.",
+        "Character_1_Question_1": "Are those black dots on your body your eyes?",
+        "Character_1_Question_2": "What is the purpose of the small bud on the head?",
+        "Character_1_Question_3": "What are the kettle and the soil for?",
+        "Character_2_Question_1": "Is that strange fur on your head actually hair?",
+        "Character_2_Question_2": "Why is your heart so huge?",
+        "Character_2_Question_3": "Is the air pump part of your tableware?",
+        "Character_3_Question_1": "Where did those red marks on your feet come from?",
+        "Character_3_Question_2": "How did you get the gunshot wound?",
+        "Character_3_Question_3": "Are you a Christian?",
+        "Character_4_Question_1": "Are you sure you can communicate with your coworkers?",
+        "Character_4_Question_2": "Can you still work?",
+        "Character_4_Question_3": "Are you looking for a home?",
+        "Character_5_Question_1": "Are those lines your face?",
+        "Character_5_Question_2": "Why are there so many bone fragments in your body?",
+        "Character_5_Question_3": "Why do you carry so many... collectibles?",
+        "Character_1_Question_Keyword_1": "Eyes",
+        "Character_1_Question_Keyword_2": "Sprout",
+        "Character_1_Question_Keyword_3": "Kettle and soil",
+        "Character_2_Question_Keyword_1": "Hair",
+        "Character_2_Question_Keyword_2": "Heart",
+        "Character_2_Question_Keyword_3": "Air pump",
+        "Character_3_Question_Keyword_1": "Ankle",
+        "Character_3_Question_Keyword_2": "Shrapnel",
+        "Character_3_Question_Keyword_3": "Cross",
+        "Character_4_Question_Keyword_1": "Garbled text",
+        "Character_4_Question_Keyword_2": "Wires",
+        "Character_4_Question_Keyword_3": "ID badge",
+        "Character_5_Question_Keyword_1": "Facial features",
+        "Character_5_Question_Keyword_2": "Bone fragments",
+        "Character_5_Question_Keyword_3": "Residues",
+        "Character_1_Answer_1": "OVO",
+        "Character_1_Answer_2": "RADIO WAVES, \nLAUNCH,\n COMMUNICATION, \nFRIENDS",
+        "Character_1_Answer_3": "HELP,\nSURVIVE,\nTOGETHER,\nUS.",
+        "Character_2_Answer_1": "What else would it be? Do I have to spell it out for you?",
+        "Character_2_Answer_2": "...Yeah. Overwork does that.",
+        "Character_2_Answer_3": "Use your brain, maybe?",
+        "Character_3_Answer_1": "Not worth the breath.",
+        "Character_3_Answer_2": "Hmph.",
+        "Character_3_Answer_3": "Just some little toys.",
+        "Character_4_Answer_1": "01111001 01100101 01110011",
+        "Character_4_Answer_1_1": "Yes",
+        "Character_4_Answer_2": "01110111 01101111 01110010 01101011",
+        "Character_4_Answer_2_1": "Work",
+        "Character_4_Answer_3": "01101000 01101111 01101101 01100101",
+        "Character_4_Answer_3_1": "Home",
+        "Character_5_Answer_1": "You like us, right?",
+        "Character_5_Answer_1_1": "We're adorable, aren't we? Ehehehe... ",
+        "Character_5_Answer_1_2": "CRUSH! CRUSH! CRUSH!",
+        "Character_5_Answer_2": "Heheh, friend~ Yeah! ",
+        "Character_5_Answer_2_1": "That's right! Exactly! ",
+        "Character_5_Answer_2_2": "Together... forever and ever...",
+        "Character_5_Answer_3": "They'll thank us someday. They're all so happy now...",
+        "Character_5_Answer_3_1": "None of your business!",
+        "Character_5_Answer_3_2": "FRIEND~ FRIEND~ FRIEND~",
+        "Item_Name_1": "Kettle",
+        "Item_Name_2": "Cup of Soil",
+        "Item_Name_3": "Air Pump",
+        "Item_Name_4": "Electronic Shackles",
+        "Item_Name_5": "Cash",
+        "Item_Name_6": "Metal Cross",
+        "Item_Name_7": "Spare Battery",
+        "Item_Name_8": "ID Badge",
+        "Item_Name_9": "Mantis Arm",
+        "Item_Name_10": "Black Unknown Substance",
+        "Item_Name_11": "Flesh Lump",
+        "Item_Name_12": "Crimson Snake Skin",
+        "Item_Desc_1": "A cute mini hovering kettle that automatically waters nearby plants.",
+        "Item_Desc_2": "Black soil brought from Earth.",
+        "Item_Desc_3": "Everyone on Balloon Planet has one.",
+        "Item_Desc_4": "The screen displays \"Fugitive…\". Code: 2002.",
+        "Item_Desc_5": "A roll of banknotes that seem to be exclusive tokens usable only in a certain district.",
+        "Item_Desc_6": "A faith item obtained from a visitor during prison visitation. It can be unscrewed, revealing a tiny lock-picking tool inside.",
+        "Item_Desc_7": "Battery power has been completely drained…",
+        "Item_Desc_8": "Embedded in the palm of G-007's hand. In the bottom right corner, a tiny engraving reads: \"where is the home\".",
+        "Item_Desc_9": "A green hollow scythe-like arm, perfectly shaped but covered in corroded pitted holes.",
+        "Item_Desc_10": "Upon closer inspection, insects can be seen struggling and writhing inside the viscous slime.",
+        "Item_Desc_11": "In a half-digested state, covered with pale yellow mucus.",
+        "Item_Desc_12": "Tightly wrapped around the vines, heavily fragmented and torn.",
+        "Planet_Name_1": "Budya",
+        "Planet_Name_2": "Tonis",
+        "Planet_Name_3": "Shawshank",
+        "Planet_Name_4": "Screw",
+        "Planet_Name_5": "Arrakis",
+        "Planet_Name_6": "Lost Eden",
+        "Planet_Name_7": "Jelly",
+        "Planet_Name_8": "Cinnabar Eye",
+        "Planet_Name_9": "Surukan",
+        "Planet_Name_10": "Tarasus",
+        "Planet_Desc_1": "An extraterrestrial paradise born from pure, innocent hearts. A world composed of harmless flora and fauna.",
+        "Planet_Desc_2": "Highly commercialized. The designated supplier for the Interstellar Alliance.",
+        "Planet_Desc_3": "Over 80% of the planet is ocean. The only landmass hosts the galaxy's most heavily guarded maximum-security prison.",
+        "Planet_Desc_4": "A collective of intelligent mechanical spirals. The entire planet has been transformed into a massive starship.",
+        "Planet_Desc_5": "Once rich with immense energy sources, now a lawless paradise for outlaws after drying up.",
+        "Planet_Desc_6": "A garden of Eden-like bliss. If you can imagine it, you can have endless joy here.",
+        "Planet_Desc_7": "The planet's surface is covered in gelatinous material. The favorite amusement park destination for interstellar families with children.",
+        "Planet_Desc_8": "The atmosphere consists of hydrogen and helium. The largest gas giant in the Kartos Star System.",
+        "Planet_Desc_9": "A realm of serene silence. Every citizen focuses solely on themselves.",
+        "Planet_Desc_10": "An ocean of trees. Countless roots intertwine and fuse together, united as one.",
+        "Planet_Require_1": "OVO members, assemble!\nEveryone is welcome to join OVO!",
+        "Planet_Require_2": "Position: Hairstylist\nRequirements: Skilled hands",
+        "Planet_Require_3": "Position: Maintenance Worker\nRequirements: Urgently hiring (10)\n※ Escaped prisoners carry bounties of up to $503,333.",
+        "Planet_Require_4": "Position: Crew Member\nRequirements: Old-model robots welcome. Only the core needs to be intact.\nThe ship has ample space and no wear-and-tear issues.",
+        "Planet_Require_5": "It's a Sicilian message. \n\"Luca Brasi sleeps with the fishes. \"\nDeliver it, and you'll get paid.",
+        "Planet_Require_6": "Work? No, come play!  \nYour only responsibility is to make yourself happy -- and feel free to tell others how to be even happier.",
+        "Planet_Require_7": "Position: Jelly Pit Rescue Assistant\nDuties: Rescue stuck children\nRequirements: Tolerates sticky environments\nPerks: Free park access",
+        "Planet_Require_8": "Position: Lead Scout\nDuties: Explore uncharted areas and collect resource and risk data.\nPaid per validated report\nRetrieval of personnel is not guaranteed.",
+        "Planet_Require_9": "Position: Boundary Keeper\nDuties: Protect personal boundaries\nRequirements: Fair\nPerks: Regular resource supply and a private domain",
+        "Planet_Require_10": "Position: Root Translator\nMust understand conversations between intertwined roots.\nMediation skills preferred.",
+        "Speaker_Manager": "Manager",
+        "Speaker_Woofie": "Woofie",
+        "guide_1": "Hey there, rookie! I'm , your senior guide around here. Woof!\nThis right here is your workstation.\n Any creatures needing placement will show up at the window. Woof!\n",
+        "guide_2": "You can check their [PROFILE] on the tablet below.\nUse the tabs to switch screens and inspect whatever they're carrying in their [LUGGAGE].",
+        "guide_3": "These are the scanning buttons. Woof!\n Tap [SCAN] to check their external features, or [X-RAY] to get a look at their internal skeleton.",
+        "guide_4": "Now then, a proper dispatcher also needs to ask a few simple questions.\nThat's what the [ASK] button is for.\nOh, and one important thing-if you haven't examined them properly first, the [ASK] button won't work. Woof!",
+        "guide_5": "Once you think you've got them figured out, hit [DISPATCH] and choose the planet that suits them best.",
+        "guide_6": "I believe in you, rookie! Woof!",
+        "setting_language": "Language",
+        "setting_music": "Music",
+        "setting_sfx": "SFX",
+        "setting_return": "Return to Title",
+        "setting_quit": "Quit",
+        "inspection_question_hide": "???",
+        "inspection_daily_dispatch": "Daily Dispatch",
+        "inspection_name": "Name: ",
+        "inspection_species": "Species: ",
+        "inspection_profile": "PROFILE/",
+        "inspection_luggage": "LUGGAGE/",
+        "planet_target_planet": "TARGET PLANET",
+        "opening_skip": "Skip",
+        "inspection_dispatch_template": "You have dispatched {0} to {1}.",
+        "ending_result_template": "Dispatch Results: {0} disappointed, {1} satisfied."
+      },
+      "Chinese": {
+        "dlg_1_0": "新来的？坐，别紧张。我是这个星际派遣局的……临时负责人。",
+        "dlg_1_1": "你知道银河人力资源部吧？",
+        "dlg_1_2_0": "知道",
+        "dlg_1_2_1": "不知道",
+        "dlg_2_0": "太好了，简单说，最近有一批外星‘求职者’涌进来。",
+        "dlg_2_1": "他们自己星球呆腻了，想换个地方打工。",
+        "dlg_3_0": "不知道也没关系，反正他们只会发邮件。",
+        "dlg_3_1": "简而言之，最近有一批外星‘求职者’涌进来。",
+        "dlg_3_2": "他们在自己星球呆腻了，想换个地方打工。",
+        "dlg_4_0": "但问题是，那些外星生物有的脾气好，",
+        "dlg_4_1": "有的智商堪比石头，",
+        "dlg_4_2": "还有的...嗯。",
+        "dlg_4_3": "爱吃同事。",
+        "dlg_4_4": "我们的工作就是，测试他们，然后塞到合适的星球去。",
+        "dlg_4_5": "如果全部正确的话，还能收到总部发来的惊喜大礼哦~",
+        "dlg_4_6": "接下去，会由你的前辈伍菲带领你学习基础的派遣知识。",
+        "dlg_4_7": "总而言之，好好干，年轻人。",
+        "dlg_4_8": "Ciao~！",
+        "dlg_5_0": "哦，看来你完成了第一天的工作~",
+        "dlg_5_1": "让我来看看你的完成度报告。",
+        "dlg_6_0": "看来你很上道嘛~",
+        "dlg_6_1_0": "哎嘿~",
+        "dlg_6_1_1": "不愧是我~",
+        "dlg_7_0": "看来你很认真嘛~",
+        "dlg_7_1_0": "哎嘿~",
+        "dlg_7_1_1": "不愧是我~",
+        "dlg_8_0": "来你有待学习哦！",
+        "dlg_8_1_0": "哎嘿~",
+        "dlg_8_1_1": "不愧是我~",
+        "dlg_9_0": "天啊！你是用脚趾头思考的吗？！",
+        "dlg_9_1_0": "哎嘿~",
+        "dlg_9_1_1": "不愧是我~",
+        "dlg_11_0": "我果然没看错人呀！",
+        "dlg_11_1": "像你这样的天才测试官已经不多了。",
+        "dlg_11_2": "过不了几天，你说不定就能晋升到总部了。",
+        "dlg_12_0": "行啦，年轻人有冲劲是好事",
+        "dlg_12_1": "但学习可不能偷懒~",
+        "dlg_12_2": "有空多去问问你的伍菲前辈吧！",
+        "dlg_13_0": "很有幽默细胞哦~",
+        "dlg_13_1": "不过说真的，作为新手能做到这个地步已经很棒了！",
+        "dlg_14_0": "装可爱是吧？！",
+        "dlg_14_1": "我见得多了，这招对我可不管用！",
+        "dlg_14_2": "赶紧把资料背熟，不然下次直接把你发配到只会流口水的星球去！",
+        "dlg_15_0": "好了，今天就到这里吧～",
+        "dlg_15_1": "无论工作如何，都要吃好喝好，准时下班！",
+        "dlg_15_2": "Ciao！明天见！",
+        "Character_Name_1": "格鲁特",
+        "Character_Name_2": "噗噗",
+        "Character_Name_3": "班克",
+        "Character_Name_4": "G-007",
+        "Character_Name_5": "蔓蔓酱",
+        "Character_Species_1": "芽",
+        "Character_Species_2": "无机物",
+        "Character_Species_3": "都市怪谈",
+        "Character_Species_4": "金属",
+        "Character_Species_5": "动物",
+        "Character_Desc_1": "触角上长了类似植物的新芽，齿状物身体是躲避天敌的伪装。",
+        "Character_Desc_2": "气球星人，会根据不同的状态变换颜色。",
+        "Character_Desc_3": "法姬娜星球的都市传说生物，但其实是弗拉特伍兹星球的主要种族。",
+        "Character_Desc_4": "卫星信号探测型，曾经是星际探索中最常见的机器人类型。",
+        "Character_Desc_5": "喜欢贴近毛茸茸的生物，在他们身上攀爬。",
+        "Character_1_Glitter_1": "嫩绿的小芽其实是它的本体。",
+        "Character_1_Glitter_2": "黑色之处似乎并不是真正的眼睛。",
+        "Character_1_Glitter_3": "柔软的小脚足以支撑它的蹦跳与奔跑。",
+        "Character_2_Glitter_1": "仅剩的几根稀疏的头发被打理的很好。",
+        "Character_2_Glitter_2": "柔韧的绳子手可以从不同方向旋转。",
+        "Character_2_Glitter_3": "眉头紧锁，原本的工作似乎让它很累。",
+        "Character_3_Glitter_1": "绒毛下闪烁着类似眼睛的反光。",
+        "Character_3_Glitter_2": "脚踝处有长期佩戴镣铐导致的一圈红痕。",
+        "Character_3_Glitter_3": "复眼的闪烁强调着他作为优势个体的强大。",
+        "Character_4_Glitter_1": "搭载了智力模块，已通过图灵测试。",
+        "Character_4_Glitter_2": "胸口的显示屏，能输出文字。",
+        "Character_4_Glitter_3": "粗壮的机械臂，力大无穷。",
+        "Character_5_Glitter_1": "身上酷似纹路的地方似乎是...一张张小脸？",
+        "Character_5_Glitter_2": "数根棕褐色的细藤紧紧缠绕，模仿出关节的弧度。",
+        "Character_5_Glitter_3": "树皮质感的面具。",
+        "Character_1_Question_1": "身上的黑点是你的眼睛吗？",
+        "Character_1_Question_2": "头上小芽是什么？",
+        "Character_1_Question_3": "水壶和土的作用？",
+        "Character_2_Question_1": "头顶奇怪的毛，难道是头发？",
+        "Character_2_Question_2": "你的心脏比其他气球人突出，是天生的吗？",
+        "Character_2_Question_3": "打气筒是你的餐具？",
+        "Character_3_Question_1": "脚上红痕的来历？",
+        "Character_3_Question_2": "枪伤的来历？",
+        "Character_3_Question_3": "你信仰基督？",
+        "Character_4_Question_1": "你确定能和同事沟通？",
+        "Character_4_Question_2": "你还能工作吗？",
+        "Character_4_Question_3": "你想找到一个家吗？",
+        "Character_5_Question_1": "那些纹路是你的脸？",
+        "Character_5_Question_2": "身体里为什么有那么多骨骼碎片？",
+        "Character_5_Question_3": "你为什么会携带那么多...藏品？",
+        "Character_1_Question_Keyword_1": "眼睛",
+        "Character_1_Question_Keyword_2": "芽",
+        "Character_1_Question_Keyword_3": "水壶和土",
+        "Character_2_Question_Keyword_1": "头发",
+        "Character_2_Question_Keyword_2": "心脏",
+        "Character_2_Question_Keyword_3": "打气筒",
+        "Character_3_Question_Keyword_1": "脚腕",
+        "Character_3_Question_Keyword_2": "弹片",
+        "Character_3_Question_Keyword_3": "十字架",
+        "Character_4_Question_Keyword_1": "乱码",
+        "Character_4_Question_Keyword_2": "线路",
+        "Character_4_Question_Keyword_3": "工牌",
+        "Character_5_Question_Keyword_1": "五官",
+        "Character_5_Question_Keyword_2": "骨头碎片",
+        "Character_5_Question_Keyword_3": "残留物",
+        "Character_1_Answer_1": "ovo",
+        "Character_1_Answer_2": "电波\n发射\n交流\n伙伴",
+        "Character_1_Answer_3": "帮助\n存活\n一起\n大家",
+        "Character_2_Answer_1": "不然呢，这都看不出来！",
+        "Character_2_Answer_2": "...长期劳累会导致心脏变大",
+        "Character_2_Answer_3": "你真应该看看脑子",
+        "Character_3_Answer_1": "不值一提",
+        "Character_3_Answer_2": "哼",
+        "Character_3_Answer_3": "一些小玩具罢了",
+        "Character_4_Answer_1": "01111001 01100101 01110011",
+        "Character_4_Answer_1_1": "能",
+        "Character_4_Answer_2": "01110111 01101111 01110010 01101011",
+        "Character_4_Answer_2_1": "工作",
+        "Character_4_Answer_3": "01101000 01101111 01101101 01100101",
+        "Character_4_Answer_3_1": "家",
+        "Character_5_Answer_1": "你喜欢我们吗？",
+        "Character_5_Answer_1_1": "我们很可爱吧嘻嘻嘻.....",
+        "Character_5_Answer_1_2": "crush！crush！crush！",
+        "Character_5_Answer_2": "哼哼，朋友~",
+        "Character_5_Answer_2_1": "是的！对的！完全正确！",
+        "Character_5_Answer_2_2": "一起走，一起走...直到天尽头",
+        "Character_5_Answer_3": "总有一天，他们会感谢我，至少现在他们挺高兴的......",
+        "Character_5_Answer_3_1": "关你什么事！",
+        "Character_5_Answer_3_2": "朋友~朋友~朋友~",
+        "Item_Name_1": "水壶",
+        "Item_Name_2": "一杯土",
+        "Item_Name_3": "打气筒",
+        "Item_Name_4": "电子镣铐",
+        "Item_Name_5": "货币",
+        "Item_Name_6": "金属十字架",
+        "Item_Name_7": "备用电池",
+        "Item_Name_8": "工牌",
+        "Item_Name_9": "螳螂手臂",
+        "Item_Name_10": "黑色未知物质",
+        "Item_Name_11": "碎肉混合块",
+        "Item_Name_12": "红蛇皮",
+        "Item_Desc_1": "迷你款悬浮水壶，可自动浇水。",
+        "Item_Desc_2": "来自地球的黑土。",
+        "Item_Desc_3": "在气球星人手一个。",
+        "Item_Desc_4": "特制版脚镣，屏幕上显示着“在逃...”，编码2002。",
+        "Item_Desc_5": "一卷纸币，似乎是只能在某地区流通的专属代币。",
+        "Item_Desc_6": "从探监家属那里得到的信仰物品？似乎可以旋开，里面是微型撬锁工具。",
+        "Item_Desc_7": "电量已耗尽... ...",
+        "Item_Desc_8": "嵌合在G-007的手心，右下角刻着一行小小的“where is the home”。",
+        "Item_Desc_9": "绿色的空壳镰刀，形态完整但有被腐蚀的斑状孔洞。",
+        "Item_Desc_10": "细看可以看出虫子们在粘液中挣扎蠕动。",
+        "Item_Desc_11": "半消化状态，覆盖着淡黄色黏液。",
+        "Item_Desc_12": "被紧紧缠绕在藤条上，碎片化严重。",
+        "Planet_Name_1": "芽牙乐",
+        "Planet_Name_2": "托尼",
+        "Planet_Name_3": "肖申克",
+        "Planet_Name_4": "螺丝",
+        "Planet_Name_5": "厄拉科斯",
+        "Planet_Name_6": "失乐园",
+        "Planet_Name_7": "果冻",
+        "Planet_Name_8": "朱砂之眼",
+        "Planet_Name_9": "苏鲁坎",
+        "Planet_Name_10": "塔拉苏斯",
+        "Planet_Desc_1": "世外桃源，由心地纯朴，单纯无害的动植物组成。",
+        "Planet_Desc_2": "高度商业化，星际联盟指定供应商。",
+        "Planet_Desc_3": "海洋占比超过百分之八十，唯一的陆地上建造了全星际戒备最森严的监狱。",
+        "Planet_Desc_4": "由智能机械组成的螺旋集合体，整个星球被改造成了星舰。",
+        "Planet_Desc_5": "曾经蕴含着巨量能源，干涸后成为了一些法外之徒的狂欢地。",
+        "Planet_Desc_6": "宛若天堂的乐园。只要你想，可以拥有无尽的欢愉。",
+        "Planet_Desc_7": "胶状物质覆盖星球表面，是星际公民最爱带孩子来的游乐场。",
+        "Planet_Desc_8": "大气层由氢气和氦气组成，是卡托斯星系最大的气体巨行星。",
+        "Planet_Desc_9": "静谧领域，每位公民都在专注自身。",
+        "Planet_Desc_10": "树的海洋。无数根须交缠融合，团结一心。",
+        "Planet_Require_1": "OVO成员集合啦！\n我们欢迎每一位成员加入OVO！",
+        "Planet_Require_2": "招聘：理发师\n要求：手艺说话，速来。",
+        "Planet_Require_3": "急需：维修工十名\n※ 悬赏通缉在逃嫌犯，最高可得503333。",
+        "Planet_Require_4": "招聘：船员\n老旧探索型机器人，核心完整即可。\n星舰收容，不嫌磨损。",
+        "Planet_Require_5": "这是个西西里口信。\n卢卡·布拉西与鱼同眠。\n把话带到，钱就是你的。",
+        "Planet_Require_6": "来上班？不，来玩！\n你只要负责让自己开心，顺便告诉别人怎么更开心。",
+        "Planet_Require_7": "招聘：果冻陷落救援员\n职责：负责救出被困孩子，保持笑容\n不怕粘、体力好优先。员工可免费游玩设施。",
+        "Planet_Require_8": "招聘：前导侦察员\n职责：进入未探明区域，采集资源数据与风险参数\n待遇：按有效记录结算\n管理局仅回收你的报告，不承诺回收你本人。",
+        "Planet_Require_9": "招聘：边界维护者\n职责：守护每位公民的个体领域边界，防止非必要接触与干扰\n要求：公正，处理情况及时\n待遇：定期资源补给及专属私人领域",
+        "Planet_Require_10": "招聘：树根通译员\n根缠着根，偶尔也会闹别扭。\n老村长腿脚慢啦，缺个能听懂两边树根说话的调解员。",
+        "Speaker_Manager": "经理",
+        "Speaker_Woofie": "伍菲",
+        "guide_1": "你好呀！新人！我是负责带领你的前辈汪酱~汪呜！\n这里就是你的工作台。\n需要派遣的生物会从视窗出现。汪呜！\n",
+        "guide_2": "你可以在下方的平板查看【PROFILE】。\n通过点击标签页，切换检视他们【LUGGAGE】中携带的随身物品。",
+        "guide_3": "这些是扫描按钮。汪呜！\n你可以点击【SCAN】检查外部特征，【X-RAY】透视内部骨骼。",
+        "guide_4": "当然，作为一名合格的派遣员，你需要询问一些简单的问题。\n没错，就是这个【ASK】按钮。\n不过我要提醒你，如果没有好好检查特征，提问按钮可不能使用哦~汪呜！",
+        "guide_5": "如果已经充分了解了，就请点击【DISPATCH】，选择最合适的星球派遣吧~",
+        "guide_6": "新人！我对你充满信心！汪呜！",
+        "setting_language": "语言",
+        "setting_music": "音乐",
+        "setting_sfx": "音效",
+        "setting_return": "回到标题",
+        "setting_quit": "退出游戏",
+        "inspection_question_hide": "???",
+        "inspection_daily_dispatch": "今日进度",
+        "inspection_name": "姓名：",
+        "inspection_species": "种族：",
+        "inspection_profile": "简历/",
+        "inspection_luggage": "行李/",
+        "planet_target_planet": "为客户选择合适的星球",
+        "opening_skip": "跳过",
+        "inspection_dispatch_template": "你已将 {0} 派遣至 {1} ",
+        "ending_result_template": "派遣结果：令其失望{0}次，满意{1}次！"
+      },
+      "Japanese": {
+        "dlg_1_0": "新人か？入って、座っていいよ。そんなに緊張しなくていい。俺は…今のところ、この星間派遣局の代理マネージャーだ。",
+        "dlg_1_1": "銀河人事部って知ってるか？",
+        "dlg_1_2_0": "知ってる",
+        "dlg_1_2_1": "知らない",
+        "dlg_2_0": "いいね。じゃあ手短に。最近、異星の求職者が大量に押し寄せてきてる。",
+        "dlg_2_1": "母星に飽きて、新しい仕事先を探してる連中ばっかりだ。",
+        "dlg_3_0": "知らなくても問題ない。基本メールしかしてこないしな。",
+        "dlg_3_1": "要するに、異星の求職者が最近一気に増えた。",
+        "dlg_3_2": "故郷に飽きて、新しい星でやり直したいってやつらだ。",
+        "dlg_4_0": "でも、気性が荒くて鋼を溶かすレベルのやつもいる。",
+        "dlg_4_1": "岩みたいに頭が悪いやつもいる。",
+        "dlg_4_2": "それから…まあ。",
+        "dlg_4_3": "同僚を食ったことがあるやつもいる。",
+        "dlg_4_4": "俺たちの仕事は、そいつらを見極めて、事故が起きにくい星へ送り出すことだ。",
+        "dlg_4_5": "うまくやれば、本部からボーナスが出るかもしれない。",
+        "dlg_4_6": "次は先輩のウーフィーが仕事を教えてくれる。",
+        "dlg_4_7": "以上だ。頑張れよ、新人。",
+        "dlg_4_8": "じゃあな〜",
+        "dlg_5_0": "おっ、初日を生き延びたみたいだな。",
+        "dlg_5_1": "どれ、成績を見せてみろ。",
+        "dlg_6_0": "ほう、見た目よりやるじゃないか。",
+        "dlg_6_1_0": "えへ〜",
+        "dlg_6_1_1": "悪くないでしょ？",
+        "dlg_7_0": "ちゃんとやってるな。いいぞ。",
+        "dlg_7_1_0": "えへ〜",
+        "dlg_7_1_1": "悪くないでしょ？",
+        "dlg_8_0": "まだまだ学ぶことは多いな。",
+        "dlg_8_1_0": "えへ〜",
+        "dlg_8_1_1": "悪くないでしょ？",
+        "dlg_9_0": "おいおい、肘で考えてたのか？",
+        "dlg_9_1_0": "えへ〜",
+        "dlg_9_1_1": "悪くないでしょ？",
+        "dlg_11_0": "やっぱり見る目は間違ってなかった。",
+        "dlg_11_1": "優秀な検査官は最近貴重だからな。",
+        "dlg_11_2": "この調子なら、本部昇格も近いぞ。",
+        "dlg_12_0": "その自信、悪くない。",
+        "dlg_12_1": "ただし訓練はサボるな。",
+        "dlg_12_2": "先輩のウーフィーにもどんどん聞け。",
+        "dlg_13_0": "冗談も言えるのか。",
+        "dlg_13_1": "新人でここまで来たなら、上出来だ。",
+        "dlg_14_0": "その可愛いアピールは通用しないぞ。",
+        "dlg_14_1": "そういう手は見飽きてる。",
+        "dlg_14_2": "今夜ちゃんと勉強しろ。次はダミー星送りだ。",
+        "dlg_15_0": "今日はここまで。",
+        "dlg_15_1": "どんな仕事でも、ちゃんと食べて水分取って、定時で帰れ。",
+        "dlg_15_2": "また明日な！",
+        "Character_Name_1": "グルート",
+        "Character_Name_2": "ブブーム\"",
+        "Character_Name_3": "バンク",
+        "Character_Name_4": "G-007",
+        "Character_Name_5": "アイビーちゃん",
+        "Character_Species_1": "スプラウト",
+        "Character_Species_2": "無機生命体",
+        "Character_Species_3": "都市伝説",
+        "Character_Species_4": "フェロ体",
+        "Character_Species_5": "獣系",
+        "Character_Desc_1": "触角に植物の芽が生えている。ギザギザした体は天敵から身を隠すための擬態。",
+        "Character_Desc_2": "感情によって色が変わるバルーン星人。",
+        "Character_Desc_3": "ファイナラ星の都市伝説から生まれた存在。実際はフラットウィズ星の支配種。",
+        "Character_Desc_4": "衛星信号を検知するモデル。かつては星間探査で最も普及していたロボット。",
+        "Character_Desc_5": "モフモフした生き物にくっつくのが大好きな、つる状の小さな生物。よじ登るのが得意。",
+        "Character_1_Glitter_1": "淡い緑の芽こそが本体。",
+        "Character_1_Glitter_2": "黒い部分は目ではないらしい。",
+        "Character_1_Glitter_3": "柔らかい足で軽やかに跳ね回る。",
+        "Character_2_Glitter_1": "長年の過労で頭頂はほぼつるつる。",
+        "Character_2_Glitter_2": "柔軟なコード状の手は自由に回転する。",
+        "Character_2_Glitter_3": "深く眉をひそめ、疲れ切っている様子だ。",
+        "Character_3_Glitter_1": "毛の奥で目のような光がちらつく。",
+        "Character_3_Glitter_2": "足首には長年の拘束痕が残っている。",
+        "Character_3_Glitter_3": "複眼の瞬きが支配種としての力を示す。",
+        "Character_4_Glitter_1": "知能モジュール搭載、チューリングテストを通過済み。",
+        "Character_4_Glitter_2": "胸部のディスプレイで文字を表示可能。",
+        "Character_4_Glitter_3": "コアの赤い光が今も点灯している…",
+        "Character_5_Glitter_1": "模様に見えるそれは…小さな顔？",
+        "Character_5_Glitter_2": "細いツタが関節の形を再現している。",
+        "Character_5_Glitter_3": "樹皮のような仮面を被っている。",
+        "Character_1_Question_1": "その黒い点、目なの？",
+        "Character_1_Question_2": "頭の芽は何？",
+        "Character_1_Question_3": "そのジョウロと土、何に使うの？",
+        "Character_2_Question_1": "その変な毛、髪なの？",
+        "Character_2_Question_2": "心臓がやけに大きいけど、普通？",
+        "Character_2_Question_3": "そのポンプ、食器？",
+        "Character_3_Question_1": "足首の赤い痕、どうしたの？",
+        "Character_3_Question_2": "その銃創、どこで？",
+        "Character_3_Question_3": "信仰はあるの？",
+        "Character_4_Question_1": "ちゃんと同僚と会話できる？",
+        "Character_4_Question_2": "まだ働ける？",
+        "Character_4_Question_3": "帰る場所を探してる？",
+        "Character_5_Question_1": "その模様、顔なの？",
+        "Character_5_Question_2": "体の中の骨片、どうして？",
+        "Character_5_Question_3": "そのコレクション…何のため？",
+        "Character_1_Question_Keyword_1": "目",
+        "Character_1_Question_Keyword_2": "芽",
+        "Character_1_Question_Keyword_3": "ジョウロと土",
+        "Character_2_Question_Keyword_1": "髪",
+        "Character_2_Question_Keyword_2": "心臓",
+        "Character_2_Question_Keyword_3": "ポンプ",
+        "Character_3_Question_Keyword_1": "足首",
+        "Character_3_Question_Keyword_2": "足首",
+        "Character_3_Question_Keyword_3": "クロス",
+        "Character_4_Question_Keyword_1": "文字化け",
+        "Character_4_Question_Keyword_2": "配線",
+        "Character_4_Question_Keyword_3": "ID",
+        "Character_5_Question_Keyword_1": "顔",
+        "Character_5_Question_Keyword_2": "骨片",
+        "Character_5_Question_Keyword_3": "コレクション",
+        "Character_1_Answer_1": "ovo",
+        "Character_1_Answer_2": "電波\n発信\n交信\n仲間",
+        "Character_1_Answer_3": "助ける\n生きる\n一緒\nみんな",
+        "Character_2_Answer_1": "他に何に見える？",
+        "Character_2_Answer_2": "…長時間の過労で心臓は肥大する",
+        "Character_2_Answer_3": "本気で言ってる？",
+        "Character_3_Answer_1": "話すほどのことじゃない",
+        "Character_3_Answer_2": "フン",
+        "Character_3_Answer_3": "ただのおもちゃに過ぎない",
+        "Character_4_Answer_1": "01111001 01100101 01110011",
+        "Character_4_Answer_1_1": "可",
+        "Character_4_Answer_2": "01110111 01101111 01110010 01101011",
+        "Character_4_Answer_2_1": "稼働",
+        "Character_4_Answer_3": "01101000 01101111 01101101 01100101",
+        "Character_4_Answer_3_1": "帰還",
+        "Character_5_Answer_1": "私たち好き？",
+        "Character_5_Answer_1_1": "かわいいでしょ？えへへ…",
+        "Character_5_Answer_1_2": "つぶす、つぶす、つぶす！",
+        "Character_5_Answer_2": "ねえ、友達でしょ？",
+        "Character_5_Answer_2_1": "そう！その通り！",
+        "Character_5_Answer_2_2": "ずっと一緒…永遠に…",
+        "Character_5_Answer_3": "いつか感謝するよ、みんな幸せだよね…",
+        "Character_5_Answer_3_1": "関係ないでしょ",
+        "Character_5_Answer_3_2": "ともだち〜ともだち〜",
+        "Item_Name_1": "ジョウロ",
+        "Item_Name_2": "土入りカップ",
+        "Item_Name_3": "エアポンプ",
+        "Item_Name_4": "電子足枷",
+        "Item_Name_5": "紙幣ロール",
+        "Item_Name_6": "金属製クロス",
+        "Item_Name_7": "予備バッテリー",
+        "Item_Name_8": "IDバッジ",
+        "Item_Name_9": "カマキリの腕",
+        "Item_Name_10": "黒い不明物質",
+        "Item_Name_11": "肉塊",
+        "Item_Name_12": "紅蛇の抜け殻",
+        "Item_Desc_1": "周囲の植物に自動で水を与える、小型の浮遊ジョウロ。",
+        "Item_Desc_2": "地球から持ち込まれた黒い土。",
+        "Item_Desc_3": "バルーン星人の必需品。誰もが一つは持っている。",
+        "Item_Desc_4": "画面には「逃亡中…」の表示。コード：2002。",
+        "Item_Desc_5": "特定区域でのみ使える専用通貨の束。",
+        "Item_Desc_6": "見た目は信仰アイテム。ねじると中から小型のピッキングツールが現れる。",
+        "Item_Desc_7": "電力は完全に尽きている…",
+        "Item_Desc_8": "G-007の手のひらに埋め込まれている。隅に「where is the home」と刻まれている。",
+        "Item_Desc_9": "緑色の中空構造の刃腕。形は保たれているが腐食が激しい。",
+        "Item_Desc_10": "粘つく黒い物質。内部で虫がもがいているのが見える。",
+        "Item_Desc_11": "半消化状態の肉塊。淡い黄色の粘液に覆われている。",
+        "Item_Desc_12": "ツタに巻き付いていた蛇皮。破損が激しく、形状は不明。",
+        "Planet_Name_1": "ブディア",
+        "Planet_Name_2": "トニス",
+        "Planet_Name_3": "ショーシャンク",
+        "Planet_Name_4": "スクリュー",
+        "Planet_Name_5": "アラキス",
+        "Planet_Name_6": "ロストエデン",
+        "Planet_Name_7": "ジェリー",
+        "Planet_Name_8": "シナバー・アイ",
+        "Planet_Name_9": "スルカン",
+        "Planet_Name_10": "タラサス",
+        "Planet_Desc_1": "無害な動植物だけで構成された純粋な楽園。",
+        "Planet_Desc_2": "商業化が極端に進んだ、星間連盟の供給拠点。",
+        "Planet_Desc_3": "海が8割以上。唯一の陸地に超厳重な監獄がある。",
+        "Planet_Desc_4": "知性ある機械群で構成された巨大宇宙船型惑星。",
+        "Planet_Desc_5": "かつて資源豊富だったが、今は無法者の楽園。",
+        "Planet_Desc_6": "望めば何でも叶う快楽の園。",
+        "Planet_Desc_7": "表面がゼリー状の遊園惑星。家族連れに人気。",
+        "Planet_Desc_8": "水素とヘリウムで構成された巨大ガス惑星。",
+        "Planet_Desc_9": "静寂の世界。住民は皆、自分だけに集中している。",
+        "Planet_Desc_10": "樹木が絡み合い、一体化した森の惑星。",
+        "Planet_Require_1": "OVOメンバー募集中。\n全員歓迎！OVOへようこそ！",
+        "Planet_Require_2": "美容師募集中。\n腕に自信のある方、即応募。",
+        "Planet_Require_3": "急募：整備員10名。\n※逃亡者に懸賞金あり（最大￥503,333）",
+        "Planet_Require_4": "募集：クルー\n旧型ロボット歓迎、コアが無事ならOK\n居住スペース十分",
+        "Planet_Require_5": "これはシチリアの伝言だ。\n「ルカ・ブラージは魚と眠る」\n届ければ、報酬は支払う。",
+        "Planet_Require_6": "仕事？いいえ、遊びです。\n自分を楽しませることが仕事。",
+        "Planet_Require_7": "募集：ジェリーピット救助スタッフ\n業務：子ども救助\n粘着環境に耐性あり、施設利用無料",
+        "Planet_Require_8": "職種：先遣スカウト\n内容：未開地調査、データ収集\n報酬：成果報酬制　\n※帰還保証なし",
+        "Planet_Require_9": "職種：境界管理者\n内容：個人領域の保護\n条件：公正な判断力\n待遇：定期的な資源補給と専用の個人領域",
+        "Planet_Require_10": "募集：通訳\n絡み合う“根”同士の会話を聞き取れる方歓迎！",
+        "Speaker_Manager": "マネージャー",
+        "Speaker_Woofie": "ウーフィー",
+        "guide_1": "やあ新人！案内役のウーフィーだ、ワン！\nここが君の作業台だ。お客さんは窓に現れるぞ、ワン！",
+        "guide_2": "下のタブレットで「PROFILE」を確認できる。\nタブで切り替えて「LUGGAGE」の持ち物も見てみよう。",
+        "guide_3": "これがスキャンボタンだ、ワン！\n「CAN」で外見、「X-RAY」で内部をチェックできる。",
+        "guide_4": "派遣員なら質問も大事だ。\n「ASK」ボタンで質問できる。\nただし、先にちゃんと調べてないと使えないからな、ワン！",
+        "guide_5": "準備ができたら「DISPATCH」で最適な星へ送ろう。",
+        "guide_6": "君ならできる！ワン！",
+        "setting_language": "言語",
+        "setting_music": "音楽",
+        "setting_sfx": "効果音",
+        "setting_return": "タイトルへ",
+        "setting_quit": "終了",
+        "inspection_question_hide": "???",
+        "inspection_daily_dispatch": "本日の業務",
+        "inspection_name": "名前：",
+        "inspection_species": "種族：",
+        "inspection_profile": "プロフィール/",
+        "inspection_luggage": "所持品/",
+        "planet_target_planet": "派遣先を選択",
+        "opening_skip": "スキップ",
+        "inspection_dispatch_template": "{0}を{1}に派遣しました",
+        "ending_result_template": "派遣結果：彼らを{0}回失望させ、{1}回満足させました！"
+      }
     }
   }
 }

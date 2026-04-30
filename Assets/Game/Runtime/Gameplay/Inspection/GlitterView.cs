@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GlitterView : MonoBehaviour
 {
     [SerializeField] private Image glitterPortrait;
-    [SerializeField] private TMP_Text glitterDesc;
+    [SerializeField] private LocalizedText glitterDesc;
     public Button closeButton;
     public float duration = 0.3f;
 
@@ -30,7 +30,7 @@ public class GlitterView : MonoBehaviour
 
         if (glitterDesc == null)
         {
-            glitterDesc = transform.Find("GlitterDesc").GetComponent<TMP_Text>();
+            glitterDesc = transform.Find("GlitterDesc").GetComponent<LocalizedText>();
         }
 
         closeButton.onClick.RemoveAllListeners();
@@ -72,12 +72,23 @@ public class GlitterView : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     点击关闭按钮
+    /// </summary>
+    public void OnClickClose()
+    {
+        AudioManager.Instance.PlaySfx("quit");
+        _isOpen = false;
+        _currentGlitterData = null;
+        Hide();
+    }
+
     private void SetContent(Sprite sprite, GlitterData data)
     {
         glitterPortrait.sprite = sprite;
         glitterPortrait.rectTransform.anchoredPosition = data.appearancePosition;
         glitterPortrait.rectTransform.localScale = Vector2.one * data.scale;
-        glitterDesc.text = data.glitterDescription;
+        glitterDesc.SetLocalizationKey(data.glitterDescription);
     }
 
     private void PlayShow()
@@ -93,16 +104,6 @@ public class GlitterView : MonoBehaviour
         _isOpen = true;
     }
 
-    /// <summary>
-    ///     点击关闭按钮
-    /// </summary>
-    public void OnClickClose()
-    {
-        AudioManager.Instance.PlaySfx("quit");
-        _isOpen = false;
-        _currentGlitterData = null;
-        Hide();
-    }
 
     private void Hide(Action onComplete = null)
     {

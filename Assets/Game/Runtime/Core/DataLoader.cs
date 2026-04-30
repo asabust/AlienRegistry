@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Game.Runtime.Core.ExcelTableReader;
+using Game.Runtime.Data;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -33,6 +34,10 @@ namespace Game.Runtime.Core
             }
 
             gameData = JsonConvert.DeserializeObject<ExcelTableContext>(jsonText.text);
+            int languageIndex = PlayerPrefs.GetInt("LanguageKey", 0);
+
+            Debug.Log($"设置语言 {languageIndex}");
+            LocalizationManager.Init(gameData.localizationData, (Language)languageIndex);
         }
     }
 }

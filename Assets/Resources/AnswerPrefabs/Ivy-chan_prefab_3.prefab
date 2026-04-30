@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 2995275249598990872}
   - component: {fileID: 2837647921472967961}
   - component: {fileID: 2801320173688461781}
+  - component: {fileID: 7918836288132681159}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -265,6 +266,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &7918836288132681159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308012879671026465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_3_2
 --- !u!1 &1314642512658501116
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +411,7 @@ GameObject:
   - component: {fileID: 7413981279736888740}
   - component: {fileID: 5142894504662040733}
   - component: {fileID: 4300434148257832222}
+  - component: {fileID: 8694881963482773870}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -553,6 +568,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &8694881963482773870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304325269655772851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_3_1
 --- !u!1 &2776002967781145663
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +870,7 @@ GameObject:
   - component: {fileID: 8966721470157733437}
   - component: {fileID: 1660331125754845336}
   - component: {fileID: 5594836736046987905}
+  - component: {fileID: 1395677800465205350}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -896,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: They'll thank us someday.
+  m_text: They'll thank us someday. They're all so happy now...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6afcacb6206c84faf8e67707d2a115a1, type: 2}
   m_sharedMaterial: {fileID: 3278446751124379594, guid: 6afcacb6206c84faf8e67707d2a115a1, type: 2}
@@ -980,7 +1009,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: -1
+  m_PreferredWidth: 460
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -998,6 +1027,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWidth: 460
+--- !u!114 &1395677800465205350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5900224691302482336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1442397a0ea434997d49d347ac7933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Character_5_Answer_3
 --- !u!1 &6612209897805137460
 GameObject:
   m_ObjectHideFlags: 0

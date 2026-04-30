@@ -10,8 +10,8 @@ public class PackageView : MonoBehaviour
     [Header("Item Detail")] [SerializeField]
     private Image itemLargeImage;
 
-    [SerializeField] private TMP_Text itemNameText;
-    [SerializeField] private TMP_Text itemDescText;
+    [SerializeField] private LocalizedText itemNameText;
+    [SerializeField] private LocalizedText itemDescText;
 
     [Header("Item Slots")] [SerializeField]
     private ToggleGroup toggleGroup;
@@ -97,8 +97,8 @@ public class PackageView : MonoBehaviour
     {
         if (DataLoader.Instance.gameData.items.TryGetValue(itemId, out ItemData data))
         {
-            itemNameText.text = data.name;
-            itemDescText.text = data.description;
+            itemNameText.SetLocalizationKey(data.name);
+            itemDescText.SetLocalizationKey(data.description);
             itemLargeImage.sprite = Resources.Load<Sprite>($"item/{data.iconName}");
             itemLargeImage.preserveAspect = true;
         }
@@ -110,8 +110,8 @@ public class PackageView : MonoBehaviour
 
     private void ClearDetailDisplay()
     {
-        itemNameText.text = "";
-        itemDescText.text = "";
+        itemNameText.SetLocalizationKey("");
+        itemDescText.SetLocalizationKey("");
         itemLargeImage.sprite = null;
     }
 }

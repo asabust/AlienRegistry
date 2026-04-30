@@ -48,7 +48,13 @@ namespace Game.Runtime.Core.ExcelTableReader
                 if (isTruncated) continue;
 
                 string speaker = row.GetString("Speaker").Trim();
-                string text = row.GetString("Text");
+
+                // 本地化，保存key
+                string key = $"dlg_{dialogueId}_{currentDialogue?.lines.Count}";
+                string englishText = row.GetString("Text_EN");
+                string chineseText = row.GetString("Text_CN");
+                string japaneseText = row.GetString("Text_JP");
+
                 int nextDialogue = row.GetInt("nextDialogue");
 
                 DialogueType type = speaker.ToLower() switch
@@ -69,17 +75,19 @@ namespace Game.Runtime.Core.ExcelTableReader
 
                     if (lastLine?.type == DialogueType.Choice)
                     {
-                        lastLine.choices.Add(new Choice { text = text, nextDialogueId = nextDialogue });
+                        key = $"dlg_{dialogueId}_{currentDialogue?.lines.Count - 1}_{lastLine.choices.Count}";
+                        lastLine.choices.Add(new Choice { text = key, nextDialogueId = nextDialogue });
                     }
                     else
                     {
                         // 新建一个 Choice Line
+                        key += "_0";
                         currentDialogue.lines.Add(new DialogueLine
                         {
                             type = DialogueType.Choice,
                             speakerName = null,
                             text = null,
-                            choices = new List<Choice> { new Choice { text = text, nextDialogueId = nextDialogue } }
+                            choices = new List<Choice> { new Choice { text = key, nextDialogueId = nextDialogue } }
                         });
                     }
                 }
@@ -89,7 +97,7 @@ namespace Game.Runtime.Core.ExcelTableReader
                     {
                         type = type,
                         speakerName = type == DialogueType.Normal ? speaker : null,
-                        text = text,
+                        text = key,
                         choices = null
                     });
 
@@ -100,6 +108,10 @@ namespace Game.Runtime.Core.ExcelTableReader
                         isTruncated = true;
                     }
                 }
+
+                context.localizationData.Add(Language.English, key, englishText);
+                context.localizationData.Add(Language.Chinese, key, chineseText);
+                context.localizationData.Add(Language.Japanese, key, japaneseText);
             }
         }
     }

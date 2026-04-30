@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e253a5341690b426c826a41ee19d18cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {}
 --- !u!4 &624430352
 Transform:
   m_ObjectHideFlags: 0
@@ -1196,6 +1197,9 @@ MonoBehaviour:
   openingScene: Opening
   firstGameScene: GameScene
   endingScene: Ending
+  englishFont: {fileID: 11400000, guid: 6afcacb6206c84faf8e67707d2a115a1, type: 2}
+  chineseFont: {fileID: 11400000, guid: b1e46f5647fc445dfb3c2d2d7d0a9652, type: 2}
+  japaneseFont: {fileID: 11400000, guid: b1e46f5647fc445dfb3c2d2d7d0a9652, type: 2}
 --- !u!4 &1537324991
 Transform:
   m_ObjectHideFlags: 0
