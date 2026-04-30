@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: Character_1_Answer_2
+  text: {fileID: 0}
 --- !u!1 &6612209897805137460
 GameObject:
   m_ObjectHideFlags: 0

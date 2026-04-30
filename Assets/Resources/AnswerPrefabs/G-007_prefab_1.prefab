@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: Character_4_Answer_1
+  text: {fileID: 0}
 --- !u!1 &6612209897805137460
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 946, y: -335}
+  m_AnchoredPosition: {x: 960, y: -335}
   m_SizeDelta: {x: 354.99, y: 49.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8456176487329316896
@@ -618,3 +619,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: Character_4_Answer_1_1
+  text: {fileID: 0}
