@@ -57,6 +57,7 @@ public class PlanetPanel : UIPanel
 
     private void OnClickClose()
     {
+        AudioManager.Instance.PlaySfx("quit");
         CloseWithAnim(() =>
         {
             UIManager.Instance.Close<PlanetPanel>();
@@ -67,6 +68,7 @@ public class PlanetPanel : UIPanel
     {
         if (_selectedIndex < 0) return;
 
+        AudioManager.Instance.PlaySfx("sure");
         int planetId = _planets[_selectedIndex].id;
         InspectionManager.Instance.OnDispatchCallback(planetId);
         OnClickClose();
@@ -141,6 +143,7 @@ public class PlanetPanel : UIPanel
 
     private void OnClickPlanet(int index)
     {
+        AudioManager.Instance.PlaySfx("click_planet");
         if (index >= _planets.Count) return;
 
         _selectedIndex = index;
